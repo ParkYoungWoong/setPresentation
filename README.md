@@ -1,32 +1,53 @@
 # Make presentations
 
-This was made with ['Reveal.js'](https://github.com/hakimel/reveal.js/).
+This was made with [Reveal.js](https://github.com/hakimel/reveal.js/).
 
-## CREATE PAGE
+## Start Code
 
 ```html
 <div class="reveal">
   <div class="slides">
 
+    <section data-markdown>
+      <textarea data-template>
+
+      </textarea>
+    </section>
+
+  </div>
+</div>
+```
+
+## How to use
+
+```html
+<div class="reveal">
+  <div class="slides">
+
+
     <!-- GENERAL SINGLE PAGE -->
     <section>
     </section>
 
+
     <!-- MARKDOWN PAGE -->
     <section data-markdown>
       <textarea data-template>
+        <!-- Enter the Markdown code -->
       </textarea>
     </section>
+
 
     <!-- VERTICAL MOVEMENT PAGE -->
     <section>
       <!-- V PAGE 1 -->
-      <section></section>
+      <section>
+      </section>
       <!-- V PAGE 2 -->
-      <section></section>
-      <!-- V PAGE 3 -->
-      <section></section>
+      <section>
+      </section>
     </section>
+
 
   </div>
 </div>
@@ -34,10 +55,15 @@ This was made with ['Reveal.js'](https://github.com/hakimel/reveal.js/).
 
 ## URL notes
 
-GitHub URL.
+The GitHub URL of required files.
 
 ```
 https://rawgit.com/ParkYoungWoong/setPresentation/master/
+```
+
+View files URL.
+
+```
 https://rawgit.com/ParkYoungWoong/setPresentation/master/views/
 ```
 
