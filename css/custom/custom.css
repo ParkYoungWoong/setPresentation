@@ -11,8 +11,10 @@
 .reveal pre code {
   background: #F6F8FA;
   padding: 10px 15px;
+  border-radius: 5px;
 }
 
+/* Highlight Theme - zenburn.css */
 .reveal pre code.hljs {
   background: #3f3f3f;
 }
