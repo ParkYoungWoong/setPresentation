@@ -7,11 +7,11 @@
   overflow: hidden;
 }
 
-.reveal code {
+.reveal pre code {
   background: #F6F8FA;
   padding: 10px 15px;
 }
 
-.reveal pre code {
-  padding: 10px 15px;
+.reveal pre code.hljs {
+  background: #3f3f3f;
 }
