@@ -1,31 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <title>reveal.js</title>
-
-    <link rel="stylesheet" href="https://rawgit.com/ParkYoungWoong/setPresentation/master/css/reveal.css">
-    <link rel="stylesheet" href="https://rawgit.com/ParkYoungWoong/setPresentation/master/css/theme/white.css">
-
-    <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="https://rawgit.com/ParkYoungWoong/setPresentation/master/lib/css/zenburn.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="https://rawgit.com/ParkYoungWoong/setPresentation/master/css/custom/custom.css">
-
-    <!-- Printing and PDF exports -->
-    <script>
-        var link = document.createElement( 'link' );
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = window.location.search.match( /print-pdf/gi ) ? 'https://rawgit.com/ParkYoungWoong/setPresentation/master/css/print/pdf.css' : 'https://rawgit.com/ParkYoungWoong/setPresentation/master/css/print/paper.css';
-        document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
-</head>
-<body>
-
 <div class="reveal">
     <div class="slides">
 
@@ -104,24 +76,3 @@
 
     </div>
 </div>
-
-<script src="https://rawgit.com/ParkYoungWoong/setPresentation/master/lib/js/head.min.js"></script>
-<script src="https://rawgit.com/ParkYoungWoong/setPresentation/master/js/reveal.js"></script>
-
-<script>
-    // More info about config & dependencies:
-    // - https://github.com/hakimel/reveal.js#configuration
-    // - https://github.com/hakimel/reveal.js#dependencies
-    Reveal.initialize({
-        dependencies: [
-            { src: 'https://rawgit.com/ParkYoungWoong/setPresentation/master/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-            { src: 'https://rawgit.com/ParkYoungWoong/setPresentation/master/plugin/markdown/marked.js' },
-            { src: 'https://rawgit.com/ParkYoungWoong/setPresentation/master/plugin/markdown/markdown.js' },
-            { src: 'https://rawgit.com/ParkYoungWoong/setPresentation/master/plugin/notes/notes.js', async: true },
-            { src: 'https://rawgit.com/ParkYoungWoong/setPresentation/master/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-            { src: 'https://rawgit.com/ParkYoungWoong/setPresentation/master/plugin/zoom-js/zoom.js', async: true }
-        ]
-    });
-</script>
-</body>
-</html>
