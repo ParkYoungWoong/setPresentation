@@ -1,0 +1,10 @@
+.reveal {
+    font-size: 30px;
+}
+.reveal pre {
+    border-radius: 10px;
+    overflow: hidden;
+}
+.reveal pre code {
+    padding: 10px 15px;
+}
