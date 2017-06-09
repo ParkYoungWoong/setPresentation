@@ -50,7 +50,7 @@ body {
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: normal;
-  text-transform: uppercase;
+  text-transform: inherit; /* 대문자 변환 사용하지 않음! */
   text-shadow: none;
   word-wrap: break-word; }
 
@@ -127,14 +127,31 @@ body {
   quotes: none; }
 
 .reveal blockquote {
+  font-size: 70%;
   display: block;
   position: relative;
   width: 70%;
-  margin: 20px auto;
-  padding: 5px;
+  margin: 30px auto 20px auto;
+  /*padding: 5px;*/
   font-style: italic;
   background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); }
+  opacity: .7;
+  box-shadow: none;
+}
+.reveal blockquote p {
+  position: relative;
+  margin: 10px 0;
+}
+.reveal blockquote p:before {
+  content: "";
+  display: block;
+  width: .6em;
+  height: 3em;
+  background: rgba(0,0,0, .2);
+  position: absolute;
+  top: -.8em;
+  left: -2em;
+}
 
 .reveal blockquote p:first-child,
 .reveal blockquote p:last-child {
@@ -253,31 +270,31 @@ body {
  *********************************************/
 .reveal .controls .navigate-left,
 .reveal .controls .navigate-left.enabled {
-  border-right-color: #2a76dd; }
+  border-right-color: #000000; }
 
 .reveal .controls .navigate-right,
 .reveal .controls .navigate-right.enabled {
-  border-left-color: #2a76dd; }
+  border-left-color: #000000; }
 
 .reveal .controls .navigate-up,
 .reveal .controls .navigate-up.enabled {
-  border-bottom-color: #2a76dd; }
+  border-bottom-color: #000000; }
 
 .reveal .controls .navigate-down,
 .reveal .controls .navigate-down.enabled {
-  border-top-color: #2a76dd; }
+  border-top-color: #000000; }
 
 .reveal .controls .navigate-left.enabled:hover {
-  border-right-color: #6ca0e8; }
+  border-right-color: #2a76dd; }
 
 .reveal .controls .navigate-right.enabled:hover {
-  border-left-color: #6ca0e8; }
+  border-left-color: #2a76dd; }
 
 .reveal .controls .navigate-up.enabled:hover {
-  border-bottom-color: #6ca0e8; }
+  border-bottom-color: #2a76dd; }
 
 .reveal .controls .navigate-down.enabled:hover {
-  border-top-color: #6ca0e8; }
+  border-top-color: #2a76dd; }
 
 /*********************************************
  * PROGRESS BAR

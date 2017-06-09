@@ -1,19 +1,20 @@
+/* 전체 폰트 크기 */
 .reveal {
   font-size: 30px;
 }
 
+
+/* 일반 코드 구문 */
 .reveal pre {
   border-radius: 10px;
   overflow: hidden;
 }
-
 .reveal code,
 .reveal pre code {
-  background: #F6F8FA;
-  padding: 10px 15px;
+  background: #f1f3f5;
+  padding: .15em .3em;
   border-radius: 5px;
 }
-
 /* Highlight Theme - zenburn.css */
 .reveal pre code.hljs {
   background: #3f3f3f;
