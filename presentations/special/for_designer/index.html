@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>reveal.js</title>
+  <title>웹 디자인과 개발 개론</title>
 
   <link rel="stylesheet" href="/css/reveal.css">
   <link rel="stylesheet" href="/css/theme/white.css">
@@ -16,13 +16,7 @@
   <link rel="stylesheet" href="/css/custom/custom.css">
 
   <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? '/css/print/pdf.css' : '/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
+  <script src="/js/create_link.js"></script>
 </head>
 <body>
 <div class="reveal">
@@ -35,6 +29,11 @@
             # 웹 디자인, 개발 개로오오오오옹!
         </textarea>
       </section>
+      <section data-markdown>
+        <textarea data-template>
+            # 굿!
+        </textarea>
+      </section>
     </section>
 
 
@@ -43,20 +42,7 @@
 
 <script src="/lib/js/head.min.js"></script>
 <script src="/js/reveal.js"></script>
+<script src="/js/reveal.initialize.js"></script>
 
-<script>
-  // More info about config & dependencies:
-  // - https://github.com/hakimel/reveal.js#configuration
-  // - https://github.com/hakimel/reveal.js#dependencies
-  Reveal.initialize({
-    dependencies: [
-      { src: '/plugin/markdown/marked.js' },
-      { src: '/plugin/markdown/markdown.js' },
-      { src: '/plugin/notes/notes.js', async: true },
-      { src: '/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-      { src: '/plugin/zoom-js/zoom.js', async: true }
-    ]
-  });
-</script>
 </body>
 </html>
