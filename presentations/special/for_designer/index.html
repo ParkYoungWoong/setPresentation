@@ -10,15 +10,19 @@
   <!--<link rel="stylesheet" href="/css/theme/white.css">-->
 
   <!-- Theme used for syntax highlighting of code -->
-  <link rel="stylesheet" href="/lib/css/github.css">
+  <link rel="stylesheet" href="/css/custom/github.css">
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/css/custom/white_custom.css">
   <link rel="stylesheet" href="/css/custom/custom.css">
   <link rel="stylesheet" href="/css/custom/kbd.css">
+  <link rel="stylesheet" href="for_designer.css">
 
   <!-- Printing and PDF exports -->
   <script src="/js/create_link.js"></script>
+
+  <script src="/js/libs/jquery.min.js"></script>
+  <script src="/js/plugins/jquery.nicescroll.min.js"></script>
 </head>
 <body>
 <div class="reveal">
@@ -167,11 +171,19 @@
 
       <section data-markdown>
       <textarea data-template>
-        ## 전후 프로세스의 이해가 있어야 능력있는 디자이너이다
+        ## 전후 프로세스의 이해가 없다면 무능한 디자이너이다
 
         '네모 바퀴 자동차 이야기'
 
         > 사이트 하단에 들어갈 '춤추는 캐릭터'를 디자인 해주세요!
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `HTML`, `CSS`는 웹 디자이너의 기본 소양이다
+
+        > 제 개발자 친구는 `CSS`가 너무 어렵다고 해요.
       </textarea>
       </section>
 
@@ -199,7 +211,7 @@
 
       <section data-markdown>
       <textarea data-template>
-        ## 연봉이 오른다
+        ## 연봉이 오른다!
 
         <img src="/img/money.png" alt="돈" width="200">
 
@@ -328,18 +340,96 @@
 
       <section data-markdown>
       <textarea data-template>
-        ### 1920 x 980
+        ### 1920 x 980 (FHD)
 
-        <img src="/img/width1920_980.jpg" alt="마세라티 메인 페이지 FHD" width="100%">
+        <img src="/img/display_ex1_1920.jpg" alt="마세라티 메인 페이지 FHD" width="100%">
       </textarea>
       </section>
 
       <section data-markdown>
       <textarea data-template>
-        ### 1600 x 900
+        ### 1600 x 900 (Laptop)
 
-        <img src="/img/width1600_900.jpg" alt="마세라티 메인 페이지 1600" width="100%">
+        <img src="/img/display_ex1_1600.jpg" alt="마세라티 메인 페이지 1600" width="100%">
       </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 1920 x 980 (FHD)
+
+        <img src="/img/display_ex2_1920.jpg" alt="허니통통 메인 페이지 FHD" width="100%">
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 1600 x 900 (Laptop)
+
+        <img src="/img/display_ex2_1600.jpg" alt="허니통통 메인 페이지 1600" width="100%">
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 1366 x 768 (HD)
+
+        <img src="/img/display_ex2_1366.jpg" alt="허니통통 메인 페이지 1600" width="100%">
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        # 섹션(Section) 이해하기
+      </textarea>
+      </section>
+
+      <section>
+        <div class="browser_group">
+          <div class="browser">
+            <div class="status_bar"><img src="/img/browser_status_bar_500.jpg" alt=""></div>
+            <div id="browser_origin_area" class="scroll_area">
+              <img src="/img/heren_main_500.jpg" alt="" width="500" height="1476">
+            </div>
+          </div>
+
+          <div class="browser">
+            <div class="status_bar"><img src="/img/browser_status_bar_500.jpg" alt=""></div>
+            <div id="browser_copy_area" class="scroll_area">
+              <img src="/img/heren_main_500_section.jpg" alt="" width="500" height="1476">
+            </div>
+          </div>
+        </div>
+
+        <script>
+          var opts = {
+            cursorcolor: "rgba(0,0,0,.4)",
+            cursorwidth: 3,
+            scrollspeed: 60,
+            cursorborderradius: 0,
+            mousescrollstep: 40,
+            background: "none",
+            cursorborder: "none",
+            autohidemode: true,
+            boxzoom: false,
+            zindex: 990
+          };
+
+          $('.browser .scroll_area').niceScroll(opts);
+
+          $('.status_bar').on('click', function () {
+            $('.browser .scroll_area').niceScroll(opts);
+          });
+
+          $('#browser_origin_area').on('scroll', function () {
+            var originY = $(this).scrollTop();
+            $('#browser_copy_area').getNiceScroll(0).doScrollTop(originY, 0);
+          });
+        </script>
       </section>
     </section>
 
@@ -404,6 +494,37 @@
         1. 저장할 영역 선택(Selected Slices 의 경우)
         1. Save..
         1. 하단 Slices: 메뉴에서 유형 선택(All Slices / All User Slices / Selected Slices)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 슬라이스(Slice Tool)
+
+        | 기능 | 설명 |
+        |--|--|
+        | Normal | 사용자가 자유롭게 슬라이스 |
+        | Fixed Aspect Ratio | 입력된 값의 비율을 유지하여 슬라이스 |
+        | Fixed Size | 입력된 값 만큼 슬라이스  |
+        | Slice From Guides | 지정된 가이드 라인에 맞게 슬라이스 |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 슬라이스 선택(Slice Select Tool)
+
+        | 기능 | 설명 |
+        |--|--|
+        | Delete Slice | 슬라이스 삭제(<kbd>Delete</kbd>) |
+        | Edit Slice Options... | 슬라이스 옵션(이름,크기,위치 등) |
+        | Promote to User Slice | 슬라이스 활성화 |
+        | Combine Slices | 슬라이스 병합 |
+        | Divide Slice... | 슬라이스 분할 |
+        | Bring to Front | 슬라이스 가장 앞으로 |
+        | Bring Forward | 슬라이스 앞으로 |
+        | Send Backward | 슬라이스 뒤로 |
+        | Send to Back | 슬라이스 가장 뒤로 |
       </textarea>
       </section>
     </section>

@@ -1,0 +1,99 @@
+/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.reveal .hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    color: #333;
+    background: #f8f8f8;
+}
+
+.reveal .hljs-comment,
+.reveal .hljs-quote {
+    color: #998;
+    font-style: italic;
+}
+
+.reveal .hljs-keyword,
+.reveal .hljs-selector-tag,
+.reveal .hljs-subst {
+    color: #333;
+    font-weight: bold;
+}
+
+.reveal .hljs-number,
+.reveal .hljs-literal,
+.reveal .hljs-variable,
+.reveal .hljs-template-variable,
+.reveal .hljs-tag .reveal .hljs-attr {
+    color: #008080;
+}
+
+.reveal .hljs-string,
+.reveal .hljs-doctag {
+    color: #d14;
+}
+
+.reveal .hljs-title,
+.reveal .hljs-section,
+.reveal .hljs-selector-id {
+    color: #900;
+    font-weight: bold;
+}
+
+.reveal .hljs-subst {
+    font-weight: normal;
+}
+
+.reveal .hljs-type,
+.reveal .hljs-class .reveal .hljs-title {
+    color: #458;
+    font-weight: bold;
+}
+
+.reveal .hljs-tag,
+.reveal .hljs-name,
+.reveal .hljs-attribute {
+    color: #000080;
+    font-weight: normal;
+}
+
+.reveal .hljs-regexp,
+.reveal .hljs-link {
+    color: #009926;
+}
+
+.reveal .hljs-symbol,
+.reveal .hljs-bullet {
+    color: #990073;
+}
+
+.reveal .hljs-built_in,
+.reveal .hljs-builtin-name {
+    color: #0086b3;
+}
+
+.reveal .hljs-meta {
+    color: #999;
+    font-weight: bold;
+}
+
+.reveal .hljs-deletion {
+    background: #fdd;
+}
+
+.reveal .hljs-addition {
+    background: #dfd;
+}
+
+.reveal .hljs-emphasis {
+    font-style: italic;
+}
+
+.reveal .hljs-strong {
+    font-weight: bold;
+}

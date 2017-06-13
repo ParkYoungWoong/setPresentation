@@ -1,0 +1,28 @@
+.reveal .browser_group::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.reveal .browser {
+    width: 500px;
+    float: left;
+    margin-right: 30px;
+    border: 1px solid #e5e5e5;
+}
+.reveal .browser:last-child {
+    float: right;
+}
+.reveal .browser img {
+    margin: 0;
+    max-width: none;
+    max-height: none;
+    vertical-align: top;
+}
+.reveal .browser .status_bar {
+    height: 23px;
+}
+.reveal .browser .scroll_area {
+    width: 500px;
+    height: 500px;
+    overflow: auto;
+}
