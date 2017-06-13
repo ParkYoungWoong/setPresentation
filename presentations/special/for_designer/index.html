@@ -46,6 +46,67 @@
     <section>
       <section data-markdown>
       <textarea data-template>
+        # 무엇을 배우는가?
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 기획과 개발의 이해
+
+        모든 구성원이 프로세스를 제대로 이해해야 훌륭한 제품이 나온다!
+
+        > 어?! 저는 잘 모르겠는데요...
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 개발을 왜 배워야 하는가?
+
+        개발자로 이직을 위해서가 아니고, 디자인 능력 향상을 위해서 배워라!
+
+        > 나는 페이스북을 만들꼬얌!
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 프로토타입이 뭐죠?
+
+        언제까지 '말'로 설명할 것인가?!
+
+        > 이거는 이렇게 움직여서 저렇게 끝나는건데.. 아.. 그게 아니구요..
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 웹 디자인(퍼블리싱) 상식
+
+        왜 섹션으로 나누고 해상도에 맞게 디자인하는가?<br>
+        이미지 소스 작업과 관리 방법 배우기!
+
+        > 내가 디자인 고자라니?!
+
+        <img src="/img/iamgoja.jpg" alt="내가 고자라니?!" width="130" style="border-radius: 50%;">
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 시간이 남으면?
+
+        회사별(부서별) 웹 디자이너들의 장단점 소개.
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
         # 웹 프로세스의 이해
       </textarea>
       </section>
@@ -70,11 +131,12 @@
 
       <section data-markdown>
       <textarea data-template>
-        ## 기획 - 분석
+        ## 기획 - 분석 단계
 
-        - 사용자 분석
-        - 고객 니즈(NEEDS) 분석
-        - 요구사항 분석
+        - 사업성 분석
+        - 클라이언트 니즈(NEEDS) 분석
+        - 클라이언트 요구사항 분석
+        - 사용자(User) 분석
       </textarea>
       </section>
 
@@ -186,13 +248,15 @@
       <textarea data-template>
         ## `HTML`, `CSS`는 웹 디자이너의 기본 소양이다
 
+        구조, 표현, 동작
+
         > 제 개발자 친구는 `CSS`가 너무 어렵다고 해요.
       </textarea>
       </section>
 
       <section data-markdown>
       <textarea data-template>
-        ## 개발자는 별도의 디자인 효과들을 교육받지 않는다
+        ## 개발자는 별도의 디자인(효과)을 교육받지 않는다
 
         > 우리 회사 개발자는 항상 '1px'씩 어긋나게 만들어..
       </textarea>
@@ -209,6 +273,16 @@
         <img src="/img/prototype_tool_origami.jpg" alt="Origami" width="200">
 
         > 슬라이드 애니메이션 만들어 놓았으니 코드만 복사해서 쓰세요.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 효율적인 사고방식이 생긴다
+
+        디자인이란 미적이면서 기능적이어야 한다!
+
+        > 그냥 예뻐서 넣었어요~ 이힛♡
       </textarea>
       </section>
 
@@ -241,7 +315,7 @@
         - 인터렉션 프로토타입(동적 시안)
         - VCS(Version Control System)
 
-        > 개발 전 디자이너가 실물과 최대한 비슷한 디자인 샘플을 만들어 체크하는 것을 '프로토타입'이라고 한다.
+        > 개발 전 디자이너가 실물과 최대한 비슷한 디자인 샘플을 만들어 체크하는 것을<br>'프로토타입'이라고 한다.
       </textarea>
       </section>
 
@@ -316,6 +390,90 @@
     <section>
       <section data-markdown>
       <textarea data-template>
+        # 섹션(Section) 이해하기
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 섹션(Section) 이란?
+
+        웹 사이트를 구성하는 가장 큰 단위의 연결된 레이아웃들(Layouts)
+
+        `header`, `footer`, `section`, `article`...
+      </textarea>
+      </section>
+
+      <section data-state="nice_scroller">
+        <div class="browser_group">
+          <div class="browser">
+            <div class="status_bar"><img src="/img/browser_status_bar_500.jpg" alt=""></div>
+            <div id="browser_origin_area" class="scroll_area">
+              <img src="/img/heren_main_500.jpg" alt="" width="500" height="1476">
+            </div>
+          </div>
+
+          <div class="browser">
+            <div class="status_bar"><img src="/img/browser_status_bar_500.jpg" alt=""></div>
+            <div id="browser_copy_area" class="scroll_area">
+              <img src="/img/heren_main_500_section.jpg" alt="" width="500" height="1476">
+            </div>
+          </div>
+        </div>
+
+        <script>
+          $(document).ready(function () {
+            Reveal.addEventListener('nice_scroller', function() {
+              var opts = {
+                cursorcolor: "rgba(0,0,0,.4)",
+                cursorwidth: 3,
+                scrollspeed: 60,
+                cursorborderradius: 0,
+                mousescrollstep: 40,
+                background: "none",
+                cursorborder: "none",
+                autohidemode: true,
+                boxzoom: false,
+                zindex: 990
+              };
+
+              $('.browser .scroll_area').each(function () {
+                $(this).niceScroll(opts);
+              });
+
+              $('#browser_origin_area').on('scroll', function () {
+                var originY = $(this).scrollTop();
+                $('#browser_copy_area').getNiceScroll(0).doScrollTop(originY, 0);
+              });
+            }, false );
+          });
+        </script>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 섹션으로 구성하는 이유
+
+        웹의 콘텐츠(Contents)를 구분하여 관리하기 위해서 섹션으로 구성.
+
+        - 웹의 내용 구분
+        - 각 레이아웃의 기준
+        - 관리가 편리
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        <img src="/img/remove_section.jpg" alt="섹션 빼기" width="900">
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
         # 해상도 이해하기
       </textarea>
       </section>
@@ -341,7 +499,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-transition="fade-in">
       <textarea data-template>
         ### 1920 x 980 (FHD)
 
@@ -349,7 +507,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-transition="fade-in">
       <textarea data-template>
         ### 1600 x 900 (Laptop)
 
@@ -357,7 +515,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-transition="fade-in">
       <textarea data-template>
         ### 1920 x 980 (FHD)
 
@@ -365,7 +523,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-transition="fade-in">
       <textarea data-template>
         ### 1600 x 900 (Laptop)
 
@@ -373,7 +531,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-transition="fade-in">
       <textarea data-template>
         ### 1366 x 768 (HD)
 
@@ -384,60 +542,6 @@
 
 
     <!--SECTION-->
-    <section>
-      <section data-markdown>
-      <textarea data-template>
-        # 섹션(Section) 이해하기
-      </textarea>
-      </section>
-
-      <section>
-        <div class="browser_group">
-          <div class="browser">
-            <div class="status_bar"><img src="/img/browser_status_bar_500.jpg" alt=""></div>
-            <div id="browser_origin_area" class="scroll_area">
-              <img src="/img/heren_main_500.jpg" alt="" width="500" height="1476">
-            </div>
-          </div>
-
-          <div class="browser">
-            <div class="status_bar"><img src="/img/browser_status_bar_500.jpg" alt=""></div>
-            <div id="browser_copy_area" class="scroll_area">
-              <img src="/img/heren_main_500_section.jpg" alt="" width="500" height="1476">
-            </div>
-          </div>
-        </div>
-
-        <script>
-          var opts = {
-            cursorcolor: "rgba(0,0,0,.4)",
-            cursorwidth: 3,
-            scrollspeed: 60,
-            cursorborderradius: 0,
-            mousescrollstep: 40,
-            background: "none",
-            cursorborder: "none",
-            autohidemode: true,
-            boxzoom: false,
-            zindex: 990
-          };
-
-          $('.browser .scroll_area').niceScroll(opts);
-
-          $('.status_bar').on('click', function () {
-            $('.browser .scroll_area').niceScroll(opts);
-          });
-
-          $('#browser_origin_area').on('scroll', function () {
-            var originY = $(this).scrollTop();
-            $('#browser_copy_area').getNiceScroll(0).doScrollTop(originY, 0);
-          });
-        </script>
-      </section>
-    </section>
-
-
-      <!--SECTION-->
     <section>
       <section data-markdown>
       <textarea data-template>
@@ -653,6 +757,7 @@
     </section>
 
 
+    <!--SECTION-->
     <section>
       <section data-markdown>
       <textarea data-template>
@@ -669,9 +774,9 @@
         | GOOD | BAD |
         |---|---|
         | 다양한 디자인 경험 | 일상이 야근 |
-        | 효율적이고 세분화된 업무 프로세스 경험 | 클라이언트는 '신'
-        | 양질의 포트폴리오 | 포토샵 머신 |
-        |  | 적은 연봉으로 시작 |
+        | 효율적이고 세분화된 업무 프로세스 경험 | 조물주 위에 클라이언트
+        | 양질의 포트폴리오 | 포토샵 기계 |
+        |  | 적은 초봉 |
       </textarea>
       </section>
 
@@ -686,7 +791,7 @@
         | 기획 단계부터 많은 참여 가능 | 실질적 디자인 업무가 거의 없음 |
         | 프로세스의 큰 흐름을 볼 수 있음 | 디자인 외 업무가 상당히 많음 |
         | 갑질 가능 | '내가 디자이너 맞나?' |
-        | 평균 이상의 연봉 |  |
+        | 안정적인 연봉 |  |
       </textarea>
       </section>
 
@@ -699,11 +804,32 @@
         | GOOD | BAD |
         |---|---|
         | 작은 규모로 기획 단계 참여/제작 | 서비스가 실패하면 직장을 잃을 수 있음 |
-        | 균형잡힌 업무 강도 | 지옥의 업데이트 |
+        | 균형잡힌 업무 | 지옥의 업데이트 |
         | 수평적 문화가 많음 | ' 포트폴리오는?' |
       </textarea>
       </section>
     </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        # 무엇이든 물어보세요?!
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        # Thank you for listening
+      </textarea>
+      </section>
+    </section>
+
 
 
   </div>
