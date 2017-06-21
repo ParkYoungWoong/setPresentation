@@ -81,5 +81,5 @@ This was made with [Reveal.js](https://github.com/hakimel/reveal.js/).
 
 ## Presentations URL Note
 
-[디자이너를 위한 웹 개발 개론](https://parkyoungwoong.github.io/presentations/special/for_designer/)
+[디자이너를 위한 웹 개발 개론](https://parkyoungwoong.github.io/setPresentation/presentations/special/for_designer/)
 
