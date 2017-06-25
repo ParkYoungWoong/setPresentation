@@ -1,0 +1,550 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>jQuery 선행학습</title>
+
+  <link rel="icon" href="/favicon.png"/>
+  <link rel="apple-touch-icon-precomposed" href="/favicon.png"/>
+
+  <link rel="stylesheet" href="/css/reveal.css">
+  <!--<link rel="stylesheet" href="/css/theme/white.css">-->
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="/css/custom/github.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/custom/white_custom.css">
+  <link rel="stylesheet" href="/css/custom/custom.css">
+  <link rel="stylesheet" href="/css/custom/kbd.css">
+
+  <!-- Printing and PDF exports -->
+  <script src="/js/create_link.js"></script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+
+    <!--SECTION-->
+    <section data-markdown>
+    <textarea data-template>
+      # jQuery 선행학습
+
+      박영웅
+    </textarea>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        # JavaScript 데이터 종류
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        | 종류 | 의미 | 문법 |
+        |--|--|--|
+        | Number | 숫자 데이터 | `123` |
+        | String | 문자 데이터 | `'hello'` |
+        | Boolean | 불린 데이터 | `true` |
+        | Function | 함수 데이터 | `function () {}` |
+        | `undefined` | 정의되지 않음 | `undefined` |
+        | `null` | 값이 존재하지 않음(초기화) | `null` |
+        | Object | 객체 데이터 | `{}` |
+        | Array | 배열 데이터 | `[]` |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## Number
+
+        숫자 데이터
+
+        ```js
+        1
+        927
+        0.76
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## String
+
+        문자 데이터
+
+        ```js
+        "hello"
+        'good job!'
+        'this is a book.'
+        '725.4'
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## Boolean
+
+        불린 데이터
+
+        진실(`true`), 거짓(`false`)의 2개의 값을 가지는 논리 데이터
+
+        ```js
+        true
+        false
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## Function
+
+        함수 데이터
+
+        특정 기능을 하는 명령어의 집합
+
+        ```js
+        function myFunc() {}
+        function helloFunc() {}
+        function () {}  // 익명함수
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## undefined
+
+        1. 값이 할당되지 않은 변수 혹,
+        1. 존재하지 않는 객체 속성에서 반환되는<br>
+        특수한 값(값이 할당되지 않음)
+
+        ```js
+        undefined
+        ```
+
+        ```js
+        hello;  // undefined
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## null
+
+        아무런 값도 나타내지 않는 특수한 값<br>
+        (값이 존재하지 않음, 변수를 초기화할 때 사용)
+
+        ```js
+        null
+        ```
+
+        ```js
+        hello = 'hello';
+        hello = null;  // 초기화
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## Object, {}
+
+        객체 데이터
+
+        이름 붙은 값들의 모음
+
+        ```js
+        o = {
+          a: 1,
+          b: 'hello',
+          c: false
+        };
+
+        o.a;  // 1
+        o.b;  // 'hello'
+        o.c;  // false
+        ```
+
+        ```js
+        image = {};  // image = new Object();
+        image.width = 100;
+        image.height = 200;
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## Array, []
+
+        배열 데이터
+
+        나열된 값들의 모음
+
+        ```js
+        a = [2, 'good', true, 'what?'];
+
+        a[0];  // 2
+        a[1];  // 'good'
+        a[2];  // true
+        a[3];  // 'what?'
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        # 변수 (Variable)
+
+        '데이터'를 저장하고 사용하는 공간
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 변수 선언
+
+        처음 변수를 생성할 때 앞에 `var` 키워드를 꼭 붙이세요!
+
+        ```js
+        var NAME = DATA;
+        ```
+
+        ```js
+        var a = 3;
+        var b = 'hello'
+        ```
+
+        `var` 키워드가 없으면 '전역변수'로 생성<br>
+        (이 방식은 추천하지 않습니다)
+        ```js
+        // 잘못된 방법
+        a = 3;
+        b = 'hello'
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        처음 변수를 생성한 이후 사용할 때는 `var` 키워드를 붙이지 않음
+
+        ```js
+        var a = 3;
+        var b = 2;
+
+        console.log(a + b);  // 5
+        console.log(a * b);  // 6
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 유효범위
+
+        변수에는 '전역변수'와 '지역변수'라는 유효범위라는 개념이 있습니다.<br>
+        자세한 부분은 나중에 살펴봐요~
+
+        ```js
+        a = 1;
+
+        function anyFunc() {
+          console.log(a)  // undefined (Variable Hoisting, 변수 호이스팅)
+          var a = 2;
+          console.log(a);  // 2
+        }
+
+        console.log(a);  // 1
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        # 함수 (Function)
+
+        특정 기능을 하는 명령어의 집합(함수의 재사용)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 함수 선언
+
+        `function` 키워드로 함수를 선언하고 '함수 이름'을 작성하세요.
+
+        ```js
+        function NAME() {
+          // 명령
+        }
+        ```
+
+        ```js
+        var a = 3;
+        var b = 2;
+        function calculator() {
+          console.log(a + b);  // 5
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 함수 호출
+
+        함수를 선언하는 것만으로는 사용할 수 없습니다.<br>
+        함수를 선언했다면 필요한 곳에서 '호출'하세요!
+
+        ```js
+        function calculator() {
+          console.log(3 + 4);
+        }
+        calculator();  // 7
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 기명 함수와 익명 함수
+
+        > 익명 함수는 재사용이 불가합니다.
+
+        ```js
+        // 기명 함수
+        function hello() {
+          console.log('hello world!');
+        }
+
+        // 익명 함수
+        function () {
+          console.log('I don't have a name..');
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 함수의 들어오는 값과 나가는 값
+
+        함수를 더 잘 활용하기 위해서는<br> 들어오는 값(Arguments)과 나가는 값(Return)에 대해서 알아야 합니다.<br>
+        자세한 부분은 나중에 살펴봐요~
+
+        ```js
+        function calculator(a, b) {
+          return a + b;
+        }
+        calculator(1, 3);  // 4
+        calculator(5, 6);  // 11
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        # 예약어 (Reserved Word)
+
+        특별한 의미를 가지는 언어 구문으로, 변수나 함수 이름 등으로 사용할 수 없는 단어
+
+        ```js
+        var this = 'hello';  // Error
+        var if = 12;  // Error
+        var break = false;  // Error
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 예약되어 있는 자바스크립트 키워드
+
+        `break`, `case`, `catch`, `continue`, `default`, `delete`, `do`, `else`, `false`, `finally`, `for`, `function`,
+        `if`, `in`, `instanceof`, `new`, `null`, `return`, `switch`, `this`, `throw`, `true`, `try`, `typeof`, `var`,
+        `void`, `while`, `with`
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## ECMA 확장을 위한 예약되어 있는 단어들
+
+        `abstract`, `boolean`, `byte`, `char`, `class`, `const`, `debugger`, `double`, `enum`, `export`, `extends`, `final`, `float`, `goto`,
+        `implements`, `import`, `int`, `interface`, `long`, `native`, `package`, `private`, `protected`, `public`, `short`, `static`, `super`,
+        `synchronized`, `throws`, `transient`, `volatile`, `as`, `is`, `namespace`, `use`
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 사용하지 말아야 할 기타 식별자들
+
+        `arguments`, `Array`, `Boolean`, `Date`, `decodeURI`, `decodeURIComponent`, `encodeURI`, `Error`, `escape`,
+        `eval`, `EvalError`, `Function`, `Infinity`, `isFinite`, `isNaN`, `Math`, `NaN`, `Number`, `Object`, `parseFloat`, `parseInt`,
+        `RangeError`, `ReferenceError`, `RegExp`, `String`, `SyntaxError`, `TypeError`, `undefined`, `unescape`, `URIError`
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        # 콘솔 (Console)
+
+        웹 브라우저 개발자 도구의 콘솔 창을 이용하여 디버깅.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        console.log(MESSAGE);
+        ```
+
+        ```js
+        console.log('hello world');
+
+        var a = 3;
+        var b = 2;
+        console.log(a - b);  // 1
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        # jQuery 문법
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 요소(Elements) 검색
+
+        CSS 선택자를 그대로 활용 가능
+
+        ```js
+        $(SELECTOR)
+        ```
+
+        ```js
+        $('.box');
+        $('ul > li');
+        $('.list li:nth-child(4)');
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 메소드
+
+        하나의 jQuery 명령을 '메소드(Method)'라고 부름
+
+        > '메소드'가 jQuery 에서만 사용되는 고유 명사는 아닙니다.
+
+        ```js
+        $(SELECTOR).METHOD();
+        ```
+
+        ```js
+        $('.box').show();
+        $('ul > li').addClass('list');
+        $('.list li:nth-child(4)').fadeOut(400);
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 메소드 반환 값 (Returns)
+
+        메소드마다 고유의 반환 값이 존재함
+
+        ```js
+        $('.hello').show();  // Returns: jQuery
+        $('.hello').index();  // Returns: Integer(Number)
+        $('.hello').width();  // Returns: Number
+        $('.hello').text();  // Returns: String
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 메소드 체이닝 (Method Chaining)
+
+        반환 값이 `jQuery`인 메소드는 뒤에 새로운 메소드를 연결해서 사용 가능
+
+        ```js
+        $('.hello').show().animate().fadeIn();  // O
+        $('.hello').show().animate().text();  // O
+        $('.hello').index().show();  // X
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## JavaScript와의 차이점
+
+        JavaScript
+
+        ```js
+        var box = document.querySelectorAll('.box');
+        for (var i = 0; i < box.length; i++) {
+          box[i].style.color = 'red';
+        }
+        ```
+
+        jQuery
+
+        ```js
+        $('.box').css({ color: 'red' });
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+  </div>
+</div>
+
+<script src="/lib/js/head.min.js"></script>
+<script src="/js/reveal.js"></script>
+<script src="/js/reveal.initialize.js"></script>
+
+</body>
+</html>

@@ -140,18 +140,20 @@ body {
 }
 .reveal blockquote p {
   position: relative;
-  margin: 30px 0;
+  margin: 20px 0;
+  padding: 10px 30px;
+  border-left: 10px solid rgba(0,0,0, .2);
 }
-.reveal blockquote p:before {
-  content: "";
-  display: block;
-  width: .6em;
-  height: 3em;
-  background: rgba(0,0,0, .2);
-  position: absolute;
-  top: -.8em;
-  left: -2em;
-}
+/*.reveal blockquote p:before {*/
+  /*content: "";*/
+  /*display: block;*/
+  /*width: .6em;*/
+  /*height: 3em;*/
+  /*background: rgba(0,0,0, .2);*/
+  /*position: absolute;*/
+  /*top: -.8em;*/
+  /*left: -2em;*/
+/*}*/
 
 .reveal blockquote p:first-child,
 .reveal blockquote p:last-child {
