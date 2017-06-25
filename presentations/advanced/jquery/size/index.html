@@ -1,0 +1,503 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>EMPTY TITLE</title>
+
+  <link rel="icon" href="/favicon.png"/>
+  <link rel="apple-touch-icon-precomposed" href="/favicon.png"/>
+
+  <link rel="stylesheet" href="/css/reveal.css">
+  <!--<link rel="stylesheet" href="/css/theme/white.css">-->
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="/css/custom/github.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/custom/white_custom.css">
+  <link rel="stylesheet" href="/css/custom/custom.css">
+  <link rel="stylesheet" href="/css/custom/kbd.css">
+
+  <!-- Printing and PDF exports -->
+  <script src="/js/create_link.js"></script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+
+    <!--SECTION-->
+    <section data-markdown>
+      <textarea data-template>
+        # jQuery Size
+
+        박영웅
+      </textarea>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.width()`
+
+        returns: `Number`
+
+        대상의 `width`를 알아내기
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box"></div>
+        ```
+
+        ```css
+        .box {
+          width: 150px;
+          height: 100px;
+        }
+        ```
+
+        ```js
+        var boxW = $('.box').width();
+        console.log(boxW);  // 150
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.width(값)`
+
+        returns: `jQuery`
+
+        대상의 `width`를 지정하기
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box"></div>
+        ```
+
+        ```css
+        .box {
+          width: 100px;
+          height: 100px;
+        }
+        ```
+
+        ```js
+        $('.box').width(200);
+        var boxW = $('.box').width();
+        console.log(boxW);  // 200
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.innerWidth()`
+
+        returns: `Number`
+
+        대상의 `width` + `padding`을 알아내기
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box"></div>
+        ```
+
+        ```css
+        .box {
+          width: 100px;
+          height: 100px;
+          padding: 50px;
+        }
+        ```
+
+        ```js
+        var boxInnerW = $('.box').innerWidth();
+        console.log(boxInnerW);  // 200
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.innerWidth(값)`
+
+        returns: `jQuery`
+
+        대상의 `width` + `padding`을 지정하기
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box"></div>
+        ```
+
+        ```css
+        .box {
+          width: 100px;
+          height: 100px;
+          padding: 50px;
+        }
+        ```
+
+        ```js
+        var boxW = $('.box').innerWidth(300).width();
+        console.log(boxW);  // 200
+        ```
+
+        > `.innerWidth()`로 사이즈를 지정하면<br> `padding`은 변경되지 않고 `width`만 변경됩니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.outerWidth()`
+
+        returns: `Number`
+
+        대상의 `width` + `padding` + `border`를 알아내기
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box"></div>
+        ```
+
+        ```css
+        .box {
+          width: 100px;
+          height: 100px;
+          padding: 50px;
+          border: 2px solid black;
+        }
+        ```
+
+        ```js
+        var boxOuterW = $('.box').outerWidth();
+        console.log(boxOuterW);  // 204
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.outerWidth(true)`
+
+        returns: `Number`
+
+        대상의 `width` + `padding` + `border` + `margin`을 알아내기
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box"></div>
+        ```
+
+        ```css
+        .box {
+          width: 100px;
+          height: 100px;
+          padding: 50px;
+          border: 2px solid black;
+          margin: 8px;
+        }
+        ```
+
+        ```js
+        var boxOuterW = $('.box').outerWidth(true);
+        console.log(boxOuterW);  // 220
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.outerWidth(값)`
+
+        returns: `jQuery`
+
+        대상의 `width` + `padding` + `border`를 지정하기
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box"></div>
+        ```
+
+        ```css
+        .box {
+          width: 100px;
+          height: 100px;
+          padding: 50px;
+          border: 2px solid black;
+          margin: 8px;
+        }
+        ```
+
+        ```js
+        var boxW = $('.box').outerWidth(400).width();
+        console.log(boxW);  // 296
+        ```
+
+        > `.outerWidth()`로 사이즈를 지정하면<br> `padding`과 `border`는 변경되지 않고 `width`만 변경됩니다.
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.height()`
+
+        returns: `Number`
+
+        대상의 `height`를 알아내기
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box"></div>
+        ```
+
+        ```css
+        .box {
+          width: 100px;
+          height: 200px;
+        }
+        ```
+
+        ```js
+        var boxH = $('.box').height();
+        console.log(boxH);  // 200
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.height(값)`
+
+        returns: `jQuery`
+
+        대상의 `height`를 지정하기
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box"></div>
+        ```
+
+        ```css
+        .box {
+          width: 100px;
+          height: 200px;
+        }
+        ```
+
+        ```js
+        var boxH = $('.box').height(300).height();
+        console.log(boxH);  // 300
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.innerHeight()`
+
+        returns: `Number`
+
+        대상의 `height` + `padding`를 알아내기
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box"></div>
+        ```
+
+        ```css
+        .box {
+          width: 100px;
+          height: 100px;
+          padding: 50px;
+        }
+        ```
+
+        ```js
+        var boxInnerH = $('.box').innerHeight();
+        console.log(boxInnerH);  // 200
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.innerHeight(값)`
+
+        returns: `jQuery`
+
+        대상의 `height` + `padding`를 지정하기
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box"></div>
+        ```
+
+        ```css
+        .box {
+          width: 100px;
+          height: 100px;
+          padding: 50px;
+        }
+        ```
+
+        ```js
+        var boxH = $('.box').innerHeight(400).height();
+        console.log(boxH);  // 300
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.outerHeight()`
+
+        returns: `Number`
+
+        대상의 `height` + `padding` + `border`를 알아내기
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box"></div>
+        ```
+
+        ```css
+        .box {
+          width: 100px;
+          height: 100px;
+          padding: 50px;
+          border: 2px solid black;
+        }
+        ```
+
+        ```js
+        var boxOuterH = $('.box').outerHeight();
+        console.log(boxOuterH);  // 204
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.outerHeight(true)`
+
+        returns: `Number`
+
+        대상의 `height` + `padding` + `border` + `margin`을 알아내기
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box"></div>
+        ```
+
+        ```css
+        .box {
+          width: 100px;
+          height: 100px;
+          padding: 50px;
+          border: 2px solid black;
+          margin: 8px;
+        }
+        ```
+
+        ```js
+        var boxOuterH = $('.box').outerHeight(true);
+        console.log(boxOuterH);  // 220
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.outerHeight(값)`
+
+        returns: `jQuery`
+
+        대상의 `height` + `padding` + `border`을 지정하기
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box"></div>
+        ```
+
+        ```css
+        .box {
+          width: 100px;
+          height: 100px;
+          padding: 50px;
+          border: 2px solid black;
+          margin: 8px;
+        }
+        ```
+
+        ```js
+        var boxH = $('.box').outerHeight(400).height();
+        var boxOuterH = $('.box').outerHeight();
+        console.log(boxH, boxOuterH);  // 296, 400
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+  </div>
+</div>
+
+<script src="/lib/js/head.min.js"></script>
+<script src="/js/reveal.js"></script>
+<script src="/js/reveal.initialize.js"></script>
+
+</body>
+</html>

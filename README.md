@@ -34,13 +34,16 @@ This was made with [Reveal.js](https://github.com/hakimel/reveal.js/).
 <div class="reveal">
   <div class="slides">
 
-    <section data-markdown>
-      <textarea data-template>
 
-      </textarea>
+    <!--SECTION-->
+    <section data-markdown>
+    <textarea data-template>
+
+    </textarea>
     </section>
 
-    </div>
+
+  </div>
 </div>
 
 <script src="/lib/js/head.min.js"></script>
@@ -82,4 +85,6 @@ This was made with [Reveal.js](https://github.com/hakimel/reveal.js/).
 ## Presentations URL Note
 
 [디자이너를 위한 웹 개발 개론](https://parkyoungwoong.github.io/setPresentation/presentations/special/for_designer/)
+
+[jQuery Size Methods](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/jquery/size)
 
