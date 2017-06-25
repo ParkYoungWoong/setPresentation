@@ -86,5 +86,7 @@ This was made with [Reveal.js](https://github.com/hakimel/reveal.js/).
 
 [디자이너를 위한 웹 개발 개론](https://parkyoungwoong.github.io/setPresentation/presentations/special/for_designer/)
 
+[JS for jQuery, 선행학습](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/jquery/prior_learning)
+
 [jQuery Size Methods](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/jquery/size)
 
