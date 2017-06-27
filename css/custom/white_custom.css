@@ -135,7 +135,7 @@ body {
   /*padding: 5px;*/
   font-style: italic;
   background: rgba(255, 255, 255, 0.05);
-  opacity: .7;
+  opacity: .6;
   box-shadow: none;
 }
 .reveal blockquote p {

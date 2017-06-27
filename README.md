@@ -110,6 +110,8 @@ This was made with [Reveal.js](https://github.com/hakimel/reveal.js/).
 
 [jQuery Animation Methods](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/jquery/animation)
 
+[jQuery Style Methods](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/jquery/style)
+
 [jQuery Size Methods](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/jquery/size)
 
 [jQuery Position Methods](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/jquery/position)

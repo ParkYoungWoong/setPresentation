@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>jQuery Style Methods</title>
+
+  <link rel="icon" href="/favicon.png"/>
+  <link rel="apple-touch-icon-precomposed" href="/favicon.png"/>
+
+  <link rel="stylesheet" href="/css/reveal.css">
+  <!--<link rel="stylesheet" href="/css/theme/white.css">-->
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="/css/custom/github.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/custom/white_custom.css">
+  <link rel="stylesheet" href="/css/custom/custom.css">
+  <link rel="stylesheet" href="/css/custom/kbd.css">
+
+  <!-- Printing and PDF exports -->
+  <script src="/js/create_link.js"></script>
+
+  <script src="/js/libs/jquery.min.js"></script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+
+    <!--SECTION-->
+    <section data-markdown data-state="first_page">
+    <textarea data-template>
+      # jQuery Style
+
+      <div id="copyright"></div>
+    </textarea>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.css('속성')`
+
+        Returns: `String`
+
+        대상에 지정된 CSS 속성의 값을 알아냄
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        .box {
+          width: 100px;
+          height: 100px;
+          background: red;
+          position: relative;
+          top: 50px;
+        }
+        ```
+
+        ```js
+        $('.box').css('width');  // '100px'
+        parseInt( $('.box').css('width') );  // 100
+        $('.box').css('background');  // 'rgb(255, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box'
+        $('.box').css('background-color');  // 'rgb(255, 0, 0)'
+        $('.box').css('position');  // 'relative'
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.css('속성', '값')`
+
+        Returns: `jQuery`
+
+        대상에 CSS 속성과 값을 지정
+
+        > 한 번에 여러 값을 입력하는 것이 불가합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box"></div>
+        ```
+
+        ```js
+        $('.box').css('position', 'fixed');
+        $('.box').css('top', 100);
+        $('.box').css('left', '50%');
+        ```
+
+        ```html
+        <div class="box" style="position: fixed; top: 100px; left: 50%;"></div>
+        ```
+
+        > JavaScript 로 추가된 CSS 속성과 값은 HTML에 'Inline 선언'으로 삽입되니,<br> 'CSS 우선순위(명시도, Specificity)'를 조심하세요.(style 속성(attribute))
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.css({})`
+
+        Returns: `jQuery`
+
+        대상에 CSS 속성과 값을 지정
+
+        > 객체 데이터로 입력하면 편리합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box"></div>
+        ```
+
+        ```js
+        $('.box').css({
+          position: fixed,
+          top: 100,
+          left: '50%'
+        });
+        ```
+
+        ```html
+        <div class="box" style="position: fixed; top: 100px; left: 50%;"></div>
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        .box {
+          width: 100px;
+          height: 200px;
+          position: absolute;
+          top: 0;
+          left: 100px;
+        }
+        ```
+
+        ```js
+        $('.box').css({
+          width: '+=200',
+          top: '+=50'
+        });
+        ```
+
+        ```html
+        <div class="box" style="width: 300px; top: 150px;"></div>
+        ```
+
+        > 요소에 들어있는 값을 그대로 이용할 수도 있습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        .box {
+          width: 100px;
+          height: 200px;
+          position: absolute;
+          top: 0;
+          left: 100px;
+        }
+        ```
+
+        ```js
+        var boxW = $('.box').width();
+        var boxT = $('.box').position().top;
+
+        $('.box').css({
+          width: boxW + 200,
+          top: boxT + 50'
+        });
+        ```
+
+        ```html
+        <div class="box" style="width: 300px; top: 150px;"></div>
+        ```
+
+        > 이전 방법보다 불편해 보이네요.
+      </textarea>
+      </section>
+    </section>
+
+
+  </div>
+</div>
+
+<script src="/lib/js/head.min.js"></script>
+<script src="/js/reveal.js"></script>
+<script src="/js/reveal.initialize.js"></script>
+<script src="/js/copyright.js"></script>
+
+</body>
+</html>

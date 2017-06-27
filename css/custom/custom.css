@@ -44,6 +44,7 @@
 #copyright {
   font-size: 14px;
   margin-top: 50px;
+  opacity: .75;
 }
 #copyright .author {
   margin: 0 6px;
