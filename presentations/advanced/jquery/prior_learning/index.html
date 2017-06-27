@@ -44,6 +44,68 @@
     <section>
       <section data-markdown>
       <textarea data-template>
+        # 표기법
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## dash-case
+
+        the-quick-brown-fox-jumps-over-the-lazy-dog
+
+        > kebab-case, spinal-case, train-case, lisp-case 등 다양한 이름으로 사용됨.
+
+        > `HTML`, `CSS`에서 활용.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## snake_case
+
+        the_quick_brown_fox_jumps_over_the_lazy_dog
+
+        > `HTML`, `CSS`에서 활용
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## UPPER_CASE_EMBEDDED_UNDERSCORE
+
+        THE_QUICK_BROWN_FOX_JUMPS_OVER_THE_LAZY_DOG
+
+        > `JavaScript`의 상수 이름으로 활용
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## camelCase
+
+        theQuickBrownFoxJumpsOverTheLazyDog
+
+        > `JavaScript`의 변수, 함수 등의 이름으로 활용
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## PascalCase
+
+        TheQuickBrownFoxJumpsOverTheLazyDog
+
+        > `JavaScript`의 생성자 함수 이름으 활용
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
         # JavaScript 데이터 종류
       </textarea>
       </section>
@@ -165,7 +227,12 @@
 
         객체 데이터
 
-        이름 붙은 값들의 모음
+        ```js
+        {
+          PROPERTY1: VALUE,
+          PROPERTY2: VALUE
+        }
+        ```
 
         ```js
         o = {
@@ -189,11 +256,29 @@
 
       <section data-markdown>
       <textarea data-template>
+        ### 객체 데이터의 속성(Property)과 메소드(Method)
+
+        | 종류 | 의미 |
+        |--|--|
+        | `Property` | 객체가 가지는 하나의 정보(데이터) |
+        | `Method` | 객체가 가지는 하나의 동작 |
+
+        ```js
+        var o = {
+          a: 1,  // Property
+          b: 'hello',  // property
+          c: false,  // property
+          c: function () {}  // Method
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
         ## Array, []
 
         배열 데이터
-
-        나열된 값들의 모음
 
         ```js
         a = [2, 'good', true, 'what?'];

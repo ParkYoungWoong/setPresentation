@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="/css/custom/white_custom.css">
   <link rel="stylesheet" href="/css/custom/custom.css">
   <link rel="stylesheet" href="/css/custom/kbd.css">
+  <link rel="stylesheet" href="animation.css">
 
   <!-- Printing and PDF exports -->
   <script src="/js/create_link.js"></script>
@@ -41,10 +42,420 @@
 
 
     <!--SECTION-->
-    <section data-markdown>
-    <textarea data-template>
-      # jQuery Animation
-    </textarea>
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.show()`
+
+        Returns: `jQuery`
+
+        숨겨진 대상을 보여줌
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.hide()`
+
+        Returns: `jQuery`
+
+        대상을 숨김
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="hide"></div>
+        <div class="show"></div>
+        ```
+
+        ```css
+        .hide {
+          display: none;
+        }
+        ```
+
+        ```js
+        $('.hide').show();  // 보여짐
+        $('.show').hide();  // 숨겨짐
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.toggle()`
+
+        Returns: `jQuery`
+
+        대상이 숨겨져 있다면 보여주거나,<br>
+        대상이 보여진다면 숨김
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.fadeIn(시간)`
+
+        Returns: `jQuery`
+
+        숨겨진 대상을 서서히 보여줌
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.fadeOut(시간)`
+
+        Returns: `jQuery`
+
+        대상을 서서히 숨김
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="hide"></div>
+        <div class="show"></div>
+        ```
+
+        ```css
+        .hide {
+          display: none;
+        }
+        ```
+
+        ```js
+        $('.hide').fadeIn(1000);  // 1초 동안 서서히 보여짐
+        $('.show').fadeOut(1000);  // 1초 동안 서서히 숨겨짐
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.fadeToggle(시간)`
+
+        Returns: `jQuery`
+
+        대상이 숨겨져 있다면 서서히 보여주거나,<br>
+        대상이 보여진다면 서서히 숨김
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.slideDown(시간)`
+
+        Returns: `jQuery`
+
+        숨겨진 대상을 슬라이딩 모션으로 보여줌
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.slideUp(시간)`
+
+        Returns: `jQuery`
+
+        대상을 슬라이딩 모션으로 숨김
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="hide"></div>
+        <div class="show"></div>
+        ```
+
+        ```css
+        .hide {
+          display: none;
+        }
+        ```
+
+        ```js
+        $('.hide').slideDown(1000);  // 1초 동안 슬라이딩 모션으로 내려오면서 보여짐
+        $('.show').slideUp(1000);  // 1초 동안 슬라이딩 모션으로 올라가면 숨겨짐
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.slideToggle(시간)`
+
+        Returns: `jQuery`
+
+        대상이 숨겨져 있다면 슬라이딩 모션으로 보여주거나,<br>
+        대상이 보여진다면 슬라이딩 모션으 숨김
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.fadeTo(시간, 투명도)`
+
+        Returns: `jQuery`
+
+        대상을 서서히 투명하게 만듬
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        $('.opacity').fadeTo(1000, .5);  // 1초동안 50%의 투명도로 변함
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.animate({}, 시간)`
+
+        Returns: `jQuery`
+
+        대상을 CSS 속성으로 애니메이션
+
+        > 별도의 플러그인이 없다면 기본적인 숫자 값을 가지는 속성들만 사용 가능
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box"></div>
+        ```
+
+        ```css
+        .box {
+          background: red;
+          position: absolute;
+        }
+        ```
+
+        ```js
+        $('.box').animate({
+          width: 100,
+          height: 100,
+          top: 200,
+          left: 350
+        }, 1000);
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.delay(시간)`
+
+        Returns: `jQuery`
+
+        대상에 적용된 다음 애니메이션의 실행을 지연
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        $('.me')
+          .delay(1000)  // 1초동안 대기 후..
+          .animate({  // 실행
+            width: 100
+          }, 1000);
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.stop()`
+
+        Returns: `jQuery`
+
+        대상의 현재 실행 중인 애니메이션을 정지
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        // 혹시 애니메이션이 있다면 정지하고 서서히 나타나게 함
+        $('.me').stop().fadeIn(400);
+        ```
+
+        ```js
+        $('.me')
+          .fadeIn(1000)  // 실행되지만..
+          .stop()  // 바로 정지 후..
+          .animate({  // 실행
+            width: 100
+          }, 1000);
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.stop(clearQueue, jumpToEnd)`
+
+        | 종류 | 값 | 의미 |
+        |---|---|---|
+        | Clear Queue | `Boolean` | 모든 애니메이션 대기열(큐, Queue) 종료 |
+        | Jump to End | `Boolean` | 현재 애니메이션 동작 마무리 |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        // $('.me').stop().fadeIn(400);와 동일
+        $('.me')
+          .stop(false, false)
+          .fadeIn(400);
+        ```
+
+        ```js
+        // 현재 애니메이션 정지(모든 대기열 종료하지 않고, 현재 동작만 완료)하고 서서히 나타나게 함
+        $('.me')
+          .fadeIn(400)
+          .stop(false, true)
+          .slideUp(400);
+        ```
+
+        ```js
+        // 현재 애니메이션 정지(모든 대기열 종료하고, 현재 동작도 정지)하고 서서히 나타나게 함
+        $('.me')
+          .fadeIn(400)
+          .stop(true, false)
+          .slideUp(400);
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        <a href="https://heropcode.github.io/jQuery-stop-method/" target="_blank"><code>.stop()</code> 예제 보기</a>
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.finish()`
+
+        Returns: `jQuery`
+
+        대상의 현재 실행 중이거나,<br> (`.finish() 앞에서`)대기 중인 모든 애니메이션을 정지하고 완료
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        $('.me')
+          .slideUp(1000)  // 무시 바로 완료..
+          .fadeIn(1000)  // 무시 바로 완료..
+          .finish()  // 모든 애니메이션 완료 후..
+          .animate({  // 실행
+            width: 100
+          }, 1000);
+        ```
+
+        > 일반적으로 `.finish()` 뒤에는 애니메이션 메소드가 오지 않는다.
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## 애니메이션 대기열(Queue)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        순차적으로 실행
+
+        ```js
+        $('.me')
+          .hide()  // 1
+          .fadeIn(1000)  // 2
+          .slideUp(1000)  // 3
+          .slideDown(1000)  // 4
+          .delay(1000)  // 5
+          .animate({  // 6
+            top: 100,
+            left: 200
+          }, 1000)
+          .animate({  // 7
+            width: 300
+          }, 1000);
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        애니메이션과 관련이 없는 메소드들은 바로 실행
+
+        ```js
+        $('.me')
+          .hide()  // 1
+          .fadeIn(1000)  // 2
+          .slideUp(1000)  // 3
+          .slideDown(1000)  // 4
+          .delay(1000)  // 5
+          .css({  // 1, Not Animated!
+            position: 'absolute',
+            background: 'blue'
+          })
+          .animate({  // 6
+            top: 100,
+            left: 200
+          }, 1000)
+          .animate({  // 7
+            width: 300
+          }, 1000)
+          addClass('hello');  // 1, Not Animated!
+        ```
+      </textarea>
+      </section>
     </section>
 
 

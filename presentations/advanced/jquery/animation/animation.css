@@ -1,0 +1,21 @@
+.reveal .box_group {
+    height: 100px;
+    position: relative;
+}
+.reveal .box_group .box {
+    width: 200px;
+    height: 100px;
+    background: red;
+    margin: 0 auto;
+}
+.reveal .box_group .click_me {
+    background: darkorange;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+}
