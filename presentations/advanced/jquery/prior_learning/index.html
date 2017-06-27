@@ -22,6 +22,8 @@
 
   <!-- Printing and PDF exports -->
   <script src="/js/create_link.js"></script>
+
+  <script src="/js/libs/jquery.min.js"></script>
 </head>
 <body>
 <div class="reveal">
@@ -29,11 +31,11 @@
 
 
     <!--SECTION-->
-    <section data-markdown>
+    <section data-markdown data-state="first_page">
     <textarea data-template>
       # jQuery 선행학습
 
-      박영웅
+      <div id="copyright"></div>
     </textarea>
     </section>
 
@@ -544,6 +546,7 @@
 <script src="/lib/js/head.min.js"></script>
 <script src="/js/reveal.js"></script>
 <script src="/js/reveal.initialize.js"></script>
+<script src="/js/copyright.js"></script>
 
 </body>
 </html>
