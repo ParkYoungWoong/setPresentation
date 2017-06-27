@@ -191,7 +191,43 @@
         <div class="box" style="width: 300px; top: 150px;"></div>
         ```
 
-        > 이전 방법보다 불편해 보이네요.
+        > 이전과 같은 결과를 가집니다. 직관적일 수 있지만 조금 불편해 보이네요.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box"></div>  <!-- 0 -->
+        <div class="box"></div>  <!-- 1 -->
+        ```
+
+        ```css
+        .box {
+          width: 100px;
+          height: 200px;
+          position: absolute;
+          top: 0;
+          left: 100px;
+        }
+        ```
+
+        ```js
+        $('.box').css({
+          width: function (index, style) {
+            return: parseInt(style) + 200;
+          },
+          top: function (index, style) {
+            // 요소의 개수만큼 반복 표시
+            console.log(index);  // 0, 1 (요소의 개수)
+            console.log(style);  // '0px', '0px' (현재 속성의 값)
+          }'
+        });
+        ```
+
+        ```html
+        <div class="box" style="width: 300px;"></div>
+        ```
       </textarea>
       </section>
     </section>
