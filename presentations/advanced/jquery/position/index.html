@@ -1,0 +1,359 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>jQuery Position Methods</title>
+
+  <link rel="icon" href="/favicon.png"/>
+  <link rel="apple-touch-icon-precomposed" href="/favicon.png"/>
+
+  <link rel="stylesheet" href="/css/reveal.css">
+  <!--<link rel="stylesheet" href="/css/theme/white.css">-->
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="/css/custom/github.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/custom/white_custom.css">
+  <link rel="stylesheet" href="/css/custom/custom.css">
+  <link rel="stylesheet" href="/css/custom/kbd.css">
+
+  <!-- Printing and PDF exports -->
+  <script src="/js/create_link.js"></script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+
+    <!--SECTION-->
+    <section data-markdown>
+    <textarea data-template>
+      # jQuery Position
+
+      박영웅
+    </textarea>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.offsetParent()`
+
+        Returns: `jQuery`
+
+        대상의 위치(position) 상의 부모 요소를 검색
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="grand">
+          <div class="parent">
+            <div class="me"></div>
+          </div>
+        </div>
+        ```
+
+        ```css
+        .grand {
+          position: relative;
+        }
+        .parent {
+          position: static;
+        }
+        .me {
+          position: absolute;
+        }
+        ```
+
+        ```js
+        $('.child').offsetParent().css({ top: 200 });
+        // $('.grand').css({ top: 200 });
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.position()`
+
+        Returns: `Object`
+
+        대상의 지역 좌표(`top`, `left`) 값을 알아냄<br>
+        (`right`, `bottom`은 알아낼 수 없음)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        .me {
+          position: absolute;
+          top: 200px;
+          left: 300px;
+        }
+        ```
+
+        ```js
+        $('.me').position();
+        // Object { top: 200, left: 300 }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.position().top`
+
+        Returns: `Number`
+
+        대상의 지역 좌표 `top`값을 알아냄
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.position().left`
+
+        Returns: `Number`
+
+        대상의 지역 좌표 `left`값을 알아냄
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        .me {
+          position: absolute;
+          top: 40px;
+          left: 20px;
+        }
+        ```
+
+        ```js
+        $('.me').position().top;  // 40
+        $('.me').position().left;  // 20
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.offset()`
+
+        Returns: `Object`
+
+        대상의 전역 좌표(`top`, `left`) 값을 알아냄
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="parent">
+          <div class="me"></div>
+        </div>
+        ```
+
+        ```css
+        .parent {
+          position: absolute;
+          top: 100px;
+          left: 100px;
+        }
+        .me {
+          position: absolute;
+          top: 50px;
+          left: 200px;
+        }
+        ```
+
+        ```js
+        $('.me').offset();
+        // { top: 150, left: 300 }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.offset().top`
+
+        Returns: `Number`
+
+        대상의 전역 좌표 `top` 값을 알아냄
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.offset().left`
+
+        Returns: `Number`
+
+        대상의 전역 좌표 `left` 값을 알아냄
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="parent">
+          <div class="me"></div>
+        </div>
+        ```
+
+        ```css
+        .parent {
+          position: absolute;
+          top: 100px;
+          left: 100px;
+        }
+        .me {
+          position: absolute;
+          top: 50px;
+          left: 200px;
+        }
+        ```
+
+        ```js
+        $('.me').offset().top;  // 150
+        $('.me').offset().left;  // 300
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.offset(좌표)`
+
+        Returns: `jQuery`
+
+        대상의 전역 좌표(`top`, `left`) 값을 지정함
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="parent">
+          <div class="me"></div>
+        </div>
+        ```
+
+        ```css
+        .parent {
+          position: absolute;
+          top: 100px;
+          left: 100px;
+        }
+        .me {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        ```
+
+        ```js
+        $('.me').offset({
+          top: 100,
+          left: 300
+        });
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.scrollTop()`
+
+        Returns: `Number`
+
+        대상의 스크롤 바의 수직 위치를 알아냄
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.scrollLeft()`
+
+        Returns: `Number`
+
+        대상의 스크롤 바의 수평 위치를 알아냄
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        $(document).on('scroll', function () {
+          console.log( $(this).scrollTop() );
+        });
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.scrollTop(값)`
+
+        Returns: `jQuery`
+
+        대상의 스크롤 바의 수직 위치를 설정
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.scrollLeft(값)`
+
+        Returns: `jQuery`
+
+        대상의 스크롤 바의 수평 위치를 설정
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="move">MOVE</div>
+        ```
+
+        ```js
+        $('.move').on('click', function () {
+          $('html, body').scrollTop(700);  // 위에서 700px 지점으로 스크롤이 이동
+        });
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+  </div>
+</div>
+
+<script src="/lib/js/head.min.js"></script>
+<script src="/js/reveal.js"></script>
+<script src="/js/reveal.initialize.js"></script>
+
+</body>
+</html>
