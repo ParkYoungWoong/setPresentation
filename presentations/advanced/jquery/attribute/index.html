@@ -1,0 +1,364 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>EMPTY TITLE</title>
+
+  <link rel="icon" href="/favicon.png"/>
+  <link rel="apple-touch-icon-precomposed" href="/favicon.png"/>
+
+  <link rel="stylesheet" href="/css/reveal.css">
+  <!--<link rel="stylesheet" href="/css/theme/white.css">-->
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="/css/custom/github.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/custom/white_custom.css">
+  <link rel="stylesheet" href="/css/custom/custom.css">
+  <link rel="stylesheet" href="/css/custom/kbd.css">
+
+  <!-- Printing and PDF exports -->
+  <script src="/js/create_link.js"></script>
+
+  <script src="/js/libs/jquery.min.js"></script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+
+    <!--SECTION-->
+    <section data-markdown data-state="first_page">
+    <textarea data-template>
+      # jQuery Attribute
+
+      <div id="copyright"></div>
+    </textarea>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.hasClass(클래스값)`
+
+        Returns: `Boolean`
+
+        대상의 class 속성의 값 확인
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box open"></div>
+        ```
+
+        ```js
+        if ( $('.box').hasClass('open') ) {
+            console.log('OPEN!');
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.addClass(클래스값)`
+
+        Returns: `jQuery`
+
+        대상에 class 속성의 값 추가
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box"></div>
+        ```
+
+        ```css
+        .box {
+          background: orange;
+        }
+        .active {
+          background: red;
+        }
+        ```
+
+        ```js
+        $('.box').addClass('active');
+        ```
+
+        ```html
+        <div class="box active"></div>  <!-- background: red; -->
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.removeClass(클래스값)`
+
+        Returns: `jQuery`
+
+        대상에 class 속성의 값 제거
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box active"></div>
+        ```
+
+        ```css
+        .box {
+          background: orange;
+        }
+        .active {
+          background: red;
+        }
+        ```
+
+        ```js
+        $('.box').removeClass('active');
+        ```
+
+        ```html
+        <div class="box"></div>  <!-- background: orange; -->
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.attr('속성')`
+
+        Returns: `String`
+
+        대상의 속성을 찾아 값을 확인
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <img src="img/sample.png" alt="Sample image">
+        ```
+
+        ```js
+        var imgSrc = $('img').attr('src');
+        var imgAlt = $('img').attr('alt');
+        console.log(imgSrc);  // 'img/sample.png'
+        console.log(imgAlt);  // 'Sample image'
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.attr('속성', '값')`
+
+        Returns: `jQuery`
+
+        대상에 속성과 값을 추가
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <img src="img/hello.png" alt="Hello">
+        ```
+
+        ```js
+        $('img').attr('src', 'img/world.png').attr('alt', 'World');
+        ```
+
+        ```html
+        <img src="img/world.png" alt="World">
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.attr({})`
+
+        Returns: `jQuery`
+
+        대상에 속성과 값을 추가
+
+        > 객체 데이터로 작성하면 편리합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <img src="img/hello.png" alt="Hello">
+        ```
+
+        ```js
+        $('img').attr({
+          src: 'img/world.png',
+          alt: 'World'
+        });
+        ```
+
+        ```html
+        <img src="img/world.png" alt="World">
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.data()`
+
+        Returns: `Object`
+
+        대상의 데이터명들을 찾아 값을 확인
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box" data-name="hello" data-options='{"opt":"nice"}'></div>
+        ```
+
+        ```js
+        var boxData = $('.box').data();
+        console.log(boxData.name);  // 'hello'
+        console.log(boxData.options.opt);  // 'nice'
+        ```
+
+        ```js
+        boxData = {
+          name: 'hello',
+          options: {
+            opt: 'nice'
+          }
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.data('데이터명')`
+
+        Returns: `String`, `Object`
+
+        대상의 데이터명을 찾아 값을 확인
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box" data-name="hello" data-options='{"opt":"nice"}'></div>
+        ```
+
+        ```js
+        $('.box').data('name');  // 'hello'
+        $('.box').data('options')  // {"opt":"nice"}
+        $('.box').data('options').opt  // "nice"
+        ```
+
+        > 객체 데이터를 입력할 경우, HTML 속성에 '작은따옴표'를 사용하세요.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.data('데이터명', '값')`
+
+        Returns: `jQuery`
+
+        대상에 데이터명과 값을 추가
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box"></div>
+        ```
+
+        ```js
+        $('.box').data('hello', 'world');
+        ```
+
+        ```html
+        <div class="box"></div>  // data-hello="world"
+        ```
+
+        ```js
+        var dataHello = $('.box').data('hello');
+        console.log(dataHello);  // 'world'
+        ```
+
+        > JS로 데이터명와 값을 추가할 경우, HTML에는 나타나지 않음
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.data({})`
+
+        Returns: `jQuery`
+
+        대상에 데이터명과 값을 추가
+
+        > 객체 데이터로 작성하면 편리합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box"></div>
+        ```
+
+        ```js
+        $('.box').data({
+          hello: 'hello',
+          options: {
+            opt: 'nice'
+          }
+        });
+        ```
+
+        ```html
+        <div class="box"></div>  // data-hello="hello" data-options='{"opt":"nice"}'
+        ```
+      </textarea>
+      </section>
+    </section>
+
+  </div>
+</div>
+
+<script src="/lib/js/head.min.js"></script>
+<script src="/js/reveal.js"></script>
+<script src="/js/reveal.initialize.js"></script>
+<script src="/js/copyright.js"></script>
+
+</body>
+</html>

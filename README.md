@@ -115,5 +115,6 @@ This was made with [Reveal.js](https://github.com/hakimel/reveal.js/).
 - [jQuery Style Methods](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/jquery/style)
 - [jQuery Size Methods](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/jquery/size)
 - [jQuery Position Methods](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/jquery/position)
+- [jQuery Attribute Methods](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/jquery/attribute)
 
 ### JavaScript for Adv.
