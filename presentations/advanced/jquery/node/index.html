@@ -1,0 +1,315 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>jQuery Node Methods</title>
+
+  <link rel="icon" href="/favicon.png"/>
+  <link rel="apple-touch-icon-precomposed" href="/favicon.png"/>
+
+  <link rel="stylesheet" href="/css/reveal.css">
+  <!--<link rel="stylesheet" href="/css/theme/white.css">-->
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="/css/custom/github.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/custom/white_custom.css">
+  <link rel="stylesheet" href="/css/custom/custom.css">
+  <link rel="stylesheet" href="/css/custom/kbd.css">
+
+  <!-- Printing and PDF exports -->
+  <script src="/js/create_link.js"></script>
+
+  <script src="/js/libs/jquery.min.js"></script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+
+    <!--SECTION-->
+    <section data-markdown data-state="first_page">
+    <textarea data-template>
+      # jQuery Node
+
+      <div id="copyright"></div>
+    </textarea>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.first()`
+
+        Returns: `jQuery`
+
+        대상 중에 첫번째 요소 검색
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <ul>
+          <li>1</li>  <!-- RED -->
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+        </ul>
+        ```
+
+        ```js
+        $('li').first().css({ color: 'red' });
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.last()`
+
+        Returns: `jQuery`
+
+        대상 중에 마지막 요소 검색
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>  <!-- RED -->
+        </ul>
+        ```
+
+        ```js
+        $('li').last().css({ color: 'red' });
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.eq(n)`
+
+        Returns: `jQuery`
+
+        대상 중에 `n`번째 요소 검색<br>
+        (Zero-based)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <ul>
+          <li>1</li>  <!-- BLUE -->
+          <li>2</li>
+          <li>3</li>  <!-- RED -->
+          <li>4</li>
+        </ul>
+        ```
+
+        ```js
+        $('li').eq(2).css({ color: 'red' });
+        $('li').eq(0).css({ color: 'blue' });
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.index()`
+
+        Returns: `Integer`
+
+        대상이 대상의 형제 요소 중 몇번째 요소인지 확인<br>
+        (Zero-based)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li class="target">3</li>
+          <li>4</li>
+        </ul>
+        ```
+
+        ```js
+        console.log( $('.target').index() );  // 2
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.find('선택자')`
+
+        Returns: `jQuery`
+
+        대상의 후손 요소 중 '선택자'를 찾기
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="parent">
+          <div class="child"></div>  <!-- RED -->
+        </div>
+
+        <div class="parent">
+          <div class="children"></div>
+          <div class="children"></div>
+          <div class="children"></div>
+        </div>
+        ```
+
+        ```js
+        $('.parent').find('.child').css({ color: 'red' });
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.filter('선택자')`
+
+        Returns: `jQuery`
+
+        대상을 '선택자'로 필터링
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```
+        <ul>
+          <li>1</li>
+          <li class="red">2</li>  <!-- RED -->
+          <li class="red">3</li>  <!-- RED -->
+          <li>4</li>
+        </ul>
+        ```
+
+        ```js
+        $('li').filter('.red').css({ color: 'red' });
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.filter(함수)`
+
+        Returns: `jQuery`
+
+        대상을 함수로 필터링
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <ul>
+          <li>1</li>  <!-- RED -->
+          <li>2</li>
+          <li>3</li>  <!-- RED -->
+          <li>4</li>
+          <li>5</li>  <!-- RED -->
+        </ul>
+        ```
+
+        ```js
+        // 홀수 요소만 필터링
+        $('li')
+          .filter(function (index) {
+            return index % 2 === 0;
+          })
+          .css({ color: 'red' });
+        ```
+
+        > `.filter()` '콜백 함수'의 `return` 값이 `true`일 경우 필터링 됩니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <ul>
+          <li>1</li>  <!-- RED -->
+          <li>2</li>
+          <li>3</li>  <!-- RED -->
+          <li>4</li>
+          <li>5</li>  <!-- RED -->
+        </ul>
+        ```
+
+        ```js
+        $('li')
+          .filter(':even')
+          .css({ color: 'red' });
+        ```
+
+        > 이전 예제와 같습니다. 'Zero-based'이기 때문에 짝수가 아닌 홀수로 선택됩니다.
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.not('선택자')`
+
+        Returns: `jQuery`
+
+        대상을 '선택자'로 필터링
+      </textarea>
+      </section>
+    </section>
+
+
+  </div>
+</div>
+
+<script src="/lib/js/head.min.js"></script>
+<script src="/js/reveal.js"></script>
+<script src="/js/reveal.initialize.js"></script>
+<script src="/js/copyright.js"></script>
+
+</body>
+</html>
