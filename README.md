@@ -111,14 +111,21 @@ This was made with [Reveal.js](https://github.com/hakimel/reveal.js/).
 ### jQuery for Adv.
 
 - [JS for jQuery, 선행학습](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/jquery/prior_learning)
+  - `표기법` `JS 데이터 종류` `기명 함수` `익명 함수` `예약어` `jQuery 문`
 - [jQuery Animation Methods](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/jquery/animation)
+  - `show` `hide` `toggle` `fadeIn` `fadeOut` `fadeToggle` `slideDown` `slideUp` `slideToggle` `fadeTo` `animate` `delay` `stop` `finish` `애니메이션 대기열(Queue)`
 - [jQuery Style Methods](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/jquery/style)
+  - `css`
 - [jQuery Size Methods](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/jquery/size)
+  - `width` `innerWidth` `outerWidth` `height` `innerHeight` `outerHeight`
 - [jQuery Position Methods](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/jquery/position)
+  - `offsetParent` `position` `offset` `scrollTop` `scrollLeft`
 - [jQuery Attribute Methods](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/jquery/attribute)
+  - `hasClass` `addClass` `removeClass` `toggleClass` `attr` `removeAttr` `prop` `data` `val`
 - [jQuery Event Methods](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/jquery/event)
+  - `on` `jQuery 이벤트 종류` `off` `one` `Event 객체` `이벤트 버블링(Bubbling)` `이벤트 캡처링(Capturing)` 
 
 ### JavaScript for Adv.
 
 - [함수(Function)](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/javascript/function)
-  - `#즉시실행함수(IIFE)` `#arguments객체` `유효범위(scope)` `렉시컬(lexical)` `호이스팅(hoisting)` `콜백(callback)`
+  - `즉시실행함수(IIFE)` `arguments 객체` `유효범위(Scope)` `렉시컬(Lexical)` `호이스팅(Hoisting)` `콜백(Callback)`
