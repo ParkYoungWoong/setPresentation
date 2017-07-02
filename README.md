@@ -121,4 +121,4 @@ This was made with [Reveal.js](https://github.com/hakimel/reveal.js/).
 ### JavaScript for Adv.
 
 - [함수(Function)](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/javascript/function)
-  - `#즉시실행함수` `#arguments객체` `유효범위(scope)` `렉시컬(lexical)` `호이스팅(hoisting)` `콜백(callback)`
+  - `#즉시실행함수(IIFE)` `#arguments객체` `유효범위(scope)` `렉시컬(lexical)` `호이스팅(hoisting)` `콜백(callback)`
