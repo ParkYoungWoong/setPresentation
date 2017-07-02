@@ -1,0 +1,719 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>JS Function</title>
+
+  <link rel="icon" href="/favicon.png"/>
+  <link rel="apple-touch-icon-precomposed" href="/favicon.png"/>
+
+  <link rel="stylesheet" href="/css/reveal.css">
+  <!--<link rel="stylesheet" href="/css/theme/white.css">-->
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="/css/custom/github.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/custom/white_custom.css">
+  <link rel="stylesheet" href="/css/custom/custom.css">
+  <link rel="stylesheet" href="/css/custom/kbd.css">
+
+  <!-- Printing and PDF exports -->
+  <script src="/js/create_link.js"></script>
+
+  <script src="/js/libs/jquery.min.js"></script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+
+    <!--SECTION-->
+    <section data-markdown data-state="first_page">
+    <textarea data-template>
+      # JavaScript Function
+
+      <div id="copyright"></div>
+    </textarea>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## 함수 정의
+
+        함수 만들기!
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 함수 선언(Declarations)
+
+        함수를 구성하는 '구문'(`function statement`),
+
+        ```js
+        function NAME() {}
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 함수 표현(Expressions)
+
+        변수나 기타 데이터 구조로 할당된 함수<br>
+        (보통 '익명 함수'로 할당함)
+
+        ```js
+        var NAME = function () {}
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## 함수 호출
+
+        함수를 사용하기!
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 일반 호출
+
+        ```js
+        // 함수 선언
+        function greeting(arg) {
+          return arg;
+        }
+
+        // 함수 호출
+        greeting();
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 즉시실행함수 (IIFE, Immediately-Invoked Function Expression)
+
+        ```js
+        // Javascript 대가 '더글라스 클락포트'의 권장 표기법
+        (function (arg) {
+          return arg;
+        }());
+
+        (function (arg) {
+          return arg;
+        })();
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## 인자와 매개변수
+
+        함수로 들어오는 값
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 인자(Arguments)
+
+        함수 외부에서 함수 내부로 전달되는 데이터
+
+        > '인수'라고도 합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 매개변수(Parameters)
+
+        전달된 '인자'를 받아 함수 내부에서 활용하는 변수
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        var a = 'hello';
+
+        function greeting(data) {
+          console.log(data);
+        }
+
+        greeting(a);  // 'hello'
+        ```
+
+        > 문자데이터 `'hello'`를 가지는 변수 `a`를 함수의 '인자'로 전달하여,<br>함수의 '매개변수' `data`가 그 값을 받아 함수 내에서 활용된다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        여러 개의 인자와 매개변수를 활용할 수 있음.
+
+        ```js
+        function greeting(name, say) {
+          console.log(name + ' said ' + say);
+        }
+
+        greeting('Mr. Park', 'hello!');  // 'Mr. Park said hello!'
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### arguments 객체
+
+        함수 내에서 함수의 인자를 확인
+
+        > 매개변수가 없어도 인자를 활용할 수 있습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        function checkArguments() {
+          console.log(typeof arguments);  // object
+          for (var i = 0; i < arguments.length; i++) {
+            console.log(arguments[i]);
+          }
+        }
+
+        checkArguments(777, 'Good!', false);
+        // 777
+        // 'Good!'
+        // false
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## 함수 종료와 반환
+
+        함수에서 나가는 값
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `return`
+
+        함수를 종료하고 함수 밖으로 특정 데이터를 반환
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        값을 반환
+
+        ```js
+        function operation(a, b) {
+          a + b;
+        }
+
+        operation(1, 2);  // undefined
+        ```
+
+        ```js
+        function operation(a, b) {
+          return a + b;
+        }
+
+        operation(1, 2);  // 3
+        ```
+
+        > 함수 내부에서 처리된 값은 밖으로 나갈 수 없습니다.<br>이 때 `return`을 사용하여 값을 함수 밖으로 내보낼 수 있습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        함수 종료
+
+        ```js
+        function check(data) {
+          if (data <= 10) {
+            return;  // 함수 종료
+          }
+
+          console.log(data + ' is greater than 10.');
+        }
+
+        check(8);  // undefined
+        check(22);  // 22 is greater than 10.
+        ```
+
+        > 함수 내에서 `return`이 실행되면 해당 함수를 종료합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        function plus(a, b) {
+          return a + b;
+        }
+
+        function minus(a, b) {
+          return a - b;
+        }
+
+        var addResult = plus(1, 2);
+        var minusResult = minus(10, addResult);
+
+        console.log(minusResult);  // 7
+        ```
+
+        > 함수가 실행되어(종료되고) 반환된 값은 데이터로 활용할 수 있습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        function returnObject(a, b) {
+          return {
+            first: a,
+            second: b
+          }
+        }
+
+        var r = returnObject('hello', 'world');
+
+        console.log(r);  // { first: 'hello', second: 'world' }
+        console.log(r.first + ' ' + r.second + '!');  // hello world!
+        ```
+
+        > `returnObject` 함수는 하나의 객체데이터를 반환합니다.<br>반환된 값을 `r`이라는 변수에 저장하여 사용할 수 있습니다.
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## 유효범위(Scope)
+
+        변수의 사용 가능 범위
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        console.log(hello);  // undefined
+
+        var hello = 'hello~';
+
+        console.log(hello);  // 'hello~'
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 전역 변수와 지역 변수
+
+        > 전역 변수와 지역 변수의 차이점을 이해하고 유효범위의 특성들을 살펴봅시다!
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        #### 전역 변수(Global Variable)
+
+        전역(Global)에서 사용 가능한 변수로,<br>**어디서든(유효범위 무시) 접근하여 사용**이 가능한 변수
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        #### 지역 변수(Local Variable)
+
+        **특정 영역(Local)에서만** 사용 가능한 변수(하나의 함수 내부)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 함수 단위 유효범위
+
+        변수의 유효범위는 '함수 단위'로 설정됨
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        function a() {
+          var hello = 'hello';  // 지역 변수
+
+          console.log(hello);
+        }
+
+        a();  // 'hello'
+        console.log(hello);  // hello is not defined, 전역 변수 `hello` 참조
+        ```
+
+        > `hello`라는 변수는 함수 `a` 내부에서만 사용 가능합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        function a() {
+          var hello = 'hello';
+
+          function b() {
+            var good = 'good';
+            console.log(hello);
+          }
+
+          b();  // 'hello'
+
+          console.log(good);
+        }
+
+        a();  // good is not defined
+        ```
+
+        > `good`이라는 변수는 함수 `b` 내부에서만 사용 가능합니다.<br>`hello`라는 변수는 함수 `a` 내부의 어디에서나 사용 가능합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 다른 유효범위에서 변수 중복 가능
+
+        같은 이름의 변수가 다시 선언되면 가장 가까운 유효범위의 변수 참조
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        var hello = 'hello';  // 전역 변수
+
+        function a() {
+          var hello = 22;
+
+          console.log('hello in a is ' + hello);  // 'hello in a is 22'
+        }
+        a();
+
+        console.log('hello in global is ' + hello);  // 'hello in global is hello'
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `var` 생략 선언 유효범위
+
+        `var` 키워드 없이 변수를 선언하면 '전역 변수(Global Variable)'로 생성
+
+        > 이 방식의 사용을 추천하지 않습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        (function a() {
+          hello = 'hello';  // 전역 변수로 선언
+        }());
+
+        (function b() {
+          var good = 'good';  // 지역 변수로 선
+        }());
+
+        console.log(hello);  // 'hello'
+        console.log(good);  // good is not defined
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 렉시컬(Lexical)
+
+        유효범위는 함수의 실행이 아닌 선언 시 정의(되는 것을 '렉시컬'이라고 함)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        function a() {
+          var hello = 'hello';
+          function b() {
+            console.log(hello);
+          }
+          b();
+        }
+
+        a();  // 'hello'
+        ```
+
+        > 함수 `a` 내부에서 선언된 함수 `b`는, 변수 `hello`를 참조할 수 있습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        function a() {
+          var hello = 'hello';
+          b();
+        }
+
+        function b() {
+          console.log(hello);
+        }
+
+        a();  // hello is not defined
+        ```
+
+        > 변수 `hello`의 유효범위 내에서 선언되지 않은 함수 `b`는, 변수 `hello`를 참조할 수 없습니다.<br>실행되는 장소와 선언되는 장소의 차이점(렉시컬)을 이해하세요.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        function a() {
+          var hello = 'hello';
+          b(hello);
+        }
+
+        function b(hello) {
+          console.log(hello);
+        }
+
+        a();  // 'hello'
+        ```
+
+        > 함수 `b`의 인자로 `'hello'`를 전달하여 변수 `hello`를 참조할 수 있습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 호이스팅(Hoisting)
+
+        함수나 변수의 선언부가 유효범위 내 최상단으로 끌어올려지는(호이스팅) 현상
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        (function a() {
+          console.log(hello);  // undefined ('hello is not defined' 이 아님!)
+
+          var hello = 'hello';
+
+          console.log(hello);  // 'hello'
+        }());
+        ```
+
+        위 예제는 호이스팅에 의해 아래와 같이 해석됨
+
+        ```js
+        (function a() {
+          var hello;
+
+          console.log(hello);  // undefined
+
+          hello = 'hello';
+
+          console.log(hello);  // 'hello'
+        }());
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        a();  // 'hello' ('a is not a function' 이 아님!)
+
+        function a() {
+          console.log('hello');
+        }
+        ```
+
+        위 예제는 호이스팅에 의해 아래와 같이 해석됨
+
+        ```js
+        function a() {
+          console.log('hello');
+        }
+
+        a();  // 'hello'
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        b();  // b is not a function
+
+        var b = function () {
+          console.log('hello');
+        };
+        ```
+
+        > 함수 선언(Declarations)이 아닌 함수 표현(Expressions)은 호이스팅되지 않습니다.
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## 콜백(Callback)
+
+        함수(메소드 등)의 인자(값)로 사용되는 함수
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        function a(callback) {
+          callback();
+        }
+
+        function b() {
+          console.log('hello callback!');
+        }
+
+        a(b);
+        // 'hello callback!'
+
+        a(function () {
+          console.log('I am an Anonymous Function!');
+        });
+        // 'I am an Anonymous Function!'
+        ```
+
+        > 함수 `a`의 인자로 함수가 전달되어,<br>매개변수 `callback`이 받아 `callback()`형태로 실행(호출)합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        JavaScript 에서 콜백 활용 예시
+
+        ```js
+        setInterval(function () {
+          console.log('Repeats once every 2 seconds');
+        }, 2000);
+
+        var array = [1, 'hello', true];
+        array.forEach(function (value, index) {
+          console.log(index + ': ' + value);
+        });
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        jQuery 에서 콜백 활용 예시
+
+        ```js
+        $('.btn').on('click', function (event) {
+          console.log(event.type);  // 'click'
+        });
+
+        $('.list li').each(function (index) {
+          console.log(index);
+        });
+
+        $('.animation').fadeIn(400, function () {
+          console.log('Animation Complete!');
+        });
+
+        $('.animation')
+          .animate({
+            top: 100,
+            left: 200
+          }, 1000, function () {
+            console.log('Animation Complete!');
+          });
+        ```
+
+        > jQuery 애니메이션 관련 메소드들에서 사용될 때는,<br>'애니메이션 종료 후 실행할 함수'의 의미로 많이 사용됩니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        jQuery `.on()`의 Event 객체 기본 원리
+
+        ```js
+        function on(name, callback) {
+          var event = {
+            type: name
+          };
+
+          callback(event);
+        }
+
+        on('click', function (e) {
+          console.log(e.type);  // 'click'
+        });
+
+        on('mouseenter', function (e) {
+          console.log(e.type);  // 'mouseenter'
+        });
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+  </div>
+</div>
+
+<script src="/lib/js/head.min.js"></script>
+<script src="/js/reveal.js"></script>
+<script src="/js/reveal.initialize.js"></script>
+<script src="/js/copyright.js"></script>
+
+</body>
+</html>

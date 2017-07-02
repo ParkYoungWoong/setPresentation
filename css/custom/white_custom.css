@@ -194,6 +194,7 @@ body {
   /*border-radius: 5px;*/
 }
 .reveal table {
+  font-size: .8em;
   margin: auto;
   border-collapse: collapse;
   border-spacing: 0; }

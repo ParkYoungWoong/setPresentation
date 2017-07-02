@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>EMPTY TITLE</title>
+  <title>jQuery Attribute Methods</title>
 
   <link rel="icon" href="/favicon.png"/>
   <link rel="apple-touch-icon-precomposed" href="/favicon.png"/>
@@ -135,6 +135,41 @@
         ```
       </textarea>
       </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.toggleClass(클래스값)`
+
+        Returns: `jQuery`
+
+        대상에 class 속성의 값이 있으면 제거(remove)하고,<br>
+        없으면 추가(add)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="btn"></div>
+        ```
+
+        ```css
+        .btn {
+          background: blue;
+        }
+        .btn.active {
+          background: red;
+        }
+        ```
+
+        ```js
+        // 버튼을 클릭할 때마다 색이 변경됨
+        $('.btn').on('click', function () {
+          $(this).toggleClass('active');
+        });
+        ```
+      </textarea>
+      </section>
     </section>
 
 
@@ -218,6 +253,126 @@
 
         ```html
         <img src="img/world.png" alt="World">
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.removeAttr('속성')`
+
+        Returns: `jQuery`
+
+        대상에서 속성을 제거
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <a href="#" title="hi~">HELLO</a>
+        ```
+
+        ```js
+        $('a').removeAttr('title');
+        ```
+
+        ```html
+        <a href="#">HELLO</a>
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.prop('속성')`
+
+        Returns: `Anything`
+
+        대상의 속성을 찾아 값을 확인
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <input type="checkbox" checked>
+        ```
+
+        ```js
+        $('input').prop('checked');  // true
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.prop('속성', 값)`
+
+        Returns: `jQuery`
+
+        대상의 속성과 값을 추가
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <input type="checkbox">
+        ```
+
+        ```js
+        // <input type="checkbox" checked>
+        $('input').prop('checked', true);
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.prop({})`
+
+        Returns: `jQuery`
+
+        대상의 속성과 값을 추가
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <input type="checkbox">
+        ```
+
+        ```js
+        // // <input type="checkbox" checked`>
+        $('input').prop({
+          checked: true
+        });
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.attr()`과 `.prop()`의 차이점
+
+        | 메소드 | 의미 |
+        |---|---|
+        | `.attr()` | HTML 속성(Attribute)을 취급 |
+        | `.prop()` | JavaScript 속성(Property)을 취급 |
+
+        ```html
+        <input type="checkbox" checked="checked">
+        ```
+
+        ```js
+        $('input').attr('checked');  // 'checked'
+        $('input').prop('checked');  // true
         ```
       </textarea>
       </section>
@@ -350,7 +505,118 @@
         ```
       </textarea>
       </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.data()`를 사용하는 이유
+
+        - 서버와의 AJAX 통신에 활용하기 위해서 사용
+        - 데이터를 HTML에 저장하기 위해서 사용
+        - 메모리 누수를 최소화
+
+        > HTML의 `class` 속성은 본래 데이터를 저장하는 용도가 아니므로,<br> `data-`를 활용할 것.
+      </textarea>
+      </section>
     </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.val()`
+
+        Returns: `String`, `Number`, `Array`
+
+        대상(양식 요소)이 가지는 현재의 값을 확인
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <input type="text" value="hello world!">
+        ```
+
+        ```js
+        $('input').val();  // 'hello world!'
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <select id="fruit" multiple>
+          <option selected>apple</option>
+          <option selected>orange</option>
+          <option>strawberry</option>
+          <option>melon</option>
+        </select>
+        ```
+
+        ```js
+        $('#fruit').val();  // ['apple', 'orange']
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <input type="text">
+        ```
+
+        ```js
+        $('input').on('keyup', function () {
+          console.log( $(this).val() );
+        });
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.val(값)`
+
+        Returns: `jQuery`
+
+        대상(양식 요소)에 값을 추가
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <input type="text">
+        ```
+
+        ```js
+        $('input').val('Have a nice day!');
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <input type="text" value="      Please trim me!   ">
+        <button>Trim</button>
+        ```
+
+        ```js
+        $('button').on('click', function () {
+          $('input').val(function (index, value) {
+            return value.trim();
+          });
+        });
+        ```
+
+        > `.trim()`은 문자의 앞뒤 공백을 제거하는 기능입니다.
+      </textarea>
+      </section>
+    </section>
+
 
   </div>
 </div>
