@@ -1,0 +1,524 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>JS Statements</title>
+
+  <link rel="icon" href="/favicon.png"/>
+  <link rel="apple-touch-icon-precomposed" href="/favicon.png"/>
+
+  <link rel="stylesheet" href="/css/reveal.css">
+  <!--<link rel="stylesheet" href="/css/theme/white.css">-->
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="/css/custom/github.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/custom/white_custom.css">
+  <link rel="stylesheet" href="/css/custom/custom.css">
+  <link rel="stylesheet" href="/css/custom/kbd.css">
+
+  <!-- Printing and PDF exports -->
+  <script src="/js/create_link.js"></script>
+
+  <script src="/js/libs/jquery.min.js"></script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+
+    <!--SECTION-->
+    <section data-markdown data-state="first_page">
+    <textarea data-template>
+      # JavaScript Statements
+
+      <div id="copyright"></div>
+    </textarea>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `if`
+
+        조건의 결과(false, true)에 따라 다른 코드를 실행하는 구문(조건문)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        if (조건) {
+          // 조건이 `true`일 때 실행할 코드
+        }
+        ```
+
+        ```js
+        if (true) {
+          console.log('hello!');  // 'hello!'
+        }
+        ```
+
+        ```js
+        if (false) {
+          console.log('hello!');  // No logs..
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        function add10(a) {
+          if (a < 0) {
+            return false;  // 함수 종료
+          }
+
+          var b = a + 10;
+
+          console.log(b);
+        }
+
+        add10(7);  // 17
+        add10(0);  // 10
+        add10(99);  // 109
+        add10(-2);  // false
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `if else`
+
+        조건의 결과(false, true)에 따라 다른 코드를 실행하는 구문(조건문)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        if (조건) {
+          // 조건이 `true`일 때 실행할 코드
+        } else {
+          // 조건이 `false`일 때 실행할 코드
+        }
+        ```
+
+        ```js
+        if (number > 0) {
+          console.log('양수');
+        } else {
+          console.log('음수');
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `if else if`
+
+        조건의 결과(false, true)에 따라 다른 코드를 실행하는 구문(조건문)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        if (조건1) {
+          // 조건1이 `true`일 때 실행할 코드
+        } else if (조건2) {
+          // 조건2가 `true`일 때 실행할 코드
+        } else {
+          // 조건1과 조건2가 모두 `false`일 때 실행할 코드
+        }
+        ```
+
+        ```js
+        if (number > 0) {
+          console.log('양수');
+        } else if (number < 0) {
+          console.log('음수');
+        } else {
+          console.log('0');
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        function whatTime(time) {
+          if (time === 24 || time >= 0 && time < 6) {
+            console.log('새벽!');
+          } else if (time >= 6 && time < 12) {
+            console.log('오전!');
+          } else if (time >= 12 && time < 18) {
+            console.log('오후!');
+          } else if (time >= 18 && time < 24) {
+            console.log('저녁!');
+          } else {
+            console.log('what?!');
+          }
+        }
+        whatTime(0);  // '새벽!'
+        whatTime(4);  // '새벽!'
+        whatTime(8);  // '오전!'
+        whatTime(15);  // '오후!'
+        whatTime(22);  // '저녁!'
+        whatTime(24);  // '새벽!'
+        whatTime(26);  // 'what?!'
+        whatTime('hello');  // 'what?!'
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `switch`
+
+        조건의 결과에 따라 다른 코드를 실행하는 구문(조건문)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        switch (조건) {
+          case 값1:
+            // `조건 === 값1`일 경우 실행할 코드
+            break;
+          case 값2:
+            // `조건 === 값2`일 경우 실행할 코드
+            break;
+          default:
+            // 조건에 맞는 `case`가 없을 경우 실행할 코드
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        function price(fruit) {
+          switch (fruit) {
+            case 'Apple':
+              console.log('$1');
+              break;
+            case 'Banana':
+              console.log('$1.5');
+              break;
+            case 'Orange':
+              console.log('$2.2');
+              break;
+            default:
+              console.log("I don't think it's a fruit..");
+          }
+        }
+        price('Apple');  // '$1'
+        price('Orange');  // '$2.2'
+        price('hello');  // "I don't think it's a fruit.."
+        ```
+
+        > `if`구문과 유사하지만 값이 명확한 경우에 많이 사용됩니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        function price(fruit) {
+          if (fruit === 'Apple') {
+            console.log('$1');
+          } else if (fruit === 'Banana') {
+            console.log('$1.5');
+          } else if (fruit === 'Orange') {
+            console.log('$2.2');
+          } else {
+            console.log("I don't think it's a fruit..");
+          }
+        }
+        ```
+
+        > 이전과 같은 결과를 가지는 코드입니다.<br>`switch`구문은 `if`구문으로 대체할 수 있습니다.
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `for`
+
+        조건에 따라 코드를 반복 실행하는 구문(반복문)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        for (시작조건; 종료조건; 변화조건) {
+          // 실행 코드
+        }
+        ```
+
+        ```js
+        for (var i = 0; i < 3; i++) {
+          console.log(i + '번째 반복!');
+        }
+        // 0번째 반복!
+        // 1번째 반복!
+        // 2번째 반복!
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <ul class="list">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        ```
+
+        ```js
+        // JavaScript
+        var list = document.querySelectorAll('.list li');
+
+        for(var i = 0; i < list.length; i++) {
+          list[i].textContent = i + 1;
+        }
+        ```
+
+        ```js
+        // jQuery
+        $('.list li').each(function (i) {
+          $(this).text(i + 1);
+        });
+        ```
+
+        ```html
+        <ul class="list">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+        </ul>
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        var fruit = ['Apple', 'Orange', 'Mango', 'Strawberry'];
+
+        for (var i = 0; i < fruit.length; i++) {
+          console.log(fruit[i]);
+        }
+
+        // 'Apple'
+        // 'Orange'
+        // 'Mango'
+        // 'Strawberry'
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `for in`
+
+        조건에 따라 코드를 반복 실행하는 구문(반복문)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        for (변수 in 객체) {
+          // 실행 코드
+        }
+        ```
+
+        > 위의 `객체`는 자료형의 '객체 데이터'를 의미하는 것이 아닙니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        var fruit = ['Apple', 'Orange', 'Mango', 'Strawberry'];
+
+        for (var prop in fruit) {
+          console.log(prop);  // '0', '1', '2', '3'
+          console.log(typeof prop)  // 'string', 'string', 'string', 'string'
+          console.log(fruit[prop]);  // 'Apple', 'Orange', 'Mango', 'Strawberry'
+        }
+        ```
+
+        > `for in`구문을 사용하여 '배열 데이터'를 활용할 수 있습니다.<br>'배열 데이터' 활용에서 변수 `prop`는 '숫자 데이터'가 아님에 주의해야 합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        var me = {
+          name: 'herop',
+          age: 19,
+          address: 'Bundang-gu, Seongnam-si',
+          contact: '010-1234-5678',
+          single: true
+        };
+
+        for (var prop in me) {
+          console.log(prop);  // 'name', 'age', 'address', 'contact', 'single'
+          console.log(typeof prop);  // 'string', 'string', 'string', 'string', 'string'
+          console.log(me[prop]);  // 'herop', 19, 'Bundang-gu, Seongnam-si', '010-1234-5678', true
+        }
+        ```
+
+        > `for in`구문을 사용하여 '객체 데이터'를 활용할 수 있습니다.
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `while`
+
+        조건에 따라 코드를 반복 실행하는 구문(반복문)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        while (종료조건) {
+          // 실행 코드
+        }
+        ```
+
+        ```js
+        var i = 0;
+
+        while (i < 4) {
+          console.log(i);
+          i++;
+        }
+        // 0
+        // 1
+        // 2
+        // 3
+        ```
+
+        > `while`구문에서 '종료조건'이 충족되지 못하면 무한 루프에 빠지게 됩니다.<br>웹 브라우저가 정지하거나 시스템에 무리를 줄 수 있으므로 주의하세요.
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `break`
+
+        `switch`, `for`, `while`구문을 종료
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        for (var i = 0; i < 10; i++) {
+          if (i === 3) {
+            break;  // 반복문 종료
+          }
+          console.log(i);
+        }
+        // 0
+        // 1
+        // 2
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        var fruit = 'Apple';
+
+        switch (fruit) {
+          case 'Apple':
+            console.log('$1');
+            break;  // 조건문 종료
+          case 'Mango':
+            console.log('$2');
+            break;  // 조건문 종료
+        }
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `continue`
+
+        `for`, `while`구문에서 현재 반복을 종료하고 다음 반복을 실행
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        for (var i = 0; i < 5; i++) {
+          if (i === 3) {
+            continue;  // 현재 반복 건너뛰기
+          }
+          console.log(i);
+        }
+        // 0
+        // 1
+        // 2
+        // 4
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+  </div>
+</div>
+
+<script src="/lib/js/head.min.js"></script>
+<script src="/js/reveal.js"></script>
+<script src="/js/reveal.initialize.js"></script>
+<script src="/js/copyright.js"></script>
+
+</body>
+</html>

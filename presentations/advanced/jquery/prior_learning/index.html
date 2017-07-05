@@ -120,7 +120,7 @@
     <section>
       <section data-markdown>
       <textarea data-template>
-        ## JavaScript 데이터 종류
+        ## JavaScript 데이터 종류(자료형)
       </textarea>
       </section>
 
@@ -134,8 +134,8 @@
         | Function | 함수 데이터 | `function () {}` |
         | `undefined` | 정의되지 않음 | `undefined` |
         | `null` | 값이 존재하지 않음(초기화) | `null` |
-        | Object | 객체 데이터 | `{}` |
         | Array | 배열 데이터 | `[]` |
+        | Object | 객체 데이터 | `{}` |
       </textarea>
       </section>
 
@@ -203,7 +203,7 @@
       <textarea data-template>
         ### undefined
 
-        1. 값이 할당되지 않은 변수 혹,
+        1. 값이 할당되지 않은 변수 혹은,
         1. 존재하지 않는 객체 속성에서 반환되는<br>
         특수한 값(값이 할당되지 않음)
 
@@ -212,7 +212,7 @@
         ```
 
         ```js
-        hello;  // undefined
+        var hello;  // undefined
         ```
       </textarea>
       </section>
@@ -229,8 +229,30 @@
         ```
 
         ```js
-        hello = 'hello';
+        var hello = 'hello';  // 변수 선언
         hello = null;  // 초기화
+        hello;  // null
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### Array, []
+
+        배열 데이터
+
+        ```js
+        [데이터, 데이터, 데이터, 데이터]
+        ```
+
+        ```js
+        var a = [2, 'good', true, 'what?'];  // 배열 선언
+
+        a[0];  // 2
+        a[1];  // 'good'
+        a[2];  // true
+        a[3];  // 'what?'
         ```
       </textarea>
       </section>
@@ -243,13 +265,14 @@
 
         ```js
         {
-          PROPERTY1: VALUE,
-          PROPERTY2: VALUE
+          속성1: 데이터,
+          속성2: 데이터
         }
         ```
 
         ```js
-        o = {
+        // 객체 선언
+        var o = {
           a: 1,
           b: 'hello',
           c: false
@@ -258,12 +281,28 @@
         o.a;  // 1
         o.b;  // 'hello'
         o.c;  // false
+        o['a'];  // 1
+        o['b'];  // 'hello'
         ```
 
+        > '객체 데이터'를 '배열 데이터'처럼 사용할 수 있습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
         ```js
-        image = {};  // image = new Object();
-        image.width = 100;
-        image.height = 200;
+        // 객체 선언
+        var o = {
+          a: 1,
+          b: 'hello',
+          c: false
+        };
+
+        o.d = 'good';  // 속성(property) 추가
+
+        o.d;  // 'good'
+        o['d']  // 'good'
         ```
       </textarea>
       </section>
@@ -285,23 +324,8 @@
           c: function () {}  // Method
         }
         ```
-      </textarea>
-      </section>
 
-      <section data-markdown>
-      <textarea data-template>
-        ### Array, []
-
-        배열 데이터
-
-        ```js
-        a = [2, 'good', true, 'what?'];
-
-        a[0];  // 2
-        a[1];  // 'good'
-        a[2];  // true
-        a[3];  // 'what?'
-        ```
+        > '함수 데이터'가 할당된 속성을 '메소드(Method)'라고 합니다.
       </textarea>
       </section>
     </section>
@@ -324,7 +348,7 @@
         처음 변수를 생성할 때 앞에 `var` 키워드를 꼭 붙이세요!
 
         ```js
-        var NAME = DATA;
+        var NAME = 데이터;
         ```
 
         ```js
@@ -533,7 +557,7 @@
 
         [1, 'hello', true].length  // 3 (배열의 개수)
 
-        function () {}.length  // 0 (함수 인자(매개변)의 개수)
+        function () {}.length  // 0 (함수 인자(매개변수)의 개수)
 
         function (arg) {}.length  // 1
 

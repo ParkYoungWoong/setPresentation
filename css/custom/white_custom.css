@@ -131,7 +131,7 @@ body {
   display: block;
   position: relative;
   width: 70%;
-  margin: 30px auto 20px auto;
+  margin: 20px auto 15px auto;
   /*padding: 5px;*/
   font-style: italic;
   background: rgba(255, 255, 255, 0.05);
@@ -187,7 +187,7 @@ body {
 .reveal pre code {
   display: block;
   overflow: auto;
-  max-height: 400px;
+  max-height: 500px;
   word-wrap: normal;
   padding: .8em 1.5em;
   /*background: #f1f3f5;*/
