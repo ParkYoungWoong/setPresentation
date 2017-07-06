@@ -327,10 +327,10 @@
       <section data-markdown>
       <textarea data-template>
         ```js
-        var fruit = ['Apple', 'Orange', 'Mango', 'Strawberry'];
+        var fruits = ['Apple', 'Orange', 'Mango', 'Strawberry'];
 
-        for (var i = 0; i < fruit.length; i++) {
-          console.log(fruit[i]);
+        for (var i = 0; i < fruits.length; i++) {
+          console.log(fruits[i]);
         }
 
         // 'Apple'
@@ -364,12 +364,12 @@
       <section data-markdown>
       <textarea data-template>
         ```js
-        var fruit = ['Apple', 'Orange', 'Mango', 'Strawberry'];
+        var fruits = ['Apple', 'Orange', 'Mango', 'Strawberry'];
 
-        for (var prop in fruit) {
+        for (var prop in fruits) {
           console.log(prop);  // '0', '1', '2', '3'
           console.log(typeof prop)  // 'string', 'string', 'string', 'string'
-          console.log(fruit[prop]);  // 'Apple', 'Orange', 'Mango', 'Strawberry'
+          console.log(fruits[prop]);  // 'Apple', 'Orange', 'Mango', 'Strawberry'
         }
         ```
 

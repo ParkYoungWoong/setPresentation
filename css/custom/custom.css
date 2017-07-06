@@ -7,6 +7,7 @@
 /* Highlight Theme - zenburn.css */
 .reveal pre code.hljs {
   /*background: #3f3f3f;*/
+  padding: .8em 1.5em;
 }
 
 

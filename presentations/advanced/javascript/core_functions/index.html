@@ -589,6 +589,379 @@
     </section>
 
 
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## Date
+
+        날짜와 시간을 처리하기 위한 `Date` 객체와 메소드들
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `new Date()`
+
+        Returns: `날짜와 시간 정보`
+
+        순간의 날짜와 시간의 정보를 나타내는 날짜 인스턴스(새로운 객체)를 만듬
+
+        ```js
+        new Date();
+        var date = new Date();
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.getFullYear()`
+
+        Returns: `Number`
+
+        현재 '연도'를 반환
+
+        ```js
+        var date = new Date();
+        date.getFullYear();  // ex) 2017
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.getMonth()`
+
+        Returns: `Number`
+
+        현재 '월'를 반환(0 ~ 11)
+
+        ```js
+        var date = new Date();
+        date.getMonth() + 1;  // ex) 12
+        ```
+
+        > `.getMonth()`는 `0`부터 `11`까지의 숫자를 반환하기 때문에<br>현재 월을 알고 싶다면 `1`를 더해야 합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.getDate()`
+
+        Returns: `Number`
+
+        현재 '일'를 반환(1 ~ 31)
+
+        ```js
+        var date = new Date();
+        date.getDate();  // ex) 16
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.getHours()`
+
+        Returns: `Number`
+
+        현재 '시'를 반환(0 ~ 23)
+
+        ```js
+        var date = new Date();
+        date.getHours();  // ex) 14
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.getMinutes()`
+
+        Returns: `Number`
+
+        현재 '분'을 반환(0 ~ 59)
+
+        ```js
+        var date = new Date();
+        date.getMinutes();  // ex) 39
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.getSeconds()`
+
+        Returns: `Number`
+
+        현재 '초'을 반환(0 ~ 59)
+
+        ```js
+        var date = new Date();
+        date.getSeconds();  // ex) 12
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        setInterval(function () {
+          var hour = new Date().getHours(),
+            min = new Date().getMinutes(),
+            sec =  new Date().getSeconds();
+
+          console.log(
+            hour + '시 ' + min + '분 ' + sec + '초'
+          );
+        }, 1000);
+        ```
+
+        > `console` 창에 1초에 한 번씩 '시분초'를 갱신하여 입력합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.getTime()`
+
+        Returns: `Number`
+
+        1970/01/01 이후 현재까지의 'milliseconds(ms)'를 반환
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        var start = 0;
+        var end = 0;
+
+        function startTime() {
+          start = new Date().getTime();
+        }
+
+        function endTime() {
+          end = new Date().getTime();
+          console.log(
+            ((end - start) / 1000).toFixed(2) + '초'
+          );
+        }
+
+        startTime();
+
+        // 3.5초 경과 후 실행..
+        endTime();  // '3.5초'
+        ```
+
+        > `.getTime()`은 초단위(ms)의 시간을 반환하기 때문에<br>시간이 얼마나 경과했는지 체크하기 위해서 사용하면 편리합니다.
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## Array
+
+        배열을 다루는 함수(메소드)들
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.indexOf()`
+
+        Returns: `Number`
+
+        배열 내 데이터의 위치(index)를 구함
+
+        ```js
+        배열.indexOf(데이터)
+        ```
+
+        ```js
+        var fruits = ['Apple', 'Orange', 'Mango'];
+
+        console.log(fruits.indexOf('Apple'));  // 0
+        console.log(fruits.indexOf('Orange'));  // 1
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.join()`
+
+        Returns: `String`
+
+        배열의 모든 데이터를 구분하여 '문자 데이터'로 반환
+
+        ```js
+        배열.join('구분기호')
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        var fruits = ['Apple', 'Orange', 'Mango', 'Strawberry'];
+
+        var join1 = fruits.join();
+        var join2 = fruits.join(', ');
+        var join3 = fruits.join(' / ');
+
+        console.log(join1);
+        // 'Apple,Orange,Mango,Strawberry'
+
+        console.log(join2);
+        // 'Apple, Orange, Mango, Strawberry'
+
+        console.log(join3);
+        // 'Apple / Orange / Mango / Strawberry'
+        ```
+
+        > `.join()`에 '인자'를 생략하면 구분기호 `','`가 자동으로 삽입됩니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.push()`
+
+        Returns: `Number`
+
+        배열의 마지막으로 데이터를 추가하고, 배열의 개수를 반환
+
+        ```js
+        배열.push(데이터)
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        var fruits = ['Apple', 'Orange', 'Mango', 'Strawberry'];
+
+        console.log(fruits[4]);  // undefined
+
+        var fruitsLength = fruits.push('Pineapple');
+
+        console.log(fruits);  // ['Apple', 'Orange', 'Mango', 'Strawberry', 'Pineapple']
+        console.log(fruits[4]);  // 'Pineapple'
+        console.log(fruitsLength);  // 5
+        console.log(fruits.length);  // 5
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.sort()`
+
+        Returns: `Array`
+
+        배열을 순서대로 정렬
+
+        ```js
+        배열.sort()
+        ```
+
+        ```js
+        var fruits = ['Apple', 'Orange', 'Mango', 'Strawberry'];
+
+        fruits.sort();
+        console.log(fruits);  // ["Apple", "Mango", "Orange", "Strawberry"]
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        var arr = ['Apple', 'Orange', 22, 10, true];
+        arr.sort();
+
+        console.log(arr);  // [10, 22, "Apple", "Orange", true]
+        ```
+
+        ```js
+        var arr = ['나', '라', '가', '마', '다'];
+
+        console.log(arr.sort());  // ["가", "나", "다", "라", "마"]
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        var arr = [72, 999, 1, 56, 2, 11];
+
+        console.log(arr.sort());  // [1, 11, 2, 56, 72, 999]
+        ```
+
+        ```js
+        var arr = [72, 999, 1, 56, 2, 11];
+
+        arr.sort(function (a, b) {
+          return a - b;
+        });
+
+        console.log(arr);  // [1, 2, 11, 56, 72, 999]
+        ```
+
+        ```js
+        var arr = [72, 999, 1, 56, 2, 11];
+
+        arr.sort(function (a, b) {
+          return b - a;
+        });
+
+        console.log(arr);  // [999, 72, 56, 11, 2, 1]
+        ```
+
+        > `.sort()` '인자'로 함수를 사용하여, 정렬 순서를 정의할 수 있습니다.<br>함수는 '음수', '0', '양수'의 값을 반환해야 합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.reverse()`
+
+        Returns: `Array`
+
+        배열의 순서를 반대로 정렬
+
+        ```js
+        배열.reverse()
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        var arr = ['나', '라', '가', '마', '다'];
+
+        arr.sort();
+        console.log(arr);  // ["가", "나", "다", "라", "마"]
+
+        arr.reverse();
+        console.log(arr);  // ["마", "라", "다", "나", "가"]
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
   </div>
 </div>
 
