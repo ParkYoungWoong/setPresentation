@@ -149,3 +149,5 @@ This was made with [Reveal.js](https://github.com/hakimel/reveal.js/).
 `선언(Declarations)` `표현(Expressions)` `즉시실행함수(IIFE)` `인자(Arguments)` `매개변수(Parameters)` `함수 종료` `arguments 객체` `유효범위(Scope)` `렉시컬(Lexical)` `호이스팅(Hoisting)` `콜백(Callback)`
 
 #### [Core functions(Methods)](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/javascript/core_functions)
+
+`String` `Number` `Math` `Date` `Array` `Timer`

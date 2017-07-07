@@ -962,6 +962,102 @@
     </section>
 
 
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## Timer
+
+        시간의 간격을 다루는 함수들
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `setTimeout()`
+
+        Returns: `Number`(설정된 타이머의 ID 값을 나타내는 숫자)
+
+        시간이 만료된 후 함수나 지정된 코드를 실행
+
+        ```js
+        setTimeout(함수, 시간);
+        ```
+
+        ```js
+        setTimeout(function () {
+          console.log('3초가 지났습니다.');
+        }, 3000);
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `clearTimeout()`
+
+        Returns: `없음`
+
+        설정된 타이머(`setTimeout()`)를 종료
+
+        ```js
+        clearTimeout(타이머함수아이디)
+        ```
+
+        ```js
+        var timer = setTimeout(function () {
+          console.log('3초가 지났습니다.');
+        }, 3000);
+
+        clearTimeout(timer);  // `timer`라는 타이머 종료
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `setInterval()`
+
+        Returns: `Number`(설정된 타이머의 ID 값을 나타내는 숫자)
+
+        지정된 간격의 시간마다 함수나 지정된 코드를 실행
+
+        ```js
+        setInterval(함수, 시간);
+        ```
+
+        ```js
+        setInterval(function () {
+          console.log(new Date().getSeconds());
+        }, 1000);
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `clearInterval()`
+
+        Returns: `없음`
+
+        설정된 타이머(`setInterval()`)를 종료
+
+        ```js
+        clearInterval(타이머함수아이디)
+        ```
+
+        ```js
+        var timer = setInterval(function () {
+          console.log(new Date().getSeconds());
+        }, 1000);
+
+        clearInterval(timer);  // `timer`라는 타이머 종료
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
   </div>
 </div>
 
