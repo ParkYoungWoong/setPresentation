@@ -1022,8 +1022,6 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mango
         */
         ```
-
-        >
       </textarea>
       </section>
 
@@ -1040,6 +1038,22 @@
         ```js
         console.log(
            $('.fruits').text().replace(/ +/g, "").trim().split('\n').join(' ')
+        );
+
+        // Apple Orange Mango
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <ul class="fruits"><li><a href="#">Apple</a></li> <li><a href="#">Orange</a></li> <li><a href="#">Mango</a></li></ul>
+        ```
+
+        ```js
+        console.log(
+           $('.fruits').text()
         );
 
         // Apple Orange Mango
