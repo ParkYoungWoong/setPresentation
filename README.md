@@ -136,7 +136,11 @@ This was made with [Reveal.js](https://github.com/hakimel/reveal.js/).
 
 #### [jQuery Event Methods](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/jquery/event)
 
-`on` `off` `one` `jQuery 이벤트 종류` `Event 객체` `이벤트 버블링(Bubbling)` `이벤트 캡처링(Capturing)` 
+`on` `off` `one` `jQuery 이벤트 종류` `Event 객체` `이벤트 버블링(Bubbling)` `이벤트 캡처링(Capturing)`
+ 
+#### [jQuery Node Methods](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/jquery/node)
+
+`first` `last` `eq` `index` `find` `filter` `not`
 
 ### JavaScript for Level 2
 

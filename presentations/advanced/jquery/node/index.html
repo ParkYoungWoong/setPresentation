@@ -297,7 +297,753 @@
 
         Returns: `jQuery`
 
-        대상을 '선택자'로 필터링
+        '선택자'를 제외한 대상들을 검색
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <ul class="list">
+          <li>1</li>  <!-- RED -->
+          <li class="not">2</li>
+          <li>3</li>  <!-- RED -->
+          <li>4</li>  <!-- RED -->
+        </ul>
+        ```
+
+        ```js
+        $('.list li').not('.not').css({ color: 'red' });
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.children()`
+
+        Returns: `jQuery`
+
+        대상의 자식 요소들을 검색
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <ul class="list">
+          <li>
+            <div></div>
+            <p></p>
+          </li>
+          <li></li>
+          <li class="hello"></li>
+        </ul>
+        ```
+
+        ```js
+        $('.list').children().addClass('children');
+        ```
+
+        ```html
+        <ul class="list">
+          <li class="childred">
+            <div></div>
+            <p></p>
+          </li>
+          <li class="childred"></li>
+          <li class="hello children"></li>
+        </ul>
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.children('선택자')`
+
+        Returns: `jQuery`
+
+        대상의 자식 요소들 중 '선택자'만 검색
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <ul class="list">
+          <li>
+            <div></div>
+            <p></p>
+          </li>
+          <li></li>
+          <li class="hello"></li>  <!-- RED -->
+        </ul>
+        ```
+
+        ```js
+        $('.list').children('.hello').css({ color: 'red' });
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.parent()`
+
+        Returns: `jQuery`
+
+        대상의 부모 요소를 검색
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="parent">  <!-- RED -->
+          <div class="child1"></div>
+        </div>
+
+        <div class="parent">
+          <div class="child2"></div>
+        </div>
+        ```
+
+        ```js
+        $('.child1').parent().css({ color: 'red' });
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.parents('선택자')`
+
+        Returns: `jQuery`
+
+        대상의 조상(상위) 요소 중 '선택자'를 검색
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="node1">
+          <div class="node2">
+            <div class="node3">
+              <div class="node4"></div>
+            </div>
+          </div>
+        </div>
+        ```
+
+        ```js
+        $('.node4').parents('.node2').addClass('checked');
+        ```
+
+        ```html
+        <div class="node1">
+          <div class="node2 checked">
+            <div class="node3">
+              <div class="node4"></div>
+            </div>
+          </div>
+        </div>
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="node">
+          <div class="node">
+            <div class="node3">
+              <div class="node4"></div>
+            </div>
+          </div>
+        </div>
+        ```
+
+        ```js
+        $('.node4').parents('.node').addClass('checked');
+        ```
+
+        ```html
+        <div class="node checked">
+          <div class="node checked">
+            <div class="node3">
+              <div class="node4"></div>
+            </div>
+          </div>
+        </div>
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.prev()`
+
+        Returns: `jQuery`
+
+        대상의 **이전** 형제 요소를 검색
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <ul class="list">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>  <!-- RED -->
+          <li class="target">4</li>
+          <li>5</li>
+          <li>6</li>
+        </ul>
+        ```
+
+        ```js
+        $('.target').prev().css({ color: 'red' });
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.next()`
+
+        Returns: `jQuery`
+
+        대상의 **다음** 형제 요소를 검색
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <ul class="list">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li class="target">4</li>
+          <li>5</li>  <!-- RED -->
+          <li>6</li>
+        </ul>
+        ```
+
+        ```js
+        $('.target').next().css({ color: 'red' });
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.siblings()`
+
+        Returns: `jQuery`
+
+        대상의 형제 요소들을 모두 검색
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <ul class="list">
+          <li>1</li>  <!-- RED -->
+          <li>2</li>  <!-- RED -->
+          <li>3</li>  <!-- RED -->
+          <li class="target">4</li>
+          <li>5</li>  <!-- RED -->
+          <li>6</li>  <!-- RED -->
+        </ul>
+        ```
+
+        ```js
+        $('.target').siblings().css({ color: 'red' });
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.siblings('선택자')`
+
+        Returns: `jQuery`
+
+        대상의 형제 요소들 중 '선택자'로 검색
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <ul class="list">
+          <li>1</li>
+          <li class="red">2</li>  <!-- RED -->
+          <li>3</li>
+          <li class="target">4</li>
+          <li>5</li>
+          <li class="red">6</li>  <!-- RED -->
+        </ul>
+        ```
+
+        ```js
+        $('.target').siblings('.red').css({ color: 'red' });
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.prepend(요소)`
+
+        Returns: `jQuery`
+
+        대상의 첫번째 자식 요소로 '요소'를 삽입<br>(추가 / 잘라내어 붙여넣기)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="hello">
+          <div>Contents</div>
+        </div>
+
+        <h1>Title</h1>
+        ```
+
+        ```js
+        $('.hello').prepend($('h1'));
+        ```
+
+        ```html
+        <div class="hello">
+          <h1>Title</h1>
+          <div>Contents</div>
+        </div>
+        ```
+
+        > 요소가 삽입되면 기존의 요소를 사라집니다.(잘라내어 붙여넣기)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="hello">
+          <div>Contents</div>
+        </div>
+        ```
+
+        ```js
+        $('.hello').prepend('<h1>Title</h1>');
+        ```
+
+        ```html
+        <div class="hello">
+          <h1>Title</h1>
+          <div>Contents</div>
+        </div>
+        ```
+
+        > `HTML`에 없는 별도의 코드로 요소를 삽입할 수도 있습니다.(추가)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="hello">
+          <div>Contents</div>
+        </div>
+
+        <div class="hello">
+        </div>
+        ```
+
+        ```js
+        $('.hello').prepend('<h1>Title</h1>');
+        ```
+
+        ```html
+        <div class="hello">
+          <h1>Title</h1>
+          <div>Contents</div>
+        </div>
+
+        <div class="hello">
+          <h1>Title</h1>
+        </div>
+        ```
+
+        > 검색된 모든 대상의 첫번째 자식 요소로 삽입합니다.<br>이어지는 `.prependTo()` `.append()` `.appendTo()` 모두 동일합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.prependTo(요소)`
+
+        Returns: `jQuery`
+
+        대상을 '요소'의 첫번째 자식 요소로 삽입<br>(추가 / 잘라내어 붙여넣기)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="hello">
+          <div>Contents</div>
+        </div>
+
+        <h1>Title</h1>
+        ```
+
+        ```js
+        $('h1').prependTo($('.hello'));
+        ```
+
+        ```html
+        <div class="hello">
+          <h1>Title</h1>
+          <div>Contents</div>
+        </div>
+        ```
+
+        > `.prepend()`와 반대로 동작하는 점을 주의하세요.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="hello">
+          <div>Contents</div>
+        </div>
+        ```
+
+        ```js
+        $('<h1>Title</h1>').prependTo($('.hello'));
+        ```
+
+        ```html
+        <div class="hello">
+          <h1>Title</h1>
+          <div>Contents</div>
+        </div>
+        ```
+
+        > `$()`의 인자로 삽입할 `HTML`코드를 작성할 수 있습니다.
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.append(요소)`
+
+        Returns: `jQuery`
+
+        대상의 마지막 자식 요소로 '요소'를 삽입<br>(추가 / 잘라내어 붙여넣기)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="hello">
+          <div>Contents</div>
+        </div>
+
+        <p>Footer</p>
+        ```
+
+        ```js
+        $('.hello').append($('p'));
+        ```
+
+        ```html
+        <div class="hello">
+          <div>Contents</div>
+          <p>Footer</p>
+        </div>
+        ```
+
+        > `.prepend()`는 '요소'를 첫번째 자식 요소로 삽입하고,<br>`.append()`는 마지막 자식 요소로 삽입합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.appendTo(요소)`
+
+        Returns: `jQuery`
+
+        대상을 '요소'의 마지막 자식 요소로 삽입<br>(추가 / 잘라내어 붙여넣기)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="hello">
+          <div>Contents</div>
+        </div>
+
+        <p>Footer</p>
+        ```
+
+        ```js
+        $('p').appendTo($('.hello'));
+        ```
+
+        ```html
+        <div class="hello">
+          <div>Contents</div>
+          <p>Footer</p>
+        </div>
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.html()`
+
+        Returns: `String`
+
+        대상의 `HTML` 내용을 확인<br>(태그 포함)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="hello">
+          <a href="#">Hello World!</a>
+        </div>
+        ```
+
+        ```js
+        console.log(
+          $('.hello').html()
+        );
+        // '<a href="#">Hello World!</a>'
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.html('요소')`
+
+        Returns: `jQuery`
+
+        대상의 내용으로 '요소'를 삽입<br>(기존 내용 덮어쓰기)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="hello">
+          <span>OLD</span>
+        </div>
+        ```
+
+        ```js
+        $('.hello').html('<p>NEW</p>');
+        ```
+
+        ```html
+        <div class="hello">
+          <p>NEW</p>
+        </div>
+        ```
+
+        > `.hello` 요소 내부 내용이, 삽입한 내용을 교체 되었습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="hello">
+          <span>OLD</span>
+        </div>
+        ```
+
+        ```js
+        $('.hello').html('');
+        ```
+
+        ```html
+        <div class="hello"></div>
+        ```
+
+        > 빈 문자열을 삽입하면 대상의 내용을 비울 수 있습니다.<br>다른 방법으로 `.empty()`를 사용할 수 있습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.html(함수)`
+
+        Returns: `jQuery`
+
+        대상의 내용으로 함수의 반환값(`return`)을 삽입
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+
+        <div class="length"></div>
+        ```
+
+        ```js
+        $('.length').html(function () {
+          var pLength = $('p').length;
+
+          return '<p>P 태그의 개수는 ' + pLength + '개 입니다.</p>'
+        });
+        // $('.length').html('<p>P 태그의 개수는 5개 입니다.</p>'); 와 동일
+        ```
+
+        ```html
+        <div class="length">
+          <p>P 태그의 개수는 5개 입니다.</p>
+        </div>
+        ```
+
+        > `.html()` '콜백 함수'의 `return` 값으로 내용을 삽입할 수 있습니다.
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.text()`
+
+        Returns: `String`
+
+        대상의 `TEXT`(문자) 내용을 확인
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="hello">
+          <a href="#">Hello World!</a>
+        </div>
+        ```
+
+        ```js
+        console.log(
+          $('.hello').text()
+        );
+        // '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello World!'
+
+        console.log(
+          $('.hello').text().trim()
+        );
+        // 'Hello World!'
+        ```
+
+        > `.text()`가 확인한 문자에 혹시 불필요한 공백이 포함될 경우,<br>`.trim()`을 사용하여 문자의 앞뒤 공백을 제거할 수 있습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <ul class="fruits">
+          <li><a href="#">Apple</a></li>
+          <li><a href="#">Orange</a></li>
+          <li><a href="#">Mango</a></li>
+        </ul>
+        ```
+
+        ```js
+        console.log(
+          $('.fruits').text()
+        );
+
+        /*
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Apple
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orange
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mango
+        */
+        ```
+
+        >
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <ul class="fruits">
+          <li><a href="#">Apple</a></li>
+          <li><a href="#">Orange</a></li>
+          <li><a href="#">Mango</a></li>
+        </ul>
+        ```
+
+        ```js
+        console.log(
+           $('.fruits').text().replace(/ +/g, "").trim().split('\n').join(' ')
+        );
+
+        // Apple Orange Mango
+        ```
       </textarea>
       </section>
     </section>

@@ -44,10 +44,9 @@
 /* Copyright */
 #copyright {
   font-size: 14px;
-  /*margin-top: 50px;*/
-  margin: auto;
+  margin: 60px auto 0 auto;
   opacity: .75;
-  position: fixed;
+  /*position: fixed;*/
   left: 0;
   right: 0;
   bottom: 24px;
