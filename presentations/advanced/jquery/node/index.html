@@ -1060,6 +1060,241 @@
         ```
       </textarea>
       </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <ul class="fruits">
+          <li><a href="#">Apple</a></li>
+          <li><a href="#">Orange</a></li>
+          <li><a href="#">Mango</a></li>
+        </ul>
+        ```
+
+        ```js
+        $('.fruits li').each(function () {
+          console.log(
+            $(this).text()
+          );
+        });
+        // Apple
+        // Orange
+        // Mango
+        ```
+
+        > 되도록 문자를 확인할 특정 요소를 정확하게 지정하는 것이 효과적입니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `.text(문자)`
+
+        Returns: `jQuery`
+
+        대상에 `문자`를 삽입
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <ul class="fruits">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        ```
+
+        ```js
+        var fruits = ['Apple', 'Orange', 'Mango', 'Strawberry'];
+
+        $('.fruits li').each(function (index) {
+          $(this).text(fruits[index]);
+        });
+        ```
+
+        ```html
+        <ul class="fruits">
+          <li>Apple</li>
+          <li>Orange</li>
+          <li>Mango</li>
+          <li>Strawberry</li>
+        </ul>
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.remove()`
+
+        Returns: `jQuery`
+
+        대상을 제거
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <ul class="fruits">
+          <li class="apple">Apple</li>
+          <li class="orange">Orange</li>
+          <li class="mango">Mango</li>
+        </ul>
+        ```
+
+        ```js
+        $('.orange').remove();
+        ```
+
+        ```html
+        <ul class="fruits">
+          <li class="apple">Apple</li>
+          <li class="mango">Mango</li>
+        </ul>
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.empty()`
+
+        Returns: `jQuery`
+
+        대상의 후손 요소들을 모두 제거(비움)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <ul class="fruits">
+          <li>
+            <div><a href="#"></a></div>
+            <p></p>
+          </li>
+          <li></li>
+          <li></li>
+        </ul>
+        ```
+
+        ```js
+        $('.fruits').empty();
+        ```
+
+        ```html
+        <ul class="fruits"></ul>
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `.each(함수)`
+
+        Returns: `jQuery`
+
+        대상의 개수에 맞게 함수를 실행
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <ul class="list">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        ```
+
+        ```js
+        $('.list li').each(function (index) {
+          console.log(index);
+        });
+        // 0
+        // 1
+        // 2
+        // 3
+        ```
+
+        > `.each()` 콜백함수의 매개변수로 보통 `index` 혹은 `i`를 사용하며,<br>이 매개변수는 함수의 반복 횟수(Zero-based)를 나타냅니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <ul class="list">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        ```
+
+        ```js
+        $('.list li').each(function (index) {
+          $(this).text(index + 1);
+        });
+        ```
+
+        ```html
+        <ul class="list">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+        </ul>
+        ```
+
+        > 키워드 `this`는 현재 반복에 해당하는 '대상'을 의미합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <ul class="list">
+          <li>1</li>
+          <li>2</li>  <!-- RED -->
+          <li>3</li>
+          <li>4</li>  <!-- RED -->
+        </ul>
+        ```
+
+        ```js
+        $('.list li').each(function (index) {
+          if ($(this).index() % 2 !== 0) {
+            $(this).css({ color: 'red' });
+          }
+        });
+        // 0 % 2 === 0
+        // 1 % 2 === 1
+        // 2 % 2 === 0
+        // 3 % 2 === 1
+        ```
+
+        > 콜백함수 내에서 다양한 명령을 적용할 수 있습니다.
+      </textarea>
+      </section>
     </section>
 
 

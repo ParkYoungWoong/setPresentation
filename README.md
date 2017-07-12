@@ -140,7 +140,7 @@ This was made with [Reveal.js](https://github.com/hakimel/reveal.js/).
  
 #### [jQuery Node Methods](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/jquery/node)
 
-`first` `last` `eq` `index` `find` `filter` `not`
+`first` `last` `eq` `index` `find` `filter` `not` `children` `parent` `parents` `prev` `next` `siblings` `prepend` `prependTo` `append` `appendTo` `html` `text` `remove` `empty` `each`
 
 ### JavaScript for Level 2
 
@@ -155,3 +155,5 @@ This was made with [Reveal.js](https://github.com/hakimel/reveal.js/).
 #### [Core functions(Methods)](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/javascript/core_functions)
 
 `String` `Number` `Math` `Date` `Array` `Timer`
+
+#### [this](https://parkyoungwoong.github.io/setPresentation/presentations/advanced/javascript/this)

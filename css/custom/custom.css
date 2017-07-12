@@ -4,11 +4,20 @@
 }
 
 
-/* Highlight Theme - zenburn.css */
+/* Highlight Theme */
 .reveal pre code.hljs {
-  /*background: #3f3f3f;*/
   padding: .8em 1.5em;
 }
+.reveal pre code.hljs::after {
+  position: absolute;
+  right: 1.5em;
+  top: .8em;
+  font-size: 12px;
+  color: #cccccc;
+}
+.reveal pre code.hljs.lang-html::after { content: "HTML"; }
+.reveal pre code.hljs.lang-css::after { content: "CSS"; }
+.reveal pre code.hljs.lang-js::after { content: "JS"; }
 
 
 /* CLEARFIX */
