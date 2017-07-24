@@ -321,7 +321,7 @@
           a: 1,  // Property
           b: 'hello',  // property
           c: false,  // property
-          c: function () {}  // Method
+          d: function () {}  // Method
         }
         ```
 
@@ -795,11 +795,11 @@
         ```js
         1 < 2;  // true
         3 > 2;  // true
-        5 > 1;  // false
+        1 > 17;  // false
 
         1 <= 2;  // true
         3 <= 3;  // true
-        5 <= 7;  // false
+        20 <= 7;  // false
         ```
       </textarea>
       </section>
@@ -817,13 +817,13 @@
         `AND` 연산자
 
         ```js
-        // 만약 조건으로 (1 < 3)도 맞고 (2 === 2)도 맞아 실행
+        // 만약 조건으로 (1 < 3)도 맞고 (2 === 2)도 맞아야 실행
         if (1 < 3 && 2 === 2) {
           console.log('둘 다 맞아!');
         }
         ```
 
-        > `&&` 연산자 앞뒤 데이터가 모두 `true`일 경우에만 `true`를 반환합니다.<br>(`&`: Ampersand)
+        > `&&` 연산자 앞뒤 데이터가 모두 `true`일 경우에만 `true`를 반환합니다.<br>(하나의 조건이라도 `false`일 경우 `false`를 반환합니다 / `&`: Ampersand)
       </textarea>
       </section>
 
@@ -840,7 +840,7 @@
         }
         ```
 
-        > `||` 연산자 앞뒤 데이터 중 하나라도 `true`일 경우 `true`를 반환합니다.<br>(`|`: Vertical bar)
+        > `||` 연산자 앞뒤 데이터 중 하나라도 `true`일 경우 `true`를 반환합니다.<br>(하나의 조건이라도 `true`일 경우 `true`를 반환합니다 / `|`: Vertical bar)
       </textarea>
       </section>
 
