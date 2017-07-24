@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>GSAP</title>
+    <title>GSAP(TweenMax)</title>
 
     <link rel="icon" href="/favicon.png"/>
     <link rel="apple-touch-icon-precomposed" href="/favicon.png"/>
@@ -24,7 +24,6 @@
     <script src="/js/create_link.js"></script>
 
     <script src="/js/libs/jquery.min.js"></script>
-  <script src="../../../../../JJ_CAMP_Fundamental-master/ui.Carousel/js/ui-carousel.js"></script>
 </head>
 <body>
 <div class="reveal">
@@ -47,6 +46,9 @@
       <section data-markdown>
       <textarea data-template>
         ## 설치
+
+        'CDN'을 사용하거나 홈페이지에서 다운로드 받아 설치하세요.<br>
+        혹은 'NPM'으로 설치할 수도 있습니다.
       </textarea>
       </section>
 
@@ -79,6 +81,8 @@
       <section data-markdown>
       <textarea data-template>
         ## 기본 사용법
+
+        많이 사용하는 핵심 기능만 간략하게 살펴보겠습니다.
       </textarea>
       </section>
 
@@ -181,7 +185,215 @@
         });
         ```
 
-        > `TweenMax.set()`를 통해서 속성을 미리 지정한 후 애니메이션할 수도 있습니다.
+        > `TweenMax.set()`를 통해 속성을 지정한 후 애니메이션할 수도 있습니다.
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## 기본 속성
+
+        적용 가능한 핵심 속성(메소드)들을 살펴봅시다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 일반 속성
+
+        CSS 속성을 이용하여 애니메이션 설정
+
+        ```js
+        TweenMax('.box', 1, {
+          width: 100,
+          height: 200,
+          opacity: .8,
+          backgroundColor: '#FFF',
+          top: '50%',
+          marginLeft: 30
+        });
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `x`, `y`
+
+        'X축'으로 이동 / 'Y축'으로 이동 설정
+
+        ```js
+        TweenMax('.box', 1, {
+          x: 100,
+          y: -100
+        });
+        ```
+
+        > `left`, `top`, `bottom`, `marginLeft`등이 아닌 `transform`(`translateX`, `translateY`) 속성을 사용하여 더 부드럽게 움직일 수 있습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        TweenMax('.box', 1, {
+          // CSS 속성
+          css: {
+            x: 100,
+            y: -100,
+            opacity: .8,
+            backgroundColor: '#FFF',
+            top: '50%',
+            marginLeft: 30
+          },
+          // TweenMax 속성(메소드)
+          delay: .7,
+          repeat: 3,
+          yoyo: true,
+          ease: Power0.easeNone
+        });
+        ```
+
+        > CSS 속성들은 `css` 속성 내부에 작성하여 정리할 수 있습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `delay`
+
+        Data: `Number`(Seconds)
+
+        애니메이션 시작 전까지의 지연 시간 설정
+
+        ```js
+        TweenMax('.box', 1, {
+          x: 100,
+          delay: 1.5
+        });
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `repeat`
+
+        Data: `Number`
+
+        애니메이션 반복 횟수 설정(첫번째 애니메이션 제외)
+
+        ```js
+        // 총 4번 반복
+        TweenMax('.box', 1, {
+          x: 100,
+          repeat: 3
+        });
+        ```
+
+        > `repeat` 속성은 처음 시작하는 애니메이션을 제외한 반복 횟수를 설정하기 때문에<br>지정한 횟수보다 1회 더 반복됩니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        // 무한 반복
+        TweenMax('.box', 1, {
+          x: 100,
+          repeat: -1
+        });
+        ```
+
+        > 무한 반복을 원할 경우 `-1`을 입력하세요.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `repeatDelay`
+
+        Data: `Number`(Seconds)
+
+        애니메이션 반복 사이의 지연 시간 설정
+
+        ```js
+        // 반복할 때마다 1.2초 동안 대기 후 시작
+        TweenMax('.box', 1, {
+          x: 100,
+          repeat: 3,
+          repeatDelay: 1.2
+        });
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `yoyo`
+
+        Data: `Boolean`
+
+        애니메이션을 앞으로 재생 후 뒤로 재생 여부<br>
+        (모든 반복 주기가 반대로 재생)
+
+        ```js
+        TweenMax('.box', 1, {
+          x: 100,
+          repeat: -1,
+          yoyo: true
+        });
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `ease`
+
+        Data: `Ease`(Function, String)
+
+        Easing 함수 설정
+
+        ```js
+        TweenMax('.box', 1, {
+          x: 100,
+          repeat: -1,
+          yoyo: true,
+          ease: Bounce.easeOut
+        });
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        <a href="https://greensock.com/ease-visualizer" target="_blank">Easing 함수 그래프 보기</a>
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `onComplete`
+
+        Data: `Function`
+
+        애니메이션이 완료되었을 때 호출될 함수(콜백)
+
+        ```js
+        // 애니메이션 3번 반복 후(종료되면) 콘솔 창에 'Complete!!'.
+        TweenMax('.box', 1, {
+          x: 100,
+          repeat: 2,
+          onComplete: function () {
+            console.log('Complete!!');
+          }
+        });
+        ```
       </textarea>
       </section>
     </section>
