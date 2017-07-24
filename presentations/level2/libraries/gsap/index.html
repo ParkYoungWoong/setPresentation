@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>GSAP</title>
+
+    <link rel="icon" href="/favicon.png"/>
+    <link rel="apple-touch-icon-precomposed" href="/favicon.png"/>
+
+    <link rel="stylesheet" href="/css/reveal.css">
+    <!--<link rel="stylesheet" href="/css/theme/white.css">-->
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="/css/custom/github.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/custom/white_custom.css">
+    <link rel="stylesheet" href="/css/custom/custom.css">
+    <link rel="stylesheet" href="/css/custom/kbd.css">
+
+    <!-- Printing and PDF exports -->
+    <script src="/js/create_link.js"></script>
+
+    <script src="/js/libs/jquery.min.js"></script>
+  <script src="../../../../../JJ_CAMP_Fundamental-master/ui.Carousel/js/ui-carousel.js"></script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+
+    <!--SECTION-->
+    <section data-markdown data-state="first_page">
+    <textarea data-template>
+      # GSAP
+
+      GreenSock Animation Platform
+      <div id="copyright"></div>
+    </textarea>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## 설치
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### CDN
+
+        ```js
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+        ```
+
+        <img src="img/get_gsap.jpg" alt="Get GSAP" width="600">
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### NPM
+
+        ```
+        npm install gsap
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## 기본 사용법
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `TweenMax.set()`
+
+        대상의 속성을 지정
+
+        | 종류 | 의미 | 단위 |
+        |---|---|---|
+        | `TARGET` | 적용 대상 | 배열, 객체, jQuery객체(유사 객체), CSS선택자(문자열) |
+        | `VARS` | 적용 속성 | 객체 |
+
+        ```js
+        TweenMax.to(TARGET, VARS);
+        ```
+
+        ```js
+        TweenMax.to('div.box', 1, { x: -100, opacity: 0.75 });
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `TweenMax.to()`
+
+        대상의 속성에 맞게 애니메이션 적용
+
+        | 종류 | 의미 | 단위 |
+        |---|---|---|
+        | `TARGET` | 적용 대상 | 배열, 객체, jQuery객체(유사 객체), CSS선택자(문자열) |
+        | `DURATION` | 시간 | Seconds |
+        | `VARS` | 적용 속성 | 객체 |
+
+        ```js
+        TweenMax.to(TARGET, DURATION, VARS);
+        ```
+
+        ```js
+        TweenMax.to('div.box', 1, { x: 100, opacity: 1, repeat: -1, yoyo: true, ease: Power0.easeNone });
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box"></div>
+        ```
+
+        ```css
+        .box {
+          width: 100px;
+          height: 100px;
+          background: red;
+          opacity: 0.5;
+        }
+        ```
+
+        ```js
+        TweenMax.to('.box', 2, {
+          width: 200,
+          y: 100,
+          opacity: 1,
+          backgroundColor: 'blue',
+          repeat: -1,
+          yoyo: true,
+          ease: Power0.easeNone
+        });
+        ```
+
+        > 미리 지정된 속성을 애니메이션할 수 있습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div class="box"></div>
+        ```
+
+        ```js
+        TweenMax.set('.box', {
+          width: 100,
+          height: 100,
+          backgroundColor: 'red',
+          opacity: .5
+        });
+
+        TweenMax.to('.box', 2, {
+          width: 200,
+          y: 100,
+          opacity: 1,
+          backgroundColor: 'blue',
+          repeat: -1,
+          yoyo: true,
+          ease: Power0.easeNone
+        });
+        ```
+
+        > `TweenMax.set()`를 통해서 속성을 미리 지정한 후 애니메이션할 수도 있습니다.
+      </textarea>
+      </section>
+    </section>
+
+
+  </div>
+</div>
+
+<script src="/lib/js/head.min.js"></script>
+<script src="/js/reveal.js"></script>
+<script src="/js/reveal.initialize.js"></script>
+<script src="/js/copyright.js"></script>
+
+</body>
+</html>

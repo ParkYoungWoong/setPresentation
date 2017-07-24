@@ -19,7 +19,6 @@
 .reveal pre code.hljs.lang-css::after { content: "CSS"; }
 .reveal pre code.hljs.lang-js::after { content: "JS"; }
 
-
 /* CLEARFIX */
 .reveal .clearfix:after {
   content: "";
