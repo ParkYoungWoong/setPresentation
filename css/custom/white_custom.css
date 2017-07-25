@@ -130,7 +130,7 @@ body {
   font-size: 70%;
   display: block;
   position: relative;
-  width: 70%;
+  width: 80%;
   margin: 20px auto 15px auto;
   /*padding: 5px;*/
   font-style: italic;
@@ -143,6 +143,7 @@ body {
   margin: 20px 0;
   padding: 10px 30px;
   border-left: 10px solid rgba(0,0,0, .2);
+  text-align: left;
 }
 /*.reveal blockquote p:before {*/
   /*content: "";*/

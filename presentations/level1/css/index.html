@@ -1,0 +1,429 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>CSS</title>
+
+  <link rel="icon" href="/favicon.png"/>
+  <link rel="apple-touch-icon-precomposed" href="/favicon.png"/>
+
+  <link rel="stylesheet" href="/css/reveal.css">
+  <!--<link rel="stylesheet" href="/css/theme/white.css">-->
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="/css/custom/github.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/custom/white_custom.css">
+  <link rel="stylesheet" href="/css/custom/custom.css">
+  <link rel="stylesheet" href="/css/custom/kbd.css">
+
+  <!-- Printing and PDF exports -->
+  <script src="/js/create_link.js"></script>
+
+  <script src="/js/libs/jquery.min.js"></script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+
+    <!--SECTION-->
+    <section data-markdown data-state="first_page">
+    <textarea data-template>
+      # CSS
+
+      <div id="copyright"></div>
+    </textarea>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## 문법
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        선택자 { 속성: 속성값; 속성: 속성값; }
+        ```
+
+        > 옆으로 길게 작성하는 방식은 '가독성'이 떨어집니다.<br>몇몇 경우를 제외하고는 아래 방식을 사용하세요.
+
+        ```css
+        선택자 {
+          속성: 속성값;
+          속성: 속성값;
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 선택자(Selector)의 역할
+
+        속성과 값을 지정할 대상을 검색
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div>HELLO</div>  <!--RED-->
+        <span>HELLO</span>
+        ```
+
+        ```css
+        div {
+          color: red;
+        }
+        ```
+
+        > 첫번째 요소가 검색되어 속성과 값이 적용됩니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 속성(Property)과 값(Value)의 역할
+
+        검색된 대상에 지정될 CSS 명령
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div>HELLO</div>
+        ```
+
+        ```css
+        div {
+          color: red;
+          font-size: 20px;
+          font-weight: bold;
+        }
+        /* 글자색: 빨강; */
+        /* 글자크기: 20px; */
+        /* 글자두께: 두껍게; */
+        ```
+
+        > 선택자로 검색한 대상에 각 속성과 값을 삽입하여 스타일을 지정합니다.
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## CSS 선언 방식
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 인라인(in-line) 방식
+
+        HTML 요소(태그)의 'style' 속성에 직접 작성하는 방식
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        <div style="color: red; font-size: 20px; font-weight: bold;">HELLO</div>
+        ```
+
+        > 이 방식은 '선택자'가 필요하지 않습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 내장(embedded) 방식
+
+        HTML `<style></style>` 안에 작성하는 방식
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        &lt;head&gt;
+          &lt;style&gt;
+            div {
+              color: red;
+              font-size: 20px;
+              font-weight: bold;
+            }
+          &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+          &lt;div&gt;HELLO&lt;/div&gt;
+        &lt;/body&gt;
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 링크(link) 방식
+
+        HTML `<link>` 를 이용하여 외부 문서로 CSS를 불러와 적용하는 방식
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        &lt;head&gt;
+          &lt;link rel="stylesheet" href="css/common.css"&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+          &lt;div&gt;HELLO&lt;/div&gt;
+        &lt;/body&gt;
+        ```
+
+        ```css
+        /* common.css */
+        div {
+          color: red;
+          font-size: 20px;
+          font-weight: bold;
+        }
+        ```
+
+        > 이 방식의 사용을 추천합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `@import` 방식
+
+        CSS `@import`를 이용하여 외부 문서로 CSS를 불러와 적용하는 방식
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```html
+        &lt;head&gt;
+          &lt;link rel="stylesheet" href="css/common1.css"&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+          &lt;div&gt;HELLO&lt;/div&gt;
+        &lt;/body&gt;
+        ```
+
+        ```css
+        /* common1.css */
+        @import url("./common2.css");
+        ```
+
+        ```css
+        /* common2.css */
+        div {
+          color: red;
+          font-size: 20px;
+          font-weight: bold;
+        }
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## CSS 선택자
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 기본 선택자(Basic Selectors)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        #### 1. 전체 선택자(Universal Selector)
+
+        (요소 내부의)모든 요소를 선택
+
+        ```
+        *
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        * {
+          color: red;
+        }
+        ```
+
+        ```html
+        <div>  <!--선택-->
+          <ul>  <!--선택-->
+            <li>사과</li>  <!--선택-->
+            <li>딸기</li>  <!--선택-->
+            <li>오렌지</li>  <!--선택-->
+          </ul>
+          <div>당근</div>  <!--선택-->
+          <p>토마토</p>  <!--선택-->
+          <span>오렌지</span>  <!--선택-->
+        </div>
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        #### 2. 태그 선택자(Type Selector)
+
+        태그이름이 `E`인 요소 선택
+
+        ```
+        E
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        li {
+          color: red;
+        }
+        ```
+
+        ```html
+        <div>
+          <ul>
+            <li>사과</li>  <!--선택-->
+            <li>딸기</li>  <!--선택-->
+            <li>오렌지</li>  <!--선택-->
+          </ul>
+          <div>당근</div>
+          <p>토마토</p>
+          <span>오렌지</span>
+        </div>
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        #### 3. 클래스 선택자(Class Selector)
+
+        HTML `class` 속성의 값이 `E`인 요소 선택
+
+        ```
+        .E
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        .orange {
+          color: red;
+        }
+        ```
+
+        ```html
+        <div>
+          <ul>
+            <li>사과</li>
+            <li>딸기</li>
+            <li class="orange">오렌지</li>  <!--선택-->
+          </ul>
+          <div>당근</div>
+          <p>토마토</p>
+          <span class="orange">오렌지</span>  <!--선택-->
+        </div>
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        #### 4. 아이디 선택자(ID Selector)
+
+        HTML `id` 속성의 값이 `E`인 요소 선택
+
+        ```
+        #E
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        #orange {
+          color: red;
+        }
+        ```
+
+        ```html
+        <div>
+          <ul>
+            <li>사과</li>
+            <li>딸기</li>
+            <li id="orange" class="orange">오렌지</li>  <!--선택-->
+          </ul>
+          <div>당근</div>
+          <p>토마토</p>
+          <span class="orange">오렌지</span>
+        </div>
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 복합 선택자(Combinators)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        #### 일치 선택자(Basic Combinator)
+
+        `E`와 `F`를 동시에 만족하는 요소 선택
+
+        ```
+        EF
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+  </div>
+</div>
+
+<script src="/lib/js/head.min.js"></script>
+<script src="/js/reveal.js"></script>
+<script src="/js/reveal.initialize.js"></script>
+<script src="/js/copyright.js"></script>
+
+</body>
+</html>
