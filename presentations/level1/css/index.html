@@ -247,7 +247,7 @@
     <section>
       <section data-markdown>
       <textarea data-template>
-        ## CSS 선택자
+        ## CSS 선택자(Selector)
       </textarea>
       </section>
 
@@ -412,6 +412,610 @@
         ```
         EF
         ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        span.orange {
+          color: red;
+        }
+        ```
+
+        ```html
+        <div>
+          <ul>
+            <li>사과</li>
+            <li>딸기</li>
+            <li class="orange">오렌지</li>
+          </ul>
+          <div>당근</div>
+          <p>토마토</p>
+          <span class="orange">오렌지</span>  <!--선택-->
+        </div>
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        #### 자식 선택자(Child Combinator)
+
+        `E`의 자식 요소 `F`를 선택
+
+        ```
+        E > F
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        ul > .orange {
+          color: red;
+        }
+        ```
+
+        ```html
+        <div>
+          <ul>
+            <li>사과</li>
+            <li>딸기</li>
+            <li class="orange">오렌지</li>  <!--선택-->
+          </ul>
+          <div>당근</div>
+          <p>토마토</p>
+          <span class="orange">오렌지</span>
+        </div>
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        #### 후손 선택자(Descendant Combinator)
+
+        `E`의 후손(하위) 요소 `F`를 선택
+
+        ```
+        E F
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        div .orange {
+          color: red;
+        }
+        ```
+
+        ```html
+        <div>
+          <ul>
+            <li>사과</li>
+            <li>딸기</li>
+            <li class="orange">오렌지</li>  <!--선택-->
+          </ul>
+          <div>당근</div>
+          <p>토마토</p>
+          <span class="orange">오렌지</span>  <!--선택-->
+        </div>
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        #### 인접 형제 선택자(Adjacent Sibling Combinator)
+
+        `E`의 다음 형제 요소 `F` 하나만 선택
+
+        ```
+        E + F
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        .orange + li {
+          color: red;
+        }
+        ```
+
+        ```html
+        <ul>
+          <li>딸기</li>
+          <li>수박</li>
+          <li class="target">오렌지</li>
+          <li>망고</li>  <!--선택-->
+          <li>사과</li>
+        </ul>
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        #### 일반 형제 선택자(General Sibling Combinator)
+
+        `E`의 다음 형제 요소 `F` 모두 선택
+
+        ```
+        E ~ F
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        .orange ~ li {
+          color: red;
+        }
+        ```
+
+        ```html
+        <ul>
+          <li>딸기</li>
+          <li>수박</li>
+          <li class="target">오렌지</li>
+          <li>망고</li>  <!--선택-->
+          <li>사과</li>  <!--선택-->
+        </ul>
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 가상 클래스 선택자(Pseudo-Classes Selectors)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        #### HOVER
+
+        `E`에 마우스(포인터)가 올라가 있는 동안에만 `E` 선택
+
+        ```
+        E:hover
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        a {
+          color: black;
+        }
+        a:hover {
+          color: red;
+        }
+        ```
+
+        ```html
+        <a href="http://www.naver.com">NAVER</a>
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        #### FIRST CHILD
+
+        `E`가 형제 요소 중 첫번째 요소라면 선택
+
+        ```
+        E:first-child
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        .fruits li:first-child {
+          color: red;
+        }
+        ```
+
+        ```html
+        <ul class="fruits">
+          <li>딸기</li>  <!--선택-->
+          <li>사과</li>
+          <li>오렌지</li>
+          <li>망고</li>
+        </ul>
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        #### LAST CHILD
+
+        `E`가 형제 요소 중 마지막 요소라면 선택
+
+        ```
+        E:last-child
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        .fruits li:last-child {
+          color: red;
+        }
+        ```
+
+        ```html
+        <ul class="fruits">
+          <li>딸기</li>
+          <li>사과</li>
+          <li>오렌지</li>
+          <li>망고</li>  <!--선택-->
+        </ul>
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        #### NTH CHILD
+
+        `E`가 형제 요소 중 `n`번째 요소라면 선택<br>
+        (`n` 키워드 사용시 `0`부터 해석(Zero-base))
+
+        ```
+        E:nth-child(n)
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        .fruits li:nth-child(2) {
+          color: red;
+        }
+        ```
+
+        ```html
+        <ul class="fruits">
+          <li>딸기</li>
+          <li>사과</li>  <!--선택-->
+          <li>오렌지</li>
+          <li>망고</li>
+        </ul>
+        ```
+
+        > `<li></li>` 중 2번째 요소를 선택합니다.
+     </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        .fruits li:nth-child(2n) {
+          color: red;
+        }
+        ```
+
+        ```html
+        <ul class="fruits">
+          <li>딸기</li>
+          <li>사과</li>  <!--선택-->
+          <li>오렌지</li>
+          <li>망고</li>  <!--선택-->
+        </ul>
+        ```
+
+        > '짝수'번째 요소들만 선택할 수 있습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        .fruits li:nth-child(n+3) {
+          color: red;
+        }
+        ```
+
+        ```html
+        <ul class="fruits">
+          <li>딸기</li>
+          <li>사과</li>
+          <li>오렌지</li>  <!--선택-->
+          <li>망고</li>  <!--선택-->
+        </ul>
+        ```
+
+        > 3번째 요소부터 이후 요소들을 선택합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        .fruits p:nth-child(1) {
+          color: red;
+        }
+        ```
+
+        ```html
+        <div class="fruits">
+          <div>딸기</div>
+          <p>사과</p>
+          <p>망고</p>
+          <span>오렌지</span>
+        </div>
+        ```
+
+        > `.fruits`의 첫번째 자식 요소가 `<p></p>`가 아니기 때문에 선택되지 않습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        #### NTH OF TYPE
+
+        `E`의 타입(태그이름)과 동일한 타입인 형제 요소 중 `E`가 `n`번째 요소라면 선택<br>
+        (`n` 키워드 사용시 `0`부터 해석(Zero-base))
+
+        ```
+        E:nth-of-type(n)
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        .fruits p:nth-of-type(1) {
+          color: red;
+        }
+        ```
+
+        ```html
+        <div class="fruits">
+          <div>딸기</div>
+          <p>사과</p>  <!--선택-->
+          <p>망고</p>
+          <span>오렌지</span>
+        </div>
+        ```
+
+        > `<p></p>`들 중에서 첫번째 요소를 선택합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        .fruits .red:nth-of-type(1) {
+          color: red;
+        }
+        ```
+
+        ```html
+        <ul class="fruits">
+          <li>오렌지</li>
+          <li class="red">딸기</li>
+          <li>망고</li>
+          <li class="red">사과</li>
+        </ul>
+        ```
+
+        > 2번째와 4번째에 있는 `.red` 요소의 타입(태그이름)은 `li` 이기 때문에, `:nth-of-type(1)` 선택자는 `<li></li>`들 중에서 첫번째 요소를 선택하고 `.red` 인지 체크하게 됩니다.<br>따라서 조건에 맞는 요소가 없으므로 선택되지 않습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        #### 부정 선택자(Negation Selector)
+
+        `S`가 아닌 `E` 선택
+
+        ```
+        E:not(S)
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        .fruits li:not(.red) {
+          color: red;
+        }
+        ```
+
+        ```html
+        <ul class="fruits">
+          <li>오렌지</li>  <!--선택-->
+          <li class="red">딸기</li>
+          <li>망고</li>  <!--선택-->
+          <li class="red">사과</li>
+        </ul>
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 가상 요소 선택자(Pseudo-Elements Selectors)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        #### BEFORE
+
+        `E` 요소 **내부의 앞**에, 내용(content)을 삽입
+
+        ```
+        E::before
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        ul li:before { /* support IE 8 */
+          content: "$";
+        }
+        ul li::before {
+          content: "$";
+        }
+        ```
+
+        ```html
+        <ul>
+          <li>1</li>  <!-- $1 -->
+          <li>2</li>  <!-- $2 -->
+          <li>3</li>  <!-- $3 -->
+          <li>4</li>  <!-- $4 -->
+        </ul>
+        ```
+
+        > 각 `<li></li>` 내부의 앞에 내용(content)으로 `$` 문자를 삽입했습니다.<br>내용을 넣기 위해서는 `content` 속성이 **필수**입니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        div::before {
+          content: url("../images/smile.png");
+        }
+        ```
+
+        > `url()`을 통해서 이미지를 삽입할 수 있습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        #### AFTER
+
+        `E` 요소 **내부의 뒤**에, 내용(content)을 삽입
+
+        ```
+        E::after
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        ul li:after { /* support IE 8 */
+          content: ".0";
+        }
+        ul li::after {
+          content: ".0";
+        }
+        ```
+
+        ```html
+        <ul>
+          <li>1</li>  <!-- 1.0 -->
+          <li>2</li>  <!-- 2.0 -->
+          <li>3</li>  <!-- 3.0 -->
+          <li>4</li>  <!-- 4.0 -->
+        </ul>
+        ```
+
+        > 각 `<li></li>` 내부의 뒤에 내용(content)으로 `.0` 문자를 삽입했습니다.
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## CSS 상속(Inheritance)
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        .ecosystem {
+          color: red;
+        }
+        ```
+
+        ```html
+        <div class="ecosystem">생태계  <!--RED-->
+          <div class="animal">동물  <!--RED-->
+            <div class="tiger">호랑이</div>  <!--RED-->
+            <div class="lion">사자</div>  <!--RED-->
+            <div class="elephant">코끼리</div>  <!--RED-->
+          </div>
+          <div class="plant">식물</div>  <!--RED-->
+        </div>
+        ```
+
+        > 생태계(`.ecosystem`)에 적용된 색상이, 하위 요소들에게도 적용되었습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 상속되는 속성들(properties)
+
+        - font
+          - font-size
+          - font-weight
+          - font-size
+          - line-height
+          - font-family
+        - color
+        - text-align
+        - text-indent
+        - text-decoration
+        - letter-spacing
+        - opacity
+
+        etc...
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 강제 상속
+
+        ```html
+        <div class="parent">
+          <div class="child"></div>
+        </div>
+        ```
+
+        ```css
+        .parent {
+          position: absolute;  /* 상속되지 않는 속성과 값 */
+        }
+        .child {
+          position: inherit;  /* 강제 상속 받아 position: absolute; 와 동일 */
+        }
+        ```
+
+        > 상속되지 않는 속성(값)도 `inherit`이라는 값을 사용하여 '부모'에서 '자식'으로 강제 상속시킬 수 있습니다. '자식'를 제외한 '후손'에게는 적용되지 않으며, 모든 속성이 강제 상속을 사용할 수 있는 것은 아닙니다.
       </textarea>
       </section>
     </section>

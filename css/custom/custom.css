@@ -27,6 +27,14 @@
 }
 
 
+/*CODE RESULT IFRAME*/
+.reveal iframe.code_result_iframe {
+  width: 90%;
+  /*max-height: 200px;*/
+  border: 1px solid #e4e6e8;
+}
+
+
 /* VIDEO, IFRAMES SIZE */
 .reveal .video-container {
   width: 600px; /* WIDTH SIZE */
