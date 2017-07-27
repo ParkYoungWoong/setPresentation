@@ -112,7 +112,13 @@ This was made with [Reveal.js](https://github.com/hakimel/reveal.js/).
 
 #### [HTML](https://parkyoungwoong.github.io/setPresentation/presentations/level1/html/)
 
-#### [CSS](https://parkyoungwoong.github.io/setPresentation/presentations/level1/css/)
+#### [CSS 개요](https://parkyoungwoong.github.io/setPresentation/presentations/level1/css/summary)
+
+`CSS 문법` `선언 방식` `선택자` `상속` `우선순위(명시도)`
+
+#### [CSS 속성](https://parkyoungwoong.github.io/setPresentation/presentations/level1/css/properties)
+
+
 
 ### jQuery for Level 2
 
