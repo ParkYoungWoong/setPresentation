@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>jQuery 선행학습</title>
+  <title>JS for jQuery 선행학습</title>
 
   <link rel="icon" href="/favicon.png"/>
   <link rel="apple-touch-icon-precomposed" href="/favicon.png"/>
@@ -28,12 +28,13 @@
 <body>
 <div class="reveal">
   <div class="slides">
+    <div id="presentation_title"></div>
 
 
     <!--SECTION-->
     <section data-markdown data-state="first_page">
     <textarea data-template>
-      # jQuery 선행학습
+      # JS for jQuery 선행학습
 
       <div id="copyright"></div>
     </textarea>
@@ -48,7 +49,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="표기법">
       <textarea data-template>
         ### dash-case
 
@@ -60,7 +61,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="표기법">
       <textarea data-template>
         ### snake_case
 
@@ -70,7 +71,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="표기법">
       <textarea data-template>
         ### UPPER_CASE_EMBEDDED_UNDERSCORE
 
@@ -80,7 +81,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="표기법">
       <textarea data-template>
         ### camelCase
 
@@ -90,13 +91,13 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="표기법">
       <textarea data-template>
         ### PascalCase
 
         TheQuickBrownFoxJumpsOverTheLazyDog
 
-        > `JavaScript`의 생성자 함수 이름으 활용
+        > `JavaScript`의 생성자 함수 이름으로 활용
       </textarea>
       </section>
     </section>
@@ -124,8 +125,10 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="데이터 종류">
       <textarea data-template>
+        ### TOC
+
         | 종류 | 의미 | 문법 |
         |--|--|--|
         | Number | 숫자 데이터 | `123` |
@@ -139,7 +142,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="데이터 종류">
       <textarea data-template>
         ### Number
 
@@ -153,7 +156,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="데이터 종류">
       <textarea data-template>
         ### String
 
@@ -168,7 +171,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="데이터 종류">
       <textarea data-template>
         ### Boolean
 
@@ -183,7 +186,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="데이터 종류">
       <textarea data-template>
         ### Function
 
@@ -199,7 +202,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="데이터 종류">
       <textarea data-template>
         ### undefined
 
@@ -217,7 +220,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="데이터 종류">
       <textarea data-template>
         ### null
 
@@ -236,7 +239,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="데이터 종류">
       <textarea data-template>
         ### Array, []
 
@@ -257,7 +260,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="데이터 종류">
       <textarea data-template>
         ### Object, {}
 
@@ -289,7 +292,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="데이터 종류">
       <textarea data-template>
         ```js
         // 객체 선언
@@ -307,7 +310,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="데이터 종류">
       <textarea data-template>
         #### 객체 데이터의 속성(Property)과 메소드(Method)
 
@@ -550,7 +553,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title=".length">
       <textarea data-template>
         ```js
         'hello'.length;  // 5 (문자의 개수)
@@ -586,7 +589,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="산술 연산자">
       <textarea data-template>
         #### `+`
 
@@ -598,7 +601,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="산술 연산자">
       <textarea data-template>
         #### `-`
 
@@ -610,7 +613,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="산술 연산자">
       <textarea data-template>
         #### `*`
 
@@ -622,7 +625,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="산술 연산자">
       <textarea data-template>
         #### `/`
 
@@ -634,7 +637,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="산술 연산자">
       <textarea data-template>
         #### `%`
 
@@ -646,7 +649,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="산술 연산자">
       <textarea data-template>
         #### `++`
 
@@ -668,7 +671,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="산술 연산자">
       <textarea data-template>
         #### `--`
 
@@ -698,7 +701,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="비교 연산자">
       <textarea data-template>
         #### `==`
 
@@ -708,7 +711,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="비교 연산자">
       <textarea data-template>
         #### `===`
 
@@ -718,7 +721,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="비교 연산자">
       <textarea data-template>
         ```js
         var a = 1;
@@ -736,7 +739,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="비교 연산자">
       <textarea data-template>
         #### `!=`
 
@@ -746,7 +749,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="비교 연산자">
       <textarea data-template>
         #### `!==`
 
@@ -756,7 +759,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="비교 연산자">
       <textarea data-template>
         ```js
         var a = 1;
@@ -774,7 +777,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="비교 연산자">
       <textarea data-template>
         #### `>`, `<`
 
@@ -782,7 +785,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="비교 연산자">
       <textarea data-template>
         #### `>=`, `<=`
 
@@ -790,7 +793,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="비교 연산자">
       <textarea data-template>
         ```js
         1 < 2;  // true
@@ -810,7 +813,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="논리 연산자">
       <textarea data-template>
         #### `&&`
 
@@ -827,7 +830,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="논리 연산자">
       <textarea data-template>
         #### `||`
 
@@ -850,7 +853,27 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="할당 연산자">
+      <textarea data-template>
+        #### `=`
+
+        ```js
+        var a = 1;
+        var b = 2;
+
+        a;  // 1
+        b;  // 2
+
+        a = 27;
+        b = 999;
+
+        a;  // 27
+        b;  // 999
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="할당 연산자">
       <textarea data-template>
         #### `+=`
 
@@ -866,7 +889,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="할당 연산자">
       <textarea data-template>
         #### `-=`
 
@@ -882,7 +905,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="할당 연산자">
       <textarea data-template>
         #### `*=`
 
@@ -898,7 +921,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="할당 연산자">
       <textarea data-template>
         #### `/=`
 
@@ -914,7 +937,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="할당 연산자">
       <textarea data-template>
         #### `%=`
 
@@ -942,7 +965,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="콘솔">
       <textarea data-template>
         ```js
         console.log(MESSAGE);
@@ -968,7 +991,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="jQuery 문법">
       <textarea data-template>
         ### 요소(Elements) 검색
 
@@ -987,7 +1010,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="jQuery 문법">
       <textarea data-template>
         ### 메소드
 
@@ -1005,7 +1028,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="jQuery 문법">
       <textarea data-template>
         ### 메소드 반환 값 (Returns)
 
@@ -1020,7 +1043,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="jQuery 문법">
       <textarea data-template>
         ### 메소드 체이닝 (Method Chaining)
 
@@ -1034,7 +1057,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="jQuery 문법">
       <textarea data-template>
         ### JavaScript 와 차이점
 
@@ -1066,6 +1089,7 @@
 <script src="/js/reveal.js"></script>
 <script src="/js/reveal.initialize.js"></script>
 <script src="/js/copyright.js"></script>
+<script src="/js/slide_change.js"></script>
 
 </body>
 </html>
