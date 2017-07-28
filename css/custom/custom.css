@@ -72,3 +72,17 @@
   font-size: 1.2em;
   font-weight: bold;
 }
+
+
+/* View Presentation Title */
+/* slide_change.js */
+#presentation_title.active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 6px;
+  border: 1px solid #777;
+  border-radius: 4px;
+  font-size: .5em;
+  opacity: .5;
+}

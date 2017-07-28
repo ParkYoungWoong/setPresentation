@@ -1,0 +1,1071 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>CSS 속성</title>
+
+  <link rel="icon" href="/favicon.png"/>
+  <link rel="apple-touch-icon-precomposed" href="/favicon.png"/>
+
+  <link rel="stylesheet" href="/css/reveal.css">
+  <!--<link rel="stylesheet" href="/css/theme/white.css">-->
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="/css/custom/github.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/custom/white_custom.css">
+  <link rel="stylesheet" href="/css/custom/custom.css">
+  <link rel="stylesheet" href="/css/custom/kbd.css">
+  <link rel="stylesheet" href="css_properties.css">
+
+  <!-- Printing and PDF exports -->
+  <script src="/js/create_link.js"></script>
+
+  <script src="/js/libs/jquery.min.js"></script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <div id="presentation_title"></div>
+
+
+    <!--SECTION-->
+    <section data-markdown data-state="first_page">
+    <textarea data-template>
+      # CSS 속성
+
+      <div id="copyright"></div>
+    </textarea>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `width`
+
+        요소의 가로 너비를 지정
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="width">
+      <textarea data-template>
+        ### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `auto` | 브라우저가 너비를 계산 | `auto` |
+        | 단위 | `px`, `em`, `cm` 등 단위로 지정 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="width">
+      <textarea data-template>
+        ### 사용법
+
+        ```
+        width: 크기;
+        ```
+
+        ```css
+        .box {
+          width: 100px;
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `height`
+
+        요소의 세로 너비를 지정
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="height">
+      <textarea data-template>
+        ### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `auto` | 브라우저가 너비를 계산 | `auto` |
+        | 단위 | `px`, `em`, `cm` 등 단위로 지정 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="height">
+      <textarea data-template>
+        ### 사용법
+
+        ```
+        height: 크기;
+        ```
+
+        ```css
+        .box {
+          height: 100px;
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="width / height">
+      <textarea data-template>
+        ```css
+        .block-element {
+          display: block;
+          width: auto;  /* 100% 동등 */
+          height: auto;  /* 0 동등 */
+        }
+        .inline-element {
+          display: inline;
+          width: auto;  /* 0 동등 */
+          height: auto;  /* 0 동등 */
+        }
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `margin`
+
+        요소의 '외부(바깥) 여백'을 지정<span class="property shorthand" title="단축 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="margin">
+      <textarea data-template>
+        ### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | 단위 | `px`, `em`, `cm` 등 단위로 지정 | `0` |
+        | `auto` | 브라우저가 너비를 계산 |  |
+        | `%` | 부모 요소의 너비에 대한 비율로 지정 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="margin">
+      <textarea data-template>
+        ### 사용법
+
+        ```
+        margin: 위 우 아래 좌;
+        margin: 위 [좌,우] 아래;
+        margin: [위,아래] [좌,우];
+        margin: [위,아래,좌,우];
+        ```
+
+        ```css
+        .box {
+          margin: 10px 20px 30px 40px;
+          margin: 10px 20px 40px;
+          margin: 10px 40px;
+          margin: 10px;
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `margin-top`
+
+        요소의 '외부(바깥) **위쪽** 여백'을 지정<span class="property individual" title="개별 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `margin-bottom`
+
+        요소의 '외부(바깥) **아래쪽** 여백'을 지정<span class="property individual" title="개별 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `margin-left`
+
+        요소의 '외부(바깥) **왼쪽** 여백'을 지정<span class="property individual" title="개별 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `margin-right`
+
+        요소의 '외부(바깥) **오른쪽** 여백'을 지정<span class="property individual" title="개별 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="margin">
+      <textarea data-template>
+        ```css
+        .box1 {
+          margin: 10px 20px 30px 40px;  /* 단축속성 */
+        }
+        .box2 {
+          /* 개별속성 */
+          margin-top: 10px;
+          margin-right: 20px;
+          margin-bottom: 30px;
+          margin-left: 40px;
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="margin">
+      <textarea data-template>
+        ### 마진 중복(병합, Collapse)
+
+        마진의 특정 값들이 '중복'되어 합쳐지는 현상
+
+        1. 형제 요소들의 `margin-top`과 `margin-bottom`이 만났을 때
+        1. 부모 요소의 `margin-top`과 자식 요소의 `margin-top`이 만났을 때
+        1. 부모 요소의 `margin-bottom`과 자식 요소의 `margin-bottom`이 만났을 때
+
+        > '마진 중복'은 버그(오류)가 아닙니다. 현상을 우회하거나 응용할 수 있습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="margin">
+      <textarea data-template>
+        #### 마진 중복 계산법
+
+        마진 중복 현상이 발생시, 중복 값을 계산하는 방법
+
+        | 조건 | 요소A 마진 | 요소B 마진 | 계산법 | 중복 값 |
+        |---|---|---|---|---|
+        | 둘 다 양수 | `30px` | `10px` | 더 큰 값으로 중복 | `30px` |
+        | 둘 다 음수 | `-30px` | `-10px` | 더 작은 값으로 중복 | `-30px` |
+        | 각각 양수와 음수 | `-30px` | `10px` | `-30` + `10` = `-20` | `-20px` |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="margin">
+      <textarea data-template>
+        #### 형제 요소에 발생하는 마진 중복 해결
+
+        각 형제 요소에 `float` 속성이 있을 경우
+
+        ```html
+        <div class="box_group">
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+        ```
+
+        ```css
+        .box_group {
+          width: 240px;
+        }
+        .box {
+          width: 200px;
+          height: 100px;
+          background: red;
+          margin: 20px;
+          float: left; /* 중복 해결 */
+        }
+        ```
+
+        > 각 형제 요소가 수직으로 정렬될 수 있도록 부모 요소의 크기(가로 너비)를 제한했습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="margin">
+      <textarea data-template>
+        #### 부모와 자식 요소에 발생하는 마진 중복 해결
+
+        부모 요소에 아래의 속성 중 하나를 추가
+
+        | 속성 | 값 |
+        |---|---|
+        | `float` | `left`, `right` |
+        | `overflow` | `hidden`, `auto` |
+        | `position` | `absolute`, `fixed` |
+        | `padding` | `1px` 이상 |
+        | `border` | `1px` 이상 |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="margin">
+      <textarea data-template>
+        ```html
+        <div class="parent">
+          <div class="child"></div>
+        </div>
+        ```
+
+        ```css
+        .parent {
+          width: 300px;
+          height: 200px;
+          background: yellow;
+          margin-top: 50px;
+          overflow: hidden; /* 중복 해결 */
+        }
+        .child {
+          width: 100px;
+          height: 100px;
+          background: red;
+          margin-top: 50px;
+        }
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `padding`
+
+        요소의 '내부(안) 여백'을 지정<span class="property shorthand" title="단축 속성"></span>
+
+        > `padding`은 `margin`과 다르게 음수 값(Negative Values)을 사용할 수 없습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="padding">
+      <textarea data-template>
+        ### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | 단위 | `px`, `em`, `cm` 등 단위로 지정 | `0` |
+        | `%` | 부모 요소의 너비에 대한 비율로 지정 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="padding">
+      <textarea data-template>
+        ### 사용법
+
+        ```
+        padding: 위 우 아래 좌;
+        padding: 위 [좌,우] 아래;
+        padding: [위,아래] [좌,우];
+        padding: [위,아래,좌,우];
+        ```
+
+        ```css
+        .box {
+          padding: 10px 20px 30px 40px;
+          padding: 10px 20px 40px;
+          padding: 10px 40px;
+          padding: 10px;
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `padding-top`
+
+        요소의 '내부(안) **위쪽** 여백'을 지정<span class="property individual" title="개별 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `padding-bottom`
+
+        요소의 '내부(안) **아래쪽** 여백'을 지정<span class="property individual" title="개별 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `padding-left`
+
+        요소의 '내부(안) **왼쪽** 여백'을 지정<span class="property individual" title="개별 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `padding-right`
+
+        요소의 '내부(안) **오른쪽** 여백'을 지정<span class="property individual" title="개별 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="padding">
+      <textarea data-template>
+        ```css
+        .box1 {
+          padding: 10px 20px 30px 40px;  /* 단축속성 */
+        }
+        .box2 {
+          /* 개별속성 */
+          padding-top: 10px;
+          padding-right: 20px;
+          padding-bottom: 30px;
+          padding-right: 40px;
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="padding">
+      <textarea data-template>
+        ### 크기 증가
+
+        추가된 `padding` 값만큼 요소의 크기가 커지는 현상
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="padding">
+      <textarea data-template>
+        #### 크기가 커지지 않도록 직접! 계산
+
+        ```css
+        /* 100 x 100(px) 크기의 요소 만들기 */
+        .box {
+          width: 60px; /* +40px */
+          height: 80px; /* +20px */
+          background: red;
+          padding: 10px 20px;
+        }
+        ```
+
+        > `padding`이 추가된 값만큼 `width`와 `height` 값을 다시 계산합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="padding">
+      <textarea data-template>
+        #### 크기가 커지지 않도록 자동! 계산
+
+        ```css
+        /* 100 x 100(px) 크기의 요소 만들기 */
+        .box {
+          width: 100px;
+          height: 100px;
+          background: red;
+          padding: 10px 20px;
+          box-sizing: border-box;
+        }
+        ```
+
+        > 직접 계산하지 않고 `box-sizing: border-box;`를 추가합니다.
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `border`
+
+        요소의 '테두리 선'을 지정<span class="property shorthand" title="단축 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="border">
+      <textarea data-template>
+        ### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `border-width` | 선의 두께(너비) | `medium` |
+        | `border-style` | 선의 종류 | `none` |
+        | `border-color` | 선의 색상 | `black` |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="border">
+      <textarea data-template>
+        ### 사용법
+
+        ```
+        border: 두께 종류 색상;
+        ```
+
+        ```css
+        .box {
+          border: 1px solid red;
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `border-width`
+
+        선의 두께(너비)를 지정<span class="property shorthand" title="단축 속성"></span><span class="property individual" title="개별 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="border-width">
+      <textarea data-template>
+        #### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `medium` | 중간 두께 | `medium` |
+        | `thin` | 얇은 두께 |  |
+        | `thick` | 두꺼운 두께 |  |
+        | 단위 | `px`, `em`, `cm` 등 단위로 지정 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="border-width">
+      <textarea data-template>
+        #### 사용법
+
+        ```
+        border-width: 위 우 아래 좌;
+        border-width: 위 [좌,우] 아래;
+        border-width: [위,아래] [좌,우];
+        border-width: [위,아래,좌,우];
+        ```
+
+        ```css
+        .box {
+          border-width: 10px 20px 30px 40px;
+          border-width: 10px 20px 40px;
+          border-width: 10px 40px;
+          border-width: 10px;
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `border-style`
+
+        선의 종류를 지정<span class="property shorthand" title="단축 속성"></span><span class="property individual" title="개별 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="border-style">
+      <textarea data-template>
+        #### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `none` | 선 없음 | `none` |
+        | `hidden` | 선 없음과 동일(`table`요소에서 사용) |  |
+        | `solid` | 실선(일반선) |  |
+        | `dotted` | 점선 |  |
+        | `dashed` | 파선 |  |
+        | `double` | 두 줄선 |  |
+        | `groove` | 홈이 파여있는 모양(선) |  |
+        | `ridge` | 솟은 모양(선, `groove`의 반대) |  |
+        | `inset` | 요소 전체가 들어간 모양(선) |  |
+        | `outset` | 요소 전체가 나온 모양(선) |  |
+
+        <a href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=none" target="_blank">선의 종류 보기</a>
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="border-style">
+      <textarea data-template>
+        #### 사용법
+
+        ```
+        border-style: 위 우 아래 좌;
+        border-style: 위 [좌,우] 아래;
+        border-style: [위,아래] [좌,우];
+        border-style: [위,아래,좌,우];
+        ```
+
+        ```css
+        .box {
+          border-style: solid dotted double inset;
+          border-style: solid dotted inset;
+          border-style: solid inset;
+          border-style: solid;
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `border-color`
+
+        선의 색상을 지정<span class="property shorthand" title="단축 속성"></span><span class="property individual" title="개별 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="border-color">
+      <textarea data-template>
+        #### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | 색상 | 선의 색상을 지정 | `black` |
+        | `transparent` | 투명한 선(요소의 배경색이 보임) |  |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="border-color">
+      <textarea data-template>
+        #### 사용법
+
+        ```
+        border-color: 위 우 아래 좌;
+        border-color: 위 [좌,우] 아래;
+        border-color: [위,아래] [좌,우];
+        border-color: [위,아래,좌,우];
+        ```
+
+        ```css
+        .box {
+          border-color: red blue #fff rgba(0,0,0,.5);
+          border-color: red blue rgba(0,0,0,.5);
+          border-color: red rgba(0,0,0,.5);
+          border-color: red;
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="border">
+      <textarea data-template>
+        ### 기타 속성1
+
+        | 속성 | 의미 | 사용 값 |
+        |---|---|---|
+        | `border-top` | 위쪽 선 | `두께 종류 색상` |
+        | `border-top-width` | 위쪽 선의 두께 | `두께` |
+        | `border-top-style` | 위쪽 선의 종류 | `종류` |
+        | `border-top-color` | 위쪽 선의 색상 | `색상` |
+        | `border-bottom-top` | 아래쪽 선 | `두께 종류 색상` |
+        | `border-bottom-width` | 아래쪽 선의 두께 | `두께` |
+        | `border-bottom-style` | 아래쪽 선의 종류 | `종류` |
+        | `border-bottom-color` | 아래쪽 선의 색상 | `색상` |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="border">
+      <textarea data-template>
+        ### 기타 속성2
+
+        | 속성 | 의미 | 사용 값 |
+        |---|---|---|
+        | `border-left` | 왼쪽 선 | `두께 종류 색상` |
+        | `border-left-width` | 왼쪽 선의 두께 | `두께` |
+        | `border-left-style` | 왼쪽 선의 종류 | `종류` |
+        | `border-left-color` | 왼쪽 선의 색상 | `색상` |
+        | `border-right` | 오른쪽 선 | `두께 종류 색상` |
+        | `border-right-width` | 오른쪽 선의 두께 | `두께` |
+        | `border-right-style` | 오른쪽 선의 종류 | `종류` |
+        | `border-right-color` | 오른쪽 선의 색상 | `색상` |
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `font`
+
+        글자 관련 속성들을 지정<span class="property shorthand" title="단축 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="font">
+      <textarea data-template>
+        ### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `font-style` | 글자 기울기 지정 | `normal` |
+        | `font-weight` | 글자 두께 지정 | `normal` |
+        | `font-size` | 글자 크기 지정 | `medium`(`16px`) |
+        | `line-height` | 줄 높이(줄 간격) 지정 | `normal`(Reset.css 적용시 `1`)|
+        | `font-family` | 글꼴(서체) 지정 | 운영체제(브라우저)에 따라 달라짐 |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="font">
+      <textarea data-template>
+        ### 사용법
+
+        ```
+        font: 기울기 두께 크기 / 줄높이 글꼴;
+        ```
+
+        ```css
+        .box {
+          font: italic bold 20px / 1.5 "Arial", sans-serif;
+        }
+        ```
+
+        ```css
+        .box {
+          font: 30px / 1.5;  /* ERROR */
+          font: bold;  /* ERROR */
+          font: bold sans-serif;  /* ERROR */
+          font: 30px / 1.5 sans-serif;
+          font: bold 30px sans-serif;
+          font: italic 30px / 1.5 "Arial", sans-serif;
+        }
+        ```
+
+        > 단축 속성을 사용하려면 `font-size`와 `font-family`를 필수로 입력해야 합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `font-style`
+
+        글자 스타일(기울기)을 지정<span class="property individual" title="개별 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="font-style">
+      <textarea data-template>
+        #### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `normal` | 스타일 없음 | `normal` |
+        | `italic` | 이텔릭체(활자) |  |
+        | `oblique` | 기울어진 글자 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="font-style">
+      <textarea data-template>
+        #### 사용법
+
+        ```
+        font-style: 기울기;
+        ```
+
+        ```css
+        .box {
+          font-style: italic;
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `font-weight`
+
+        글자의 두께(가중치)를 지정<span class="property individual" title="개별 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="font-weight">
+      <textarea data-template>
+        #### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `normal` | 기본 글자 두께, `400`과 동일 | `normal`(`400`) |
+        | `bold` | 글자 두껍게, `700`과 동일 |  |
+        | `bolder` | 부모(상위) 요소보다 더 두껍게(`bold`보다 두껍다는 개념이 아님) |  |
+        | `lighter` |  부모(상위) 요소보다 더 얇게 |  |
+        | 숫자 | `100`부터 `900`까지의 100단위의 숫자 9개, `normal`과 `bold` 이외의 두께를 제공하는 글꼴(서체)을 위한 설정 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="font-weight">
+      <textarea data-template>
+        #### 사용법
+
+        ```
+        font-weight: 두께;
+        ```
+
+        ```css
+        .box {
+          font-weight: bold;
+          /* font-weight: 700; */
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="font-weight">
+      <textarea data-template>
+        #### 상대적 두께
+
+        `bolder`나 `lighter`를 사용할 경우<br>부모(상위) 요소에게 상속받은 값에서 다음과 같이 계산됨
+
+        | 상속 값 | `bolder` | `lighter` |
+        |---|---|---|
+        | `100` | `400` | `100` |
+        | `200` | `400` | `100` |
+        | `300` | `400` | `100` |
+        | `400` | `700` | `100` |
+        | `500` | `700` | `100` |
+        | `600` | `900` | `400` |
+        | `700` | `900` | `400` |
+        | `800` | `900` | `700` |
+        | `900` | `900` | `700` |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="font-weight">
+      <textarea data-template>
+        #### 일반적인 두께의 이름
+
+        `font-weight`의 각 값은 일반적으로 다음과 같은 글꼴의 이름으로 표현됨
+
+        | 값 | 일반적인 두께 이름 |
+        |---|---|
+        | `100` | Thin (Hairline) |
+        | `200` | Extra Light (Ultra Light) |
+        | `300` | Light |
+        | `400` | Normal |
+        | `500` | Medium |
+        | `600` | Semi Bold (Demi Bold) |
+        | `700` | Bold |
+        | `800` | Extra Bold (Ultra Bold) |
+        | `900` | Black (Heavy) |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="font-weight">
+      <textarea data-template>
+        #### 숫자 값과 두께의 불일치
+
+        글꼴(서체)의 정확한 두께를 숫자로 표현할 수 없는 경우에만..
+
+        1. `400`이 주어지면 `500`을 사용하고, `500`이 불가하면 `500`미만의 다른 두께 사용
+        1. `500`이 주어지면 `400`을 사용하고, `400`이 불가하면 `400`미만의 다른 두께 사용
+        1. `400`미만 값이 주어지면, 가장 가까운 숫자의 얇은 두께 사용
+        1. `500`초과 값이 주어지면, 가장 가까운 숫자의 두꺼운 두께 사용
+
+        > 예를들면 `normal` 과 `bold` 만 지원하는 글꼴일 경우,<br>`100`~`500` 은 `normal`을 의미하고 `600`~`900` 은 `bold`를 의미합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `font-size`
+
+        글자의 크기를 지정<span class="property individual" title="개별 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="font-size">
+      <textarea data-template>
+        #### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | 단위 | `px`, `em`, `cm` 등 단위로 지정 | `16px` |
+        | `%` | 부모(상위) 요소의 비율로 지정 |  |
+        | `xx-small` | 가장 작은 크기 |  |
+        | `x-small` | 더 작은 크기 |  |
+        | `small` | 작은 크기 |  |
+        | `medium` | 중간 크기 | `medium` |
+        | `large` | 큰 크기 |  |
+        | `x-large` | 더 큰 크기 |  |
+        | `xx-large` | 가장 큰 크기 |  |
+        | `smaller` | 부모(상위) 요소보다 작은 크기 |  |
+        | `larger` | 부모(상위) 요소보다 큰 크기 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="font-size">
+      <textarea data-template>
+        #### 사용법
+
+        ```
+        font-size: 크기;
+        ```
+
+        ```css
+        .box {
+          font-size: 16px;
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `line-height`
+
+        줄 높이(줄 간격) 지정<span class="property individual" title="개별 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="line-height">
+      <textarea data-template>
+        #### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `normal` | 브라우저의 기본 정의를 사용(`1`~`1.4`) | `normal` |
+        | 숫자 | 요소 자체 글꼴 크기의 배수로 지정 |  |
+        | 단위 | `px`, `em`, `cm` 등 단위로 지정 |  |
+        | `%` | 요소 자체 글꼴 크기의 비율로 지정 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="line-height">
+      <textarea data-template>
+        #### 사용법
+
+        ```
+        line-height: 줄높이;
+        ```
+
+        ```css
+        .box {
+          line-height: 1.7;
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `font-family`
+
+        글꼴(서체) 지정<span class="property individual" title="개별 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="font-family">
+      <textarea data-template>
+        #### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | 글꼴이름 | 글꼴(서체) 후보 목록을 지정 |  |
+        | `serif`<br>`sans-serif`<br>`monospace`<br>`cursive`<br>`fantasy` | 글꼴 계열 이름을 지정 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="font-family">
+      <textarea data-template>
+        #### 사용법
+
+        ```
+        font-family: [글꼴후보1, 글꼴후보2...], 글꼴계열;
+        ```
+
+        ```css
+        .box {
+          font-family: Arial, "Open Sans", "돋움", dotum, sans-serif;
+        }
+        ```
+
+        > 글꼴 계열은 필수로 입력해야 합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="font-family">
+      <textarea data-template>
+        #### 글꼴 계열(Generic family)
+
+        | 계열 | 의미 | 예시 |
+        |---|---|---|
+        | `serif` | 바탕체 계열 | <img src="img/serif.jpg" alt="Serif" style="vertical-align: middle;" width="200"> |
+        | `sans-serif` | 고딕체 계열 |  <img src="img/sans_serif.jpg" alt="Sans Serif" style="vertical-align: middle;" width="200"> |
+        | `monospace` | 고정너비(가로폭이 동등한) 글꼴 계열 |  <img src="img/monospace.jpg" alt="Monospace" style="vertical-align: middle;" width="200"> |
+        | `cursive` | 필기체 계열 |  <img src="img/cursive.jpg" alt="Cursive" style="vertical-align: middle;" width="200"> |
+        | `fantasy` | 장식(재미있는 문자 표현을 포함하는) 글꼴 계열 |  <img src="img/fantasy.jpg" alt="Fantasy" style="vertical-align: middle;" width="200"> |
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## 문자(Text) 관련 속성
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `color`
+
+        문자의 색상을 지정
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="color">
+      <textarea data-template>
+        #### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | 색상 | 문자의 색상을 지정 | `rgb(0,0,0)` |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 색상 표현
+
+        | 표현 | 의미 | 예시 |
+        |---|---|---|
+        | 색상이름 | 브라우저에서 제공하는 색상의 이름 | `red`, `blue` |
+        | Hex 색상코드 | 16 진수 색상 (Hexadecimal Colors)  | `#000000` |
+        | RGB | 빛의 삼원색 | `rgb(255, 255, 255)` |
+        | RGBA | 빛의 삼원색, 투명도 | `rgba(255, 0, 0, .5)` |
+        | HSL | 색상, 채도, 명도 | `hsl(120, 100%, 50%)` |
+        | HSLA | 색상, 채도, 명도, 투명도 | `hsla(120, 100%, 50%, .3)` |
+
+        > 위 표는 색상을 이용하는 모든 속성(property)의 값으로 사용할 수 있습니다.<br>`RGBA`: Red, Green, Blue, Alpha channel<br>`HSLA`: Hue, Saturation, Lightness, Alpha channel
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `text-align`
+
+        문자 정렬 방식을 지정
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="text-align">
+      <textarea data-template>
+        #### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | 색상 | 문자의 색상을 지정 | `rgb(0,0,0)` |
+      </textarea>
+      </section>
+    </section>
+
+
+  </div>
+</div>
+
+<script src="/lib/js/head.min.js"></script>
+<script src="/js/reveal.js"></script>
+<script src="/js/reveal.initialize.js"></script>
+<script src="/js/copyright.js"></script>
+<script src="/js/slide_change.js"></script>
+
+</body>
+</html>
