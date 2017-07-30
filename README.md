@@ -68,7 +68,7 @@ This was made with [Reveal.js](https://github.com/hakimel/reveal.js/).
 <script src="/lib/js/head.min.js"></script>
 <script src="/js/reveal.js"></script>
 <script src="/js/reveal.initialize.js"></script>
-<script src="/js/copyright.js"></script>
+<script src="/js/reveal.custom.js"></script>
 
 </body>
 </html>

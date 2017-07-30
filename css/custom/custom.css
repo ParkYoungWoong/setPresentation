@@ -75,7 +75,7 @@
 
 
 /* View Presentation Title */
-/* slide_change.js */
+/* reveal.custom.js */
 #presentation_title.active {
   position: absolute;
   top: 0;
@@ -86,4 +86,15 @@
   font-size: .5em;
   opacity: .5;
   z-index: 9999;
+}
+
+
+/* 제목이 줄바꿈 될 경우, 제목 앞에 `div.line-height-up` 요소 추가 */
+.reveal .line-height-up + h1,
+.reveal .line-height-up + h2,
+.reveal .line-height-up + h3,
+.reveal .line-height-up + h4,
+.reveal .line-height-up + h5,
+.reveal .line-height-up + h6 {
+  line-height: 1.8;
 }

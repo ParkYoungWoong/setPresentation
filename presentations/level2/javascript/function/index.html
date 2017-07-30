@@ -330,18 +330,6 @@
 
       <section data-markdown>
       <textarea data-template>
-        ```js
-        console.log(hello);  // undefined
-
-        var hello = 'hello~';
-
-        console.log(hello);  // 'hello~'
-        ```
-      </textarea>
-      </section>
-
-      <section data-markdown>
-      <textarea data-template>
         ### 전역 변수와 지역 변수
 
         > 전역 변수와 지역 변수의 차이점을 이해하고 유효범위의 특성들을 살펴봅시다!
@@ -532,7 +520,7 @@
       <textarea data-template>
         ### 호이스팅(Hoisting)
 
-        함수나 변수의 선언부가 유효범위 내 최상단으로 끌어올려지는(호이스팅) 현상
+        함수나 변수의 **선언**부가 유효범위 내 최상단으로 끌어올려지는(호이스팅) 현상
       </textarea>
       </section>
 
@@ -567,7 +555,11 @@
       <section data-markdown>
       <textarea data-template>
         ```js
-        a();  // 'hello' ('a is not a function' 이 아님!)
+        a()  // a is not defined
+        ```
+
+        ```js
+        a();  // 'hello' ('a is not a function' 이 아닙니다!)
 
         function a() {
           console.log('hello');
@@ -715,7 +707,7 @@
 <script src="/lib/js/head.min.js"></script>
 <script src="/js/reveal.js"></script>
 <script src="/js/reveal.initialize.js"></script>
-<script src="/js/copyright.js"></script>
+<script src="/js/reveal.custom.js"></script>
 
 </body>
 </html>
