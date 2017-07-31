@@ -11,7 +11,7 @@ This was made with [Reveal.js](https://github.com/hakimel/reveal.js/).
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>EMPTY TITLE</title>
+  <title>TITLE</title>
 
   <link rel="icon" href="/favicon.png"/>
   <link rel="apple-touch-icon-precomposed" href="/favicon.png"/>
@@ -35,6 +35,7 @@ This was made with [Reveal.js](https://github.com/hakimel/reveal.js/).
 <body>
 <div class="reveal">
   <div class="slides">
+    <div id="presentation_title"></div>
 
 
     <!--SECTION-->
@@ -72,7 +73,6 @@ This was made with [Reveal.js](https://github.com/hakimel/reveal.js/).
 
 </body>
 </html>
-
 ```
 
 ## How to use
@@ -158,7 +158,7 @@ This was made with [Reveal.js](https://github.com/hakimel/reveal.js/).
 
 #### [구문(Statements)](https://parkyoungwoong.github.io/setPresentation/presentations/level2/javascript/statements)
 
-`if` `else` `switch` `for` `while` `case` `default` `break` `continue`
+`if` `조건부(3항) 연산자` `else` `switch` `for` `while` `case` `default` `break` `continue`
 
 #### [함수(Function)](https://parkyoungwoong.github.io/setPresentation/presentations/level2/javascript/function)
                 
