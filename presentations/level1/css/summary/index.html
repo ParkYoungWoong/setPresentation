@@ -28,6 +28,7 @@
 <body>
 <div class="reveal">
   <div class="slides">
+    <div id="presentation_title"></div>
 
 
     <!--SECTION-->
@@ -48,7 +49,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="문법">
       <textarea data-template>
         ```css
         선택자 { 속성: 속성값; 속성: 속성값; }
@@ -65,7 +66,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="문법">
       <textarea data-template>
         ### 선택자(Selector)의 역할
 
@@ -73,7 +74,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="문법">
       <textarea data-template>
         ```html
         <div>HELLO</div>  <!--RED-->
@@ -90,7 +91,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="문법">
       <textarea data-template>
         ### 속성(Property)과 값(Value)의 역할
 
@@ -98,7 +99,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="문법">
       <textarea data-template>
         ```html
         <div>HELLO</div>
@@ -119,7 +120,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="문법">
       <textarea data-template>
         ### `/* Comment */`
 
@@ -144,7 +145,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="선언 방식">
       <textarea data-template>
         ### 인라인(in-line) 방식
 
@@ -152,7 +153,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="선언 방식">
       <textarea data-template>
         ```html
         <div style="color: red; font-size: 20px; font-weight: bold;">HELLO</div>
@@ -162,7 +163,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="선언 방식">
       <textarea data-template>
         ### 내장(embedded) 방식
 
@@ -170,7 +171,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="선언 방식">
       <textarea data-template>
         ```html
         &lt;head&gt;
@@ -189,7 +190,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="선언 방식">
       <textarea data-template>
         ### 링크(link) 방식
 
@@ -197,7 +198,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="선언 방식">
       <textarea data-template>
         ```html
         &lt;head&gt;
@@ -221,7 +222,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="선언 방식">
       <textarea data-template>
         ### `@import` 방식
 
@@ -229,7 +230,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="선언 방식">
       <textarea data-template>
         ```html
         &lt;head&gt;
@@ -272,7 +273,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="기본 선택자">
       <textarea data-template>
         #### 1. 전체 선택자(Universal Selector)
 
@@ -284,7 +285,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="기본 선택자 / 전체">
       <textarea data-template>
         ```css
         * {
@@ -307,7 +308,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="기본 선택자">
       <textarea data-template>
         #### 2. 태그 선택자(Type Selector)
 
@@ -319,7 +320,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="기본 선택자 / 태그">
       <textarea data-template>
         ```css
         li {
@@ -342,7 +343,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="기본 선택자">
       <textarea data-template>
         #### 3. 클래스 선택자(Class Selector)
 
@@ -354,7 +355,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="기본 선택자 / 클래스">
       <textarea data-template>
         ```css
         .orange {
@@ -377,7 +378,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="기본 선택자">
       <textarea data-template>
         #### 4. 아이디 선택자(ID Selector)
 
@@ -389,7 +390,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="기본 선택자 / 아이디">
       <textarea data-template>
         ```css
         #orange {
@@ -418,7 +419,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="복합 선택자">
       <textarea data-template>
         #### 일치 선택자(Basic Combinator)
 
@@ -430,7 +431,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="복합 선택자 / 일치">
       <textarea data-template>
         ```css
         span.orange {
@@ -453,7 +454,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="복합 선택자">
       <textarea data-template>
         #### 자식 선택자(Child Combinator)
 
@@ -465,7 +466,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="복합 선택자 / 자식">
       <textarea data-template>
         ```css
         ul > .orange {
@@ -488,7 +489,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="복합 선택자">
       <textarea data-template>
         #### 후손(하위) 선택자(Descendant Combinator)
 
@@ -502,7 +503,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="복합 선택자 / 후손(하위)">
       <textarea data-template>
         ```css
         div .orange {
@@ -525,7 +526,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="복합 선택자">
       <textarea data-template>
         #### 인접 형제 선택자(Adjacent Sibling Combinator)
 
@@ -537,7 +538,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="복합 선택자 / 인접 형제">
       <textarea data-template>
         ```css
         .orange + li {
@@ -557,7 +558,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="복합 선택자">
       <textarea data-template>
         #### 일반 형제 선택자(General Sibling Combinator)
 
@@ -569,7 +570,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="복합 선택자 / 일반 형제">
       <textarea data-template>
         ```css
         .orange ~ li {
@@ -595,7 +596,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="가상 클래스 선택자">
       <textarea data-template>
         #### HOVER
 
@@ -607,7 +608,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="가상 클래스 선택자 :hover">
       <textarea data-template>
         ```css
         a {
@@ -624,7 +625,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="가상 클래스 선택자">
       <textarea data-template>
         #### FIRST CHILD
 
@@ -636,7 +637,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="가상 클래스 선택자 :first-child">
       <textarea data-template>
         ```css
         .fruits li:first-child {
@@ -655,7 +656,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="가상 클래스 선택자">
       <textarea data-template>
         #### LAST CHILD
 
@@ -667,7 +668,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="가상 클래스 선택자 :last-child">
       <textarea data-template>
         ```css
         .fruits li:last-child {
@@ -686,7 +687,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="가상 클래스 선택자">
       <textarea data-template>
         #### NTH CHILD
 
@@ -699,7 +700,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="가상 클래스 선택자 :nth-child(n)">
       <textarea data-template>
         ```css
         .fruits li:nth-child(2) {
@@ -720,7 +721,7 @@
      </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="가상 클래스 선택자 :nth-child(n)">
       <textarea data-template>
         ```css
         .fruits li:nth-child(2n) {
@@ -741,7 +742,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="가상 클래스 선택자 :nth-child(n)">
       <textarea data-template>
         ```css
         .fruits li:nth-child(n+3) {
@@ -762,7 +763,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="가상 클래스 선택자 :nth-child(n)">
       <textarea data-template>
         ```css
         .fruits p:nth-child(1) {
@@ -783,7 +784,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="가상 클래스 선택자">
       <textarea data-template>
         #### NTH OF TYPE
 
@@ -796,7 +797,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="가상 클래스 선택자 :nth-of-type(n)">
       <textarea data-template>
         ```css
         .fruits p:nth-of-type(1) {
@@ -817,7 +818,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="가상 클래스 선택자 :nth-of-type(n)">
       <textarea data-template>
         ```css
         .fruits .red:nth-of-type(1) {
@@ -838,7 +839,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="가상 클래스 선택자">
       <textarea data-template>
         #### 부정 선택자(Negation Selector)
 
@@ -850,7 +851,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="가상 클래스 선택자 :not()">
       <textarea data-template>
         ```css
         .fruits li:not(.red) {
@@ -875,7 +876,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="가상 요소 선택자">
       <textarea data-template>
         #### BEFORE
 
@@ -887,7 +888,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="가상 요소 선택자 ::before">
       <textarea data-template>
         ```css
         ul li:before { /* support IE 8 */
@@ -911,7 +912,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="가상 요소 선택자 ::before">
       <textarea data-template>
         ```css
         div::before {
@@ -923,7 +924,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="가상 요소 선택자">
       <textarea data-template>
         #### AFTER
 
@@ -935,7 +936,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="가상 요소 선택자 ::after">
       <textarea data-template>
         ```css
         ul li:after { /* support IE 8 */
@@ -969,7 +970,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="상속">
       <textarea data-template>
         ```css
         .ecosystem {
@@ -992,7 +993,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="상속">
       <textarea data-template>
         ### 상속되는 속성들(properties)
 
@@ -1013,7 +1014,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="상속">
       <textarea data-template>
         ### 강제 상속
 
@@ -1046,7 +1047,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="우선순위">
       <textarea data-template>
         ```html
         <body>
@@ -1073,7 +1074,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="우선순위">
       <textarea data-template>
         ### 우선순위 결정
 
@@ -1088,7 +1089,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="우선순위">
       <textarea data-template>
         #### 1. 가장 중요(`!important`)
 
@@ -1104,7 +1105,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="우선순위">
       <textarea data-template>
         #### 2. 인라인 선언 방식(Style Attribute)
 
@@ -1118,7 +1119,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="우선순위">
       <textarea data-template>
         #### 3. 아이디(ID Selector)
 
@@ -1134,7 +1135,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="우선순위">
       <textarea data-template>
         #### 4. 클래스(Class Selector)
 
@@ -1150,7 +1151,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="우선순위">
       <textarea data-template>
         #### 5. 태그(Type Selector)
 
@@ -1166,7 +1167,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="우선순위">
       <textarea data-template>
         #### 6. 전체(Universal Selector)
 
@@ -1182,7 +1183,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="우선순위">
       <textarea data-template>
         #### 7. 상속(CSS Inheritance)
 
@@ -1198,7 +1199,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="우선순위">
       <textarea data-template>
         계산해 보세요!
 
