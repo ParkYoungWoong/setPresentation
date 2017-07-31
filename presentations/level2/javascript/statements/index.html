@@ -180,6 +180,89 @@
         ```
       </textarea>
       </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `조건부 연산자`
+
+        3항 연산자(conditional ternary operator)라고도 하며,<br>
+        세 개의 피연산 함수를 취할 수 있는 유일한 자바스크립트 연산자
+
+        > `if` 조건문의 축약형으로 자주 사용됩니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```
+        조건 ? 표현식1 : 표현식2
+        ```
+
+        > 조건이 `true`이면 `표현식1`을 실행하고, 조건이 `false`이면 `표현식2`를 실행합니다.<br>`if` 조건문으로 대체 가능합니다.
+
+        ```js
+        var price = 3;
+
+        console.log('Apples are ' + (price > 2 ? 'expensive.' : 'cheap.'));
+        // 'Apples are expensive.'
+        ```
+
+        ```js
+        var price = 3;
+
+        if (price > 2) {
+          console.log('Apples are expensive.');
+        } else {
+          console.log('Apples are cheap.');
+        }
+        // 'Apples are expensive.'
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```
+        조건1 ? (조건2 ? 표현식1 : 표현식2) : (조건3 ? 표현식3 : 표현식4)
+        ```
+
+        > 조금 복잡해 보이지만 위와 같이 하나의 표현식 내부에서 새로운 '3항 연산'을 할 수 있습니다.<br>'다중 3항 연산'이라고 합니다. 자주 사용하는 방법은 아닙니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```js
+        var fruits = true;
+        var isApple = true;
+        var isTomato = false;
+        ```
+
+        ```js
+        console.log(fruits ? (isApple ? 'Apple' : 'Mango') : (isTomato ? 'Tomato' : 'Carrot'));
+        ```
+
+        ```js
+        console.log(fruits ? isApple ? 'Apple' : 'Mango' : isTomato ? 'Tomato' : 'Carrot');
+        ```
+
+        ```js
+        if (fruits) {
+          if (isApple) {
+            console.log('Apple');
+          } else {
+            console.log('Mango');
+          }
+        } else {
+          if (isTomato) {
+            console.log('Tomato');
+          } else {
+            console.log('Carrot');
+          }
+        }
+        ```
+      </textarea>
+      </section>
     </section>
 
 

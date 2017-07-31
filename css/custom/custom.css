@@ -10,9 +10,10 @@
 }
 .reveal pre code.hljs::after {
   position: absolute;
-  right: 1.5em;
-  top: .8em;
+  right: 1.3em;
+  top: .6em;
   font-size: 12px;
+  font-weight: bold;
   color: #cccccc;
 }
 .reveal pre code.hljs.lang-html::after { content: "HTML"; }
@@ -24,14 +25,6 @@
   content: "";
   display: block;
   clear: both;
-}
-
-
-/*CODE RESULT IFRAME*/
-.reveal iframe.code_result_iframe {
-  width: 90%;
-  /*max-height: 200px;*/
-  border: 1px solid #e4e6e8;
 }
 
 
