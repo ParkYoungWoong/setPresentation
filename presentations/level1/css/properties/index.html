@@ -1181,21 +1181,198 @@
       </textarea>
       </section>
 
-      <section data-markdown data-present-title="float">
+      <section data-markdown data-present-title="float / 사용법">
       <textarea data-template>
         ### 단순 띄움
 
-        <img src="img/float.jpg" alt="float" width="600">
+        <img src="img/float1.jpg" alt="float" width="600">
 
         > 요소에 `float` 속성을 적용하면, 적용된 요소 주변으로 문자(text)가 흐르게 됩니다.
       </textarea>
       </section>
 
-      <section data-markdown data-present-title="float">
+      <section data-markdown data-present-title="float / 사용법">
       <textarea data-template>
-        ### 흐름 해제
+        ### 수평 정렬
 
+        <img src="img/float3.jpg" alt="float" width="600">
 
+        > 각 요소에 `float`속성이 적용되면 차례로 '**정렬**'됩니다.
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="float / 해제">
+      <textarea data-template>
+        ### 단순 해제
+
+        <img src="img/float2.jpg" alt="float" width="600">
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="float / 해제">
+      <textarea data-template>
+        ### 정렬 해제
+
+        <img src="img/float4.jpg" alt="float" width="600">
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="float / 해제">
+      <textarea data-template>
+        ### `float` 해제
+
+        `float`속성이 적용된 요소의 주위로 다른 요소들이 흐르게 되는데<br>이를 방지하기 위해 속성을 '해제'해야 함
+
+        1. 형제요소에 `clear: (left,right,both)` 추가하여 해제
+        1. 부모요소에 `overflow: (hidden,auto)` 추가하여 해제
+        1. 부모요소에 `clearfix`클래스 추가하여 해제 (**추천!**)
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="float / 해제">
+      <textarea data-template>
+        #### 형제 요소에서 해제
+
+        `float`속성이 추가된 요소의 다음 형제요소에 `clear`속성 추가
+
+        ```html
+        <div class="float-left"></div>
+        <div class="float-left"></div>
+        <div class="next"></div>
+        ```
+
+        ```css
+        .float-left {
+          width: 100px;
+          height: 100px;
+          background: red;
+          float: left;
+        }
+        .next {
+          clear: both;
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="float / 해제">
+      <textarea data-template>
+        #### 부모 요소에서 해제 1
+
+        `float`속성이 추가된 요소의 부모요소에 `overflow`속성 추가
+
+        ```html
+        <div class="parent">
+          <div class="child"></div>
+          <div class="child"></div>
+        </div>
+        ```
+
+        ```css
+        .parent {
+          overflow: hidden; /* or `auto` */
+        }
+        .child {
+          float: left;
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="float / 해제">
+      <textarea data-template>
+        #### 부모 요소에서 해제 2 (추천!)
+
+        `float`속성이 추가된 요소의 부모요소에 미리 지정된 `clearfix`클래스 추가
+
+        ```html
+        <div class="parent clearfix">
+          <div class="child"></div>
+          <div class="child"></div>
+        </div>
+        ```
+
+        ```css
+        .clearfix::after {
+          content: "";
+          clear: both;
+          display: block; /* or `table` */
+        }
+        .child {
+          float: left;
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="float / display 수정">
+      <textarea data-template>
+        ### `display` 수정
+
+        `float`속성이 추가된 요소는 `display`속성의 값이 대부분 `block`으로 수정됨
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="float / display 수정">
+      <textarea data-template>
+        | 지정값 | 변화값 |
+        |---|---|
+        | `inline` | `block` |
+        | `inline-block` | `block` |
+        | `inline-table` | `block` |
+        | `table-row` | `block` |
+        | `table-row-group` | `block` |
+        | `table-column` | `block` |
+        | `table-column-group` | `block` |
+        | `table-cell` | `block` |
+        | `table-caption` | `block` |
+        | `table-header-group` | `block` |
+        | `table-footer-group` | `block` |
+        | `flex` | `flex` / `float`속성 효과없음 |
+        | `inline-flex` | `inline-flex` / `float`속성 효과없음 |
+        | 그외 | 변화없음 |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="float / display 수정">
+      <textarea data-template>
+        ```html
+        <a href="#"></a>
+        <span></span>
+        ```
+
+        ```css
+        a,
+        span {
+          width: 100px;
+          height: 100px;
+          background: red;
+          float: left;
+        }
+        ```
+
+        > `&lt;a&gt;`, `&lt;span&gt;` 요소는 대표적인 `inline`요소로 가로/세로 너비를 가질 수 없습니다.<br>하지만 `float`속성이 있을 경우 가로/세로 너비를 사용할 수 있습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="float / clear">
+      <textarea data-template>
+        ### `clear`
+
+        `float`속성이 적용되지 않도록 지정(해제)
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="float / clear">
+      <textarea data-template>
+        #### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `none` | 요소 띄움 허용 | `none` |
+        | `left` | 왼쪽 띄움 해제 |  |
+        | `right` | 오른쪽 띄움 해제 |  |
+        | `both` | 양쪽(왼쪽, 오른쪽) 모두 띄움 해제 |  |
       </textarea>
       </section>
     </section>
@@ -1462,6 +1639,58 @@
       </textarea>
       </section>
 
+      <section data-markdown data-present-title="position / display 수정">
+      <textarea data-template>
+        ### `display` 수정
+
+        `position`속성이 추가된 요소는 `display`속성의 값이 대부분 `block`으로 수정됨
+
+        > `relative`를 제외한 `absolute`, `fixed`만 가능합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="position / display 수정">
+      <textarea data-template>
+        | 지정값 | 변화값 |
+        |---|---|
+        | `inline` | `block` |
+        | `inline-block` | `block` |
+        | `inline-table` | `block` |
+        | `table-row` | `block` |
+        | `table-row-group` | `block` |
+        | `table-column` | `block` |
+        | `table-column-group` | `block` |
+        | `table-cell` | `block` |
+        | `table-caption` | `block` |
+        | `table-header-group` | `block` |
+        | `table-footer-group` | `block` |
+        | `flex` | `flex` / `position`속성 효과없음 |
+        | `inline-flex` | `inline-flex` / `position`속성 효과없음 |
+        | 그외 | 변화없음 |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="position / display 수정">
+      <textarea data-template>
+        ```html
+        <a href="#"></a>
+        <span></span>
+        ```
+
+        ```css
+        a,
+        span {
+          width: 100px;
+          height: 100px;
+          background: red;
+          position: absolute;
+        }
+        ```
+
+        > `&lt;a&gt;`, `&lt;span&gt;` 요소는 대표적인 `inline`요소로 가로/세로 너비를 가질 수 없습니다.<br>하지만 `position`속성이 있을 경우 가로/세로 너비를 사용할 수 있습니다.
+      </textarea>
+      </section>
+
       <section data-markdown data-present-title="position / top">
       <textarea data-template>
         ### `top`
@@ -1550,6 +1779,482 @@
         }
         .box1 {
           z-index: 2;
+        }
+        ```
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `background`
+
+        요소의 배경을 설정<span class="property shorthand" title="단축 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="background">
+      <textarea data-template>
+        ### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `background-color` | 배경 색상 | `transparent` |
+        | `background-image` | 하나 이상의 배경 이미지 | `none` |
+        | `background-repeat` | 배경 이미지의 반복 | `repeat` |
+        | `background-position` | 배경 이미지의 위치 | `0 0` |
+        | `background-attachment` | 배경 이미지의 스크롤 여부(특성) | `scroll` |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="background">
+      <textarea data-template>
+        ### 사용법
+
+        ```
+        background: 색상 이미지경로 반복 위치 스크롤특성;
+        ```
+
+        ```css
+        .box1 {
+          background: red url("../img/image.jpg") no-repeat left top scroll;
+          /* 색상 이미지경로 반복 위치 스크롤특성 */
+        }
+        .box2 {
+          background: url("../img/image.jpg") no-repeat right 100px;
+          /* 이미지경로 반복 위치 */
+        }
+        .box3 {
+          background: red;
+          /* 색상 */
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `background-color`
+
+        요소의 배경 색상을 지정<span class="property individual" title="개별 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="background-color">
+      <textarea data-template>
+        #### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | 색상 | 요소의 배경 색상 |  |
+        | `transparent` | 투명 | `transparent` |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="background-color">
+      <textarea data-template>
+        #### 사용법
+
+        ```
+        background-color: 색상;
+        ```
+
+        ```css
+        .box1 {
+          background-color: red;
+        }
+        .box2 {
+          background-color: #000;
+        }
+        .box3 {
+          background-color: rgba(255,0,0,.5);
+          /* Red Green Blue Alpha */
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `background-image`
+
+        요소의 배경에 하나 이상의 이미지를 삽입<span class="property individual" title="개별 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="background-image">
+      <textarea data-template>
+        #### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `none` | 이미지 없음 | `none` |
+        | `url("경로")` | 이미지 경로(URL) |  |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="background-image">
+      <textarea data-template>
+        #### 사용법
+
+        ```
+        background-image: url("경로");
+        ```
+
+        ```css
+        .box {
+          background-image: url("../img/image.jpg");
+          width: 120px;
+          height: 80px;
+        }
+        ```
+
+        > 배경 이미지 삽입 시, 요소의 크기가 설정되어 있어야 배경 이미지가 보일 수 있습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="background-image">
+      <textarea data-template>
+        ```css
+        .box1 {
+          /* 개별속성 */
+          background-image: url("../img/i1.jpg"),
+            url("../img/i2.jpg"),
+            url("../img/i3.jpg");
+        }
+        .box2 {
+          /* 단축속성 */
+          background: url("../img/i1.jpg") no-repeat,
+            url("../img/i2.jpg") no-repeat 100px 50px,
+            url("../img/i3.jpg") repeat-x;
+        }
+        ```
+
+        > 하나 이상의 배경 이미지를 삽입할 경우 `,`로 구분합니다. 먼저 작성된 이미지가 더 위에 쌓입니다. 이런 '다중 배경 이미지'는 IE8 이하 버전에 사용할 수 없습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `background-repeat`
+
+        배경 이미지의 반복을 설정<span class="property individual" title="개별 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="background-repeat">
+      <textarea data-template>
+        #### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `repeat` | 배경 이미지를 수직, 수평으로 반복 | `repeat` |
+        | `repeat-x` | 배경 이미지를 수평으로 반복 |  |
+        | `repeat-y` | 배경 이미지를 수직으로 반복 |  |
+        | `no-repeat` | 반복 없음 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="background-repeat">
+      <textarea data-template>
+        #### 사용법
+
+        ```
+        background-repeat: 반복;
+        ```
+
+        ```css
+        .box1 {
+          background-image: url("../img/image.jpg");
+          background-repeat: no-repeat;
+          width: 300px;
+          height: 200px;
+        }
+        .box2 {
+          background: url("../img/image.jpg") no-repeat;
+          width: 300px;
+          height: 200px;
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `background-position`
+
+        배경 이미지의 위치를 설정<span class="property individual" title="개별 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="background-position">
+      <textarea data-template>
+        #### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `%` | 왼쪽 상단 모서리는 `0% 0%`,<br>오른쪽 하단 모서리는 `100% 100%` | `0% 0%` |
+        | 방향 | 방향을 입력하여 위치 설정<br>`top`, `bottom`, `left`, `right`, `center` |  |
+        | 단위 | `px`, `em`, `cm` 등 단위로 지정 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="background-position">
+      <textarea data-template>
+        #### 사용법
+
+        값이 방향일 경우
+
+        ```
+        background-position: 방향1 방향2;
+        ```
+
+        값이 단위(`%`, `px` 등)일 경우
+
+        ```
+        background-position: X축 Y축;
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="background-position">
+      <textarea data-template>
+        ```css
+        .box {
+          background-position: left top; /* 왼쪽, 위쪽 */
+          background-position: top left; /* 위쪽, 왼쪽  */
+          background-position: center center; /* 가운데, 가운데 */
+          background-position: center; /* 가운데, 가운데 */
+
+          background-position: 0% 0%; /* X: 0%, Y: 0% */
+          background-position: 0 0; /* X: 0, Y: 0 (추천!) */
+          background-position: 20% 50%; /* X: 20%, Y: 50% */
+          background-position: 10%; /* X: 10%, Y: 0% */
+          background-position: 50%; /* X: 50%, Y: 50% (가운데) */
+          background-position: 10px 20px; /* X: 10px, Y: 20px */
+          background-position: 10px; /* X: 10px, Y: 0 */
+          background-position: 50% 30px; /* X: 50%, Y: 30px */
+
+          background-position: 30% bottom; /* X: 30%, 아래쪽 */
+          background-position: left 50px; /* 왼쪽, Y: 50px */
+          background-position: 50px left; /* ERROR */
+          background-position: top 30%; /* ERROR */
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `background-attachment`
+
+        요소가 스크롤될 때 배경 이미지의 스크롤 여부(특성) 설정<span class="property individual" title="개별 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="background-attachment">
+      <textarea data-template>
+        #### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `scroll` | 배경 이미지가 요소를 따라서 같이 스크롤 됨 | `scroll` |
+        | `fixed` | 배경 이미지가 뷰포트(Viewport)에 고정되어, 요소와 같이 스크롤되지 않음 |  |
+        | `local` | 요소 내 스크롤 시 배경 이미지가 같이 스크롤 됨 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="background-attachment">
+      <textarea data-template>
+        #### 사용법
+
+        ```
+        background-attachment: 스크롤특성;
+        ```
+
+        ```html
+        <div class="parent">
+          <div class="child"></div>
+        </div>
+        ```
+
+        ```css
+        .parent {
+          width: 500px;
+          height: 300px;
+          background: url("../img/image.png") no-repeat local;
+          overflow: auto;
+        }
+        .child {
+          width: 500px;
+          height: 600px;
+        }
+        ```
+
+        > `local` 값을 사용했을 경우, `overflow: [auto, scroll]` 속성이 필요합니다.
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `display`
+
+        요소의 박스 타입(유형)을 설정
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="display">
+      <textarea data-template>
+        ### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `block` | 블록 요소(`&lt;div&gt;` 등) |  |
+        | `inline` | 인라인 요소(`&lt;span&gt;` 등) |  |
+        | `inline-block` | 인라인-블록 요소(`&lt;input&gt;` 등) |  |
+        | 기타 | `table`, `table-cell`, `flex` 등 |  |
+        | `none` | 요소의 박스 타입이 없음(요소가 사라짐) |  |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="display">
+      <textarea data-template>
+        ### 사용법
+
+        ```
+        display: 박스타입;
+        ```
+
+        ```css
+        a {
+          width: 100px;
+          height: 100px;
+          background: red;
+          display: block;
+        }
+        ```
+
+        > 예를들어 `&lt;a&gt;`요소는 `inline`특성이기 때문에 가로/세로 너비를 지정할 수 없지만,<br>`display`속성 값을 `block`으로 설정하면 가로/세로 너비를 지정할 수 있습니다.
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `overflow`
+
+        요소의 크기 이상으로 내용(자식요소)이 넘쳤을 때,<br>내용의 보여짐을 제어<span class="property shorthand" title="단축 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="overflow">
+      <textarea data-template>
+        ### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `visible` | 넘친 부분을 자르지 않고 그대로 보여줌 | `visible` |
+        | `hidden` | 넘친 부분을 잘라내고, 보이지 않도록 함 |  |
+        | `scroll` | 넘친 부분을 잘라내고, 스크롤바를 이용하여 볼 수 있도록 함 |  |
+        | `auto` | 넘친 부분이 있는 경우만 잘라내고, 스크롤바를 이용하여 볼 있도록 함	 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="overflow">
+      <textarea data-template>
+        ### 사용법
+
+        ```
+        overflow: 보여짐제어;
+        ```
+
+        ```html
+        <div class="parent">
+          <div class="child"></div>
+        </div>
+        ```
+
+        ```css
+        .parent {
+          width: 200px;
+          height: 200px;
+          background: yellow;
+          overflow: hidden;
+        }
+        .child {
+          width: 100px;
+          height: 300px;
+          background: red;
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="overflow">
+      <textarea data-template>
+        ## `overflow-x`
+
+        요소의 X축(좌,우)으로 내용이 넘쳤을 때, overflow 지정<span class="property individual" title="개별 속성"></span>
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="overflow">
+      <textarea data-template>
+        ## `overflow-y`
+
+        요소의 Y축(위,아래)으로 내용이 넘쳤을 때, overflow 지정<span class="property individual" title="개별 속성"></span>
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## `opacity`
+
+        요소의 투명도를 지정
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="opacity">
+      <textarea data-template>
+        ### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | 숫자 | `0`부터 `1`사이의 소수점 숫자 | `1` |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="opacity">
+      <textarea data-template>
+        ### 사용법
+
+        ```
+        opacity: 투명도;
+        ```
+
+        ```css
+        .half {
+          opacity: 0.5;  /* 50% 투명도, 반투명 */
+        }
+        .transparent {
+          opacity: 0;  /* 0% 투명도, 투명 */
+        }
+        .box {
+          opacity: .75;  /* 75% 투명도, 반투명 */
         }
         ```
       </textarea>
