@@ -51,7 +51,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="Flex">
       <textarea data-template>
         ### `container`와 `items`
 
@@ -61,7 +61,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="Flex">
       <textarea data-template>
         ## Flex `container`를 위한 속성들
 
@@ -69,15 +69,15 @@
         |---|---|
         | `display` | 플렉스 컨테이너를 정의 |
         | `flex-flow` | `flex-direction` + `flex-wrap` 단축 속성 |
-        | `flex-direction` | 플렉스 아이템들의 주 방향(main-axis)을 설정 |
-        | `flex-wrap` | 플렉스 아이템들의 여러 줄 묶음(줄바꿈) 설정 |
+        | `flex-direction` | 아이템들의 주 방향(main-axis)을 설정 |
+        | `flex-wrap` | 아이템들의 여러 줄 묶음(줄바꿈) 설정 |
         | `justify-content` | 주 방향(main-axis)의 정렬(배치) 방법을 설정 |
-        | `align-items` |  |
-        | `align-content` |  |
+        | `align-content` | 교차 방향(cross-axis)의 정렬(배치) 방법을 설정 |
+        | `align-items` | 교차 방향(cross-axis)에서 아이템들의 정렬(배치) 방법을 설정 |
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="Flex / Container / display">
       <textarea data-template>
         ### `display`
 
@@ -92,22 +92,22 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="Flex / Container / display">
       <textarea data-template>
         <img src="img/flex-display.jpg" alt="flex" width="700">
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="Flex / Container / flex-flow">
       <textarea data-template>
         ### `flex-flow`
 
-        플렉스 아이템들의 주 방향(main-axis)을 설정하며,<br>플렉스 아이템들의 여러 줄 묶음(줄바꿈) 설정<span class="property shorthand" title="단축 속성"></span>
+        플렉스 아이템들의 주 방향(main-axis)을 설정하며,<br>아이템들의 여러 줄 묶음(줄바꿈) 설정<span class="property shorthand" title="단축 속성"></span>
 
         | 값 | 의미 | 기본값 |
         |---|---|---|
-        | `flex-direction` | 플렉스 아이템들의 주 방향(main-axis)을 설정 | `row` |
-        | `flex-wrap` | 플렉스 아이템들의 여러 줄 묶음(줄바꿈) 설정 | `nowrap` |
+        | `flex-direction` | 아이템들의 주 방향(main-axis)을 설정 | `row` |
+        | `flex-wrap` | 아이템들의 여러 줄 묶음(줄바꿈) 설정 | `nowrap` |
 
         ```
         flex-flow: 방향 여러줄묶음;
@@ -119,7 +119,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="Flex / Container / flex-flow / flex-direction">
       <textarea data-template>
         ### `flex-direction`
 
@@ -127,9 +127,9 @@
 
         | 값 | 의미 | 기본값 |
         |---|---|---|
-        | `row` | 플렉스 아이템들을 수평 방향으로 표시 | `row` |
+        | `row` | 아이템들을 수평 방향으로 표시 | `row` |
         | `row-reverse` | `row`의 수평 반대 방향 |  |
-        | `column` | 플렉스 아이템들을 수직 방향으로 표시 |  |
+        | `column` | 아이템들을 수직 방향으로 표시 |  |
         | `column-reverse` | `column`의 수직 반대 방향 |  |
 
         ```
@@ -138,25 +138,37 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="Flex / Container / flex-flow / flex-direction">
       <textarea data-template>
         <img src="img/flex-direction.jpg" alt="flex" width="700">
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="Flex / Container / flex-flow / flex-direction">
       <textarea data-template>
         <img src="img/flex-direction-main-axis.jpg" alt="flex" width="700">
+
+        > 방향에 따라 주 축(main-axis)과 교차 축(cross-axis)이 변경됩니다.
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="Flex / Container / flex-flow / flex-direction">
       <textarea data-template>
         <img src="img/flex-direction-main-start.jpg" alt="flex" width="766">
+
+        > 방향에 따라 주 '시작점(start)'과 '끝점(end)'의 위치도 변경됩니다.
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="Flex / Container / flex-flow / flex-direction">
+      <textarea data-template>
+        <img src="img/flex-direction-cross-start.jpg" alt="flex" width="700">
+
+        > 방향에 따라 교차 '시작점(start)'과 '끝점(end)'의 위치도 변경됩니다.<br>`row`와 `column`으로만 구분됩니다.
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="Flex / Container / flex-flow / flex-wrap">
       <textarea data-template>
         ### `flex-wrap`
 
@@ -164,9 +176,9 @@
 
         | 값 | 의미 | 기본값 |
         |---|---|---|
-        | `nowrap` | 모든 플렉스 아이템들을 한 줄에 표시 | `nowrap` |
-        | `wrap` | 플렉스 아이템들을 위에서 아래로 여러 줄로 묶음 |  |
-        | `wrap-reverse` | 플렉스 아이템들을 아래에서 위로 여러 줄로 묶음 |  |
+        | `nowrap` | 모든 아이템들을 한 줄에 표시 | `nowrap` |
+        | `wrap` | 아이템들을 위에서 아래로 여러 줄로 묶음 |  |
+        | `wrap-reverse` | 아이템들을 아래에서 위로 여러 줄로 묶음 |  |
 
         ```
         flex-wrap: 여러줄묶음;
@@ -174,13 +186,13 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="Flex / Container / flex-flow / flex-wrap">
       <textarea data-template>
         <img src="img/flex-wrap.jpg" alt="flex" width="700">
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="Flex / Container / justify-content">
       <textarea data-template>
         ### `justify-content`
 
@@ -188,11 +200,11 @@
 
         | 값 | 의미 | 기본값 |
         |---|---|---|
-        | `flex-start` | 플렉스 아이템들이 `main-start`(시작점)로 배치됨 | `flex-start` |
-        | `flex-end` | 플렉스 아이템들이 `main-end`(끝점)로 배치됨 |  |
-        | `center` | 플렉스 아이템들이 가운데 배치됨 |  |
+        | `flex-start` | 전체 아이템이 `main-start`(시작점)로 배치됨 | `flex-start` |
+        | `flex-end` | 전체 아이템이 `main-end`(끝점)로 배치됨 |  |
+        | `center` | 전체 아이템이 가운데 배치됨 |  |
         | `space-between` | 시작 아이템은 `main-start`에,<br>마지막 아이템은 `main-end`에 배치되고<br>나머지 아이템들은 사이에 고르게 분포함 |  |
-        | `space-around` | 각 항목에 균등한 여백을 포함하여 배치 |  |
+        | `space-around` | 각 아이템에 균등한 여백을 포함하여 배치 |  |
 
         ```
         justify-content: 정렬방법;
@@ -200,9 +212,62 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="Flex / Container / justify-content">
       <textarea data-template>
         <img src="img/flex-justify-content.jpg" alt="flex" width="700">
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="Flex / Container / align-content">
+      <textarea data-template>
+        ### `align-content`
+
+        교차 방향(cross-axis)의 정렬(배치) 방법을 설정(2줄 이상, 여백이 있을 경우)
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `stretch` | 컨테이너를 채우기 위해 각 아이템들을 늘림 | `stretch` |
+        | `flex-start` | 전체 아이템이 `cross-start`(시작점)로 배치됨 |  |
+        | `flex-end` | 전체 아이템이 `cross-end`(끝점)로 배치됨 |  |
+        | `center` | 전체 아이템이 가운데 배치됨 |  |
+        | `space-between` | 시작 아이템은 `cross-start`에,<br>마지막 아이템은 `cross-end`에 배치되고<br>나머지 아이템들은 사이에 고르게 분포함 |  |
+        | `space-around` | 각 행에 균등한 여백을 포함하여 배치 |  |
+
+        ```
+        align-content: 정렬방법;
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="Flex / Container / align-content">
+      <textarea data-template>
+        <img src="img/flex-align-content.jpg" alt="flex" width="1071">
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="Flex / Container / align-items">
+      <textarea data-template>
+        ### `align-items`
+
+        교차 방향(cross-axis)에서 아이템들의 정렬(배치) 방법을 설정
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `stretch` | 컨테이너를 채우기 위해 각 아이템들을 늘림 | `stretch` |
+        | `flex-start` | 아이템들이 각 행의 `cross-start`(시작점)로 배치됨 |  |
+        | `flex-end` | 아이템들이 각 행의 `cross-end`(끝점)로 배치됨 |  |
+        | `center` | 아이템들이 각 행의 가운데 배치됨 |  |
+        | `baseline` | 아이템들이 문자 기준선에 배치됨 |  |
+
+        ```
+        align-items: 정렬방법;
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="Flex / Container / align-items">
+      <textarea data-template>
+        <img src="img/flex-align-items.jpg" alt="flex" width="1071">
       </textarea>
       </section>
     </section>
