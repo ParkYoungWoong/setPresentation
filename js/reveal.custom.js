@@ -40,3 +40,9 @@ REVEAL_CUSTOMIZER.checkTitle = function () {
     presentationTitleElement.innerHTML = presentationTitle;
   }
 };
+
+
+// Check a password.
+REVEAL_CUSTOMIZER.checkPw = function () {
+  
+};
