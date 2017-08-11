@@ -57,7 +57,7 @@
 
         플렉스 레이아웃은 부모 요소(`container`)와 자식 요소(`items`)에 적용되는 속성이 구분되어 있음
 
-        <img src="img/flex-basis.jpg" alt="flex" width="500">
+        <img src="img/flex-base.jpg" alt="flex" width="500">
       </textarea>
       </section>
 
@@ -279,14 +279,14 @@
         |---|---|
         | `order` | 플렉스 아이템의 순서를 설정 |
         | `flex` | `flex-grow` + `flex-shrink` + `flex-basis` 단축 속성 |
-        | `flex-grow` |  |
-        | `flex-shrink` |  |
-        | `flex-basis` |  |
-        | `align-self` |  |
+        | `flex-grow` | 플렉스 아이템의 증가 너비 비율을 설정 |
+        | `flex-shrink` | 플렉스 아이템의 감소 너비 비율을 설정 |
+        | `flex-basis` | 플렉스 아이템의 (공간 배분 전) 기본 너비 설정 |
+        | `align-self` | 교차 방향(cross-axis)에서 개별 아이템의 정렬(배치) 방법을 설정 |
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="Flex / Items / order">
       <textarea data-template>
         ### `order`
 
@@ -302,7 +302,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="Flex / Items / order">
       <textarea data-template>
         <img src="img/flex-order.jpg" alt="flex" width="500">
 
@@ -310,7 +310,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="Flex / Items / flex">
       <textarea data-template>
         ### `flex`
 
@@ -334,7 +334,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="Flex / Items / flex / flex-grow">
       <textarea data-template>
         ### `flex-grow`
 
@@ -352,7 +352,13 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="Flex / Items / flex / flex-grow">
+      <textarea data-template>
+        <img src="img/flex-grow.jpg" alt="flex" width="550">
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="Flex / Items / flex / flex-grow">
       <textarea data-template>
         <iframe height='500' scrolling='no' title='flex-grow' src='//codepen.io/heropark/embed/PKmMKN/?height=341&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/heropark/pen/PKmMKN/'>flex-grow</a> by park young woong (<a href='https://codepen.io/heropark'>@heropark</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -361,11 +367,11 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="Flex / Items / flex / flex-shrink">
       <textarea data-template>
         ### `flex-shrink`
 
-        플렉스 아이템의 감소 너비를 설정<span class="property individual" title="개별 속성"></span>
+        플렉스 아이템의 감소 너비 비율을 설정<span class="property individual" title="개별 속성"></span>
 
         | 값 | 의미 | 기본값 |
         |---|---|---|
@@ -379,7 +385,13 @@
       </textarea>
       </section>
 
-      <section data-markdown>
+      <section data-markdown data-present-title="Flex / Items / flex / flex-shrink">
+      <textarea data-template>
+        <img src="img/flex-shrink.jpg" alt="flex" width="1000">
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="Flex / Items / flex / flex-shrink">
       <textarea data-template>
         <iframe height='500' scrolling='no' title='flex-shrink' src='//codepen.io/heropark/embed/oeWLVm/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/heropark/pen/oeWLVm/'>flex-shrink</a> by park young woong (<a href='https://codepen.io/heropark'>@heropark</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -388,13 +400,7 @@
       </textarea>
       </section>
 
-      <section data-markdown>
-      <textarea data-template>
-        <img src="img/flex-shrink.jpg" alt="flex" width="1000">
-      </textarea>
-      </section>
-
-      <section data-markdown>
+      <section data-markdown data-present-title="Flex / Items / flex / flex-basis">
       <textarea data-template>
         ### `flex-basis`
 
@@ -408,6 +414,42 @@
         ```
         flex-basis: 기본너비;
         ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="Flex / Items / flex / flex-basis">
+      <textarea data-template>
+        <img src="img/flex-basis.jpg" alt="flex" width="1000">
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="Flex / Items / align-self">
+      <textarea data-template>
+        ### `align-self`
+
+        교차 방향(cross-axis)에서 **개별** 아이템의 정렬(배치) 방법을 설정
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `auto` | 컨테이너의 `align-items`속성을 상속 받음 | `auto` |
+        | `stretch` | 컨테이너를 채우기 위해 아이템을 늘림 |  |
+        | `flex-start` | 아이템이 행의 `cross-start`(시작점)로 배치됨 |  |
+        | `flex-end` | 아이템이 행의 `cross-end`(끝점)로 배치됨 |  |
+        | `center` | 아이템이 행의 가운데 배치됨 |  |
+        | `baseline` | 아이템이 문자 기준선에 배치됨 |  |
+
+
+        ```
+        align-self: 정렬방법;
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="Flex / Items / align-self">
+      <textarea data-template>
+        <img src="img/flex-align-self.jpg" alt="flex" width="600">
+
+        > 컨테이너에 부여된 교차 방향(cross-axis)의 정렬(`align-items`)과 별개로,<br>각 아이템의 '교차 방향 정렬'을 따로 설정할 수 있습니다.<br>이 속성은 `align-items`속성보다 우선합니다.
       </textarea>
       </section>
     </section>
