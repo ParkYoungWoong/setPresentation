@@ -45,7 +45,7 @@
     <section>
       <section data-markdown>
       <textarea data-template>
-        ## Flexible Box Layout
+        ## Flexible Box
 
         요소의 크기가 불분명하거나 동적인 경우에도,<br>각 요소를 정렬(배치)할 수 있는 효율적인 방법를 제공
       </textarea>
@@ -55,9 +55,9 @@
       <textarea data-template>
         ### '컨테이너'와 '아이템'
 
-        플렉스 레이아웃은 부모 요소(`container`)와 자식 요소(`items`)에 적용되는 속성이 구분되어 있음
+        플렉스 레이아웃은 부모 요소(`container`)와<br>자식 요소(`items`)에 적용되는 속성이 구분되어 있음
 
-        <img src="img/flex-base.jpg" alt="flex" width="500">
+        <img src="img/flex-base.jpg" alt="flex" width="900">
       </textarea>
       </section>
 
@@ -114,7 +114,9 @@
         ```
 
         ```css
-        flex-flow: row-reverse wrap;
+        .container {
+          flex-flow: row-reverse wrap;
+        }
         ```
       </textarea>
       </section>
@@ -327,9 +329,11 @@
         ```
 
         ```css
-        flex: 1 1 20px;  /* 증가 감소 기본 */
-        flex: 1 1;  /* 증가 감소 */
-        flex: 1 20px;  /* 증가 기본 */
+        .item {
+          flex: 1 1 20px;  /* 증가 감소 기본 */
+          flex: 1 1;  /* 증가 감소 */
+          flex: 1 20px;  /* 증가 기본 */
+        }
         ```
       </textarea>
       </section>
@@ -450,6 +454,187 @@
         <img src="img/flex-align-self.jpg" alt="flex" width="600">
 
         > 컨테이너에 부여된 교차 방향(cross-axis)의 정렬(`align-items`)과 별개로,<br>각 아이템의 '교차 방향 정렬'을 따로 설정할 수 있습니다.<br>이 속성은 `align-items`속성보다 우선합니다.
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## Multi-Columns
+
+        일반 블록 레이아웃을 확장하여<br>여러 텍스트 다단으로 쉽게 정리하며, 가독성 확보
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="Columns">
+      <textarea data-template>
+        <img src="img/columns_base.jpg" alt="flex" width="750">
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="Columns / columns">
+      <textarea data-template>
+        ### `columns`
+
+        다단을 정의<span class="property shorthand" title="단축 속성"></span>
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `auto` | 브라우저가 단의 너비와 개수를 설정 | `auto` |
+        | `column-width` | 단의 최적 너비를 설정 | `auto` |
+        | `column-count` | 단의 개수를 설정 | `auto` |
+
+        ```
+        columns: 너비 개수;
+        ```
+
+        ```css
+        .text {
+          columns: 100px 2;
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="Columns / columns / column-width">
+      <textarea data-template>
+        ### `column-width`
+
+        단의 최적 너비를 설정<span class="property individual" title="개별 속성"></span>
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `auto` | 브라우저가 단의 너비를 설정 | `auto` |
+        | 단위 | `px`, `em`, `cm` 등 단위로 지정 |  |
+
+        ```
+        column-width: 너비;
+        ```
+
+        > 각 단이 줄어들 수 있는 최적 너비(최소 너비)를 설정하며,<br>요소의 너비가 가변하여 하나의 단이 최적 너비보다 줄어들 경우 단의 개수가 조정됩니다.
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="Columns / columns / column-count">
+      <textarea data-template>
+        ### `column-count`
+
+        단의 개수를 설정<span class="property individual" title="개별 속성"></span>
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `auto` | 브라우저가 단의 개수를 설정 | `auto` |
+        | 숫자 | 단의 개수를 설정 |  |
+
+        ```
+        column-count: 개수;
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="Columns / column-gap">
+      <textarea data-template>
+        ### `column-gap`
+
+        단과 단 사이의 간격 설정
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `normal` | 브라우저가 단과 단 사이의 간격을 설정(`1em`) | `normal` |
+        | 단위 | `px`, `em`, `cm` 등 단위로 지정 |  |
+
+        ```
+        column-gap: 간격;
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="Columns / column-rule">
+      <textarea data-template>
+        ### `column-rule`
+
+        단과 단 사이의 (구분)선을 지정<span class="property shorthand" title="단축 속성"></span>
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `column-width` | 선의 두께를 지정 | `medium` |
+        | `column-style` | 선의 종류를 지정 | `none` |
+        | `column-color` | 선의 색상을 지정 | 요소의 글자색과 동일 |
+
+        ```
+        column-rule: 두께 종류 색상;
+        ```
+
+        > 구분선(`column-rule`)은 단과 단 사이의 간격 중간에 위치합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="Columns / column-rule / column-rule-width">
+      <textarea data-template>
+        ### `column-rule-width`
+
+        단과 단 사이 선의 두께 설정<span class="property individual" title="개별 속성"></span>
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `medium` | 중간 두께 선 | `medium` |
+        | `thin` | 얇은 두께 선 |  |
+        | `thick` | 두꺼운 두께 선 |  |
+        | 단위 | `px`, `em`, `cm` 등 단위로 지정 |  |
+
+        ```
+        column-rule-width: 두께;
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="Columns / column-rule / column-rule-style">
+      <textarea data-template>
+        ### `column-rule-style`
+
+        단과 단 사이 선의 종류 설정<span class="property individual" title="개별 속성"></span>
+
+        ```
+        column-rule-style: 종류;
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="Columns / column-rule / column-rule-style">
+      <textarea data-template>
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `none` | 선 없음 | `none` |
+        | `hidden` | 선 없음과 동일(`table`요소에서 사용) |  |
+        | `solid` | 실선(일반선) |  |
+        | `dotted` | 점선 |  |
+        | `dashed` | 파선 |  |
+        | `double` | 두 줄선 |  |
+        | `groove` | 홈이 파여있는 모양(선) |  |
+        | `ridge` | 솟은 모양(선, `groove`의 반대) |  |
+        | `inset` | 요소 전체가 들어간 모양(선) |  |
+        | `outset` | 요소 전체가 나온 모양(선) |  |
+
+         <a href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_column-rule-style" target="_blank">선의 종류 보기</a>
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="Columns / column-rule / column-rule-color">
+      <textarea data-template>
+        ### `column-rule-color`
+
+        단과 단 사이 선의 색상 설정<span class="property individual" title="개별 속성"></span>
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | 색상 | 선의 색상을 지정 | 요소의 글자색과 동일 |
+
+        ```
+        column-rule-color: 색상;
+        ```
       </textarea>
       </section>
     </section>
