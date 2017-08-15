@@ -267,6 +267,8 @@ body {
 }
 
 .reveal section img.plain {
+  vertical-align: middle;
+  margin: 2px;
   border: 0;
   box-shadow: none; }
 
