@@ -985,7 +985,8 @@
         요소의 변환 효과(변형)를 지정
 
         ```
-        transform: 변환함수1 변환함수2 변환함수3;
+        transform: 변환함수1 변환함수2 변환함수3...;
+        transform: 원근법 이동 크기 회전 기울임;
         ```
 
         ```css
@@ -998,38 +999,175 @@
 
       <section data-markdown>
       <textarea data-template>
-        ## `transform` 2D 변환 효과
+        ## `transform` 2D 변환 함수
 
-        | 값(변환함수) | 의미 |
-        |---|---|
-        | `translate(x, y)` | 이동 |
-        | `translateX(x)` | X축 이동 |
-        | `translateY(y)` | Y축 이동 |
-        | `scale(x, y)` | 크기 |
-        | `scaleX(x)` | X축 크기 |
-        | `scaleY(y)` | Y축 크기 |
-        | `rotate(degree)` | 회전 |
-        | `skew(x, y)` | 기울임(비틀기) |
-        | `skewX(x)` | X축 기울임 |
-        | `skewY(y)` | Y축 기울임 |
+        | 값(변환함수) | 의미 | 단위 |
+        |---|---|---|
+        | `translate(x, y)` | 이동(X축, Y축) | 단위 |
+        | `translateX(x)` | 이동(X축) | 단위 |
+        | `translateY(y)` | 이동(Y축) | 단위 |
+        | `scale(x, y)` | 크기(X축, Y축) | 없음(배수) |
+        | `scaleX(x)` | 크기(X축) | 없음(배수) |
+        | `scaleY(y)` | 크기(Y축) | 없음(배수) |
+        | `rotate(degree)` | 회전(각도) | `deg` |
+        | `skew(x, y)` | 기울임(X축, Y축) | 단위 |
+        | `skewX(x)` | 기울임(X축) | 단위 |
+        | `skewY(y)` | 기울임(Y축) | 단위 |
+        | `matrix(n,n,n,n,n,n)` | 2차원 변환 효과 | 없음 |
       </textarea>
       </section>
 
       <section data-markdown>
       <textarea data-template>
-        ## `transform` 3D 변환 효과
+        ## `transform` 3D 변환 함수
 
-        | 값(변환함수) | 의미 |
+        | 값(변환함수) | 의미 | 단위 |
+        |---|---|---|
+        | `translate3d(x, y, z)` | 이동(X축, Y축, Z축) | 단위 |
+        | `translateZ(z)` | 이동(Z축) | 단위 |
+        | `scale3d(x, y, z)` | 크기(X축, Y축, Z축) | 없음(배수) |
+        | `scaleZ(z)` | 크기(Z축) | 없음(배수) |
+        | `rotate3d(x, y, z, a)` | 회전(X축, Y축, Z축, 각도) | 없음, `deg` |
+        | `rotateX(x)` | 회전(X축) | `deg` |
+        | `rotateY(y)` | 회전(Y축) | `deg` |
+        | `rotateZ(z)` | 회전(Z축) | `deg` |
+        | `perspective(n)` | 원근법(거리) | 단위 |
+        | `matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)` | 3차원 변환 효과 | 없음 |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        <iframe height='600' scrolling='no' title='Css3 Transform' src='//codepen.io/vineethtr/embed/XKKEgM/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/vineethtr/pen/XKKEgM/'>Css3 Transform</a> by Vineeth.TR (<a href='https://codepen.io/vineethtr'>@vineethtr</a>) on <a href='https://codepen.io'>CodePen</a>.
+        </iframe>
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `matrix(a,b,c,d,e,f)`
+
+        요소의 2차원 변환 효과를 지정<br>
+        `scale()`, `skew()`, `translate()` 그리고 `rotate()`를 지정
+
+        | 인자 | 의미 |
         |---|---|
-        | `translate3d(x, y, z)` | 이동(X축, Y축, Z축) |
-        | `translateZ(z)` | 이동(Z축) |
-        | `scale3d(x, y, z)` | 크기(X축, Y축, Z축) |
-        | `scaleZ(z)` | 크기(Z축) |
-        | `rotate3d(x, y, z)` | 회전(X축, Y축, Z축) |
-        | `rotateX(x)` | 회전(X축) |
-        | `rotateY(y)` | 회전(Y축) |
-        | `rotateZ(z)` | 회전(Z축) |
-        | `perspective(n)` |  |
+        | `a`, `d` | 크기, `scale(a, d)` |
+        | `b`, `c` | 기울임, `skew(b, c)` |
+        | `e`, `f` | 이동, `translate(e, f)` |
+
+        > 요소에 일반 2차원 변환 함수를 사용하더라도 `matrix` 변환 함수로 계산되어 적용됩니다.<br>`matrix` 변환 함수는 작성이 복잡하니 보통은 일반 변환 함수를 사용하세요.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        .box.normal {
+          transform: scale(1.5, 2.5) skew(2, 3) translate(20px, 40px);
+        }
+        .box.matrix {
+          transform: matrix(1.5, 2, 3, 2.5, 20, 40);
+        }
+        ```
+
+        ```css
+        .box.rotate {
+          transform: rotate(30deg);
+        }
+        .box.matrix {
+          transform: matrix(0.866025, 0.5, -0.5, 0.866025, 0, 0);
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `transform` 변환 속성
+
+        | 속성 | 의미 |
+        |---|---|
+        | `transform-origin` | 요소 변환의 기준점을 설정 |
+        | `transform-style` | 3D 변환 요소의 자식 요소도 3D 변환을 사용할지 설정 |
+        | `perspective` | 하위 요소를 관찰하는 원근 거리를 설정 |
+        | `perspective-origin` | 원근 거리의 기준점을 설정 |
+        | `backface-visibility` | 3D 변환으로 회전된 요소의 뒷면 숨김을 설정 |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `transform-origin`
+
+        요소 변환의 기준점을 설정
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | X축 | `left`, `right`, `center`, `%`, 단위 | `50%` |
+        | Y축 | `top`, `bottom`, `center`, `%`, 단위 | `50%` |
+        | Z축 | 단위 | `0` |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `transform-style`
+
+        3D 변환 요소의 자식 요소도 3D 변환을 사용할지 설정
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `flat` | 자식 요소의 3D 변환을 사용하지 않음 | `flat` |
+        | `preserve-3d` | 자식 요소의 3D 변환을 사용함 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        <iframe height='400' scrolling='no' title='transform-style' src='//codepen.io/heropark/embed/RZxEXe/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/heropark/pen/RZxEXe/'>transform-style</a> by park young woong (<a href='https://codepen.io/heropark'>@heropark</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+        > `.grand` 혹은 `.parent`의 `preserve-3d`속성을 제거하면,<br>속성이 제거된 자식 요소의 3D 변환 효과가 적용되지 않습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `perspective`
+
+        하위 요소를 관찰하는 원근 거리를 설정
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | 단위 | `px`, `em`, `cm` 등 단위로 지정 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        <iframe height='400' scrolling='no' title='perspective' src='//codepen.io/heropark/embed/VzyRxe/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/heropark/pen/VzyRxe/'>perspective</a> by park young woong (<a href='https://codepen.io/heropark'>@heropark</a>) on <a href='https://codepen.io'>CodePen</a>.
+      </iframe>
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `perspective-origin`
+
+        원근 거리의 기준점을 설정
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | X축 | `left`, `right`, `center`, `%`, 단위 | `50%` |
+        | Y축 | `top`, `bottom`, `center`, `%`, 단위 | `50%` |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        <iframe height='400' scrolling='no' title='perspective-origin' src='//codepen.io/heropark/embed/GvyePm/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/heropark/pen/GvyePm/'>perspective-origin</a> by park young woong (<a href='https://codepen.io/heropark'>@heropark</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
       </textarea>
       </section>
     </section>
