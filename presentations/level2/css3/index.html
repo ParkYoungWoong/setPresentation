@@ -364,7 +364,7 @@
 
       <section data-markdown data-present-title="Flex / Items / flex / flex-grow">
       <textarea data-template>
-        <iframe height='500' scrolling='no' title='flex-grow' src='//codepen.io/heropark/embed/PKmMKN/?height=341&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/heropark/pen/PKmMKN/'>flex-grow</a> by park young woong (<a href='https://codepen.io/heropark'>@heropark</a>) on <a href='https://codepen.io'>CodePen</a>.
+        <iframe height='400' scrolling='no' title='flex-grow' src='//codepen.io/heropark/embed/PKmMKN/?height=341&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/heropark/pen/PKmMKN/'>flex-grow</a> by park young woong (<a href='https://codepen.io/heropark'>@heropark</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
         > 각 아이템의 `flex-grow` 값에 따라 증가하는 너비의 비율이 달라집니다.
@@ -397,7 +397,7 @@
 
       <section data-markdown data-present-title="Flex / Items / flex / flex-shrink">
       <textarea data-template>
-        <iframe height='500' scrolling='no' title='flex-shrink' src='//codepen.io/heropark/embed/oeWLVm/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/heropark/pen/oeWLVm/'>flex-shrink</a> by park young woong (<a href='https://codepen.io/heropark'>@heropark</a>) on <a href='https://codepen.io'>CodePen</a>.
+        <iframe height='400' scrolling='no' title='flex-shrink' src='//codepen.io/heropark/embed/oeWLVm/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/heropark/pen/oeWLVm/'>flex-shrink</a> by park young woong (<a href='https://codepen.io/heropark'>@heropark</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
         > 각 아이템의 `flex-shrink` 값에 따라 축소되는 너비의 비율이 달라집니다.
@@ -782,6 +782,254 @@
           font-family: "Noto Sans KR", sans-serif;
         }
         ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `@media`
+
+        다양한 미디어 유형이나 장치에 따라, 서로 다른 스타일 규칙을 적용
+
+        ```
+        @media 미디어타입 and (미디어특성) {
+          CSS코드
+        }
+        ```
+
+        ```css
+        @media screen and (max-width: 1200px) {
+          body {
+            color: red;
+          }
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        #### 미디어타입
+
+        | 타입 | 의미 | 기본값 |
+        |---|---|---|
+        | `all` | 모든 미디어 타입에 적용 | `all` |
+        | `screen` | 컴퓨터 화면, 타블렛, 스마트폰 등 |  |
+        | `print` | 인쇄 전용 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        #### 미디어특성
+
+        | 특성 | 의미 |
+        |---|---|
+        | `width` | 뷰포트 가로 너비 |
+        | `max-width` | 뷰포트 최대 가로 너비(이하) |
+        | `min-width` | 뷰포트 최소 가로 너비(이상) |
+        | `height` | 뷰포트 세로 너비 |
+        | `max-height` | 뷰포트 최대 세로 너비(이하) |
+        | `min-height` | 뷰포트 최대 세로 너비(이상) |
+        | `orientation` | 뷰포트 방향(`portrait`, `landscape`) |
+        | 기타 | <a href="https://www.w3.org/TR/css3-mediaqueries/" target="_blank">다른 특성들..</a> |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `@keyframes`
+
+        2개 이상의 애니메이션 중간 상태(프레임)을 지정
+
+        ```
+        @keyframes 애니메이션이름 {
+          0% { 속성: 값; }
+          50% { 속성: 값; }
+          100% { 속성: 값; }
+        }
+        ```
+
+        ```css
+        @keyframes move-box {
+          0% { left: 100px; }
+          100% { top: 200px; }
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        <iframe height='400' scrolling='no' title='@keyframes' src='//codepen.io/heropark/embed/VzyWdj/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/heropark/pen/VzyWdj/'>@keyframes</a> by park young woong (<a href='https://codepen.io/heropark'>@heropark</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+        > `@keyframes` 로 만든 애니메이션의 프레임을, `animation` 속성으로 사용합니다.
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## Transitions
+
+        CSS 속성의 전환 효과를 지정
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `transition`
+
+        CSS 속성의 시작과 끝을 지정(전환 효과)하여 중간 값을 애니메이션<span class="property shorthand" title="단축 속성"></span>
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `transition-property` | 전환 효과를 사용할 속성 이름 | `all` |
+        | `transition-duration` | 전환 효과의 지속시간 설정 | `0s` |
+        | `transition-timing-function` | 타이밍 함수 지정(<a href="http://easings.net/ko" target="_blank">타이밍 함수란?</a>) | `ease` |
+        | `transition-delay` | 전환 효과의 대기시간 설정 | `0s` |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```css
+        .box {
+          height: 100px;
+          background: red;
+          transition: all 2s;
+        }
+        .box:hover {
+          height: 50px;
+          background: blue;
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `transition-property`
+
+        전환 효과를 사용할 속성 이름을 설정<span class="property individual" title="개별 속성"></span>
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `all` | 모든 속성에 적용 | `all` |
+        | 속성이름 | 전환 효과를 사용할 속성 이름 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `transition-duration`
+
+        전환 효과의 지속시간을 설정<span class="property individual" title="개별 속성"></span>
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | 시간 | 전환 효과가 지속되는 시간 | `0s` |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `transition-timing-function`
+
+        타이밍 함수(애니메이션 전환 효과를 계산하는 방법) 지정<span class="property individual" title="개별 속성"></span>
+
+        | 값 | 의미 | 기본값 | Cubic Bezier 값 |
+        |---|---|---|---|
+        | `ease` | 빠르게 - 느리게 | `ease` | `cubic-bezier(.25, .1, .25, 1)` |
+        | `linear` | 일정하게 |  | `cubic-bezier(0, 0, 1, 1)` |
+        | `ease-in` | 느리게 - 빠르게 |  | `cubic-bezier(.42, 0, 1, 1)` |
+        | `ease-out` | 빠르게 - 느리게 |  | `cubic-bezier(0, 0, .58, 1)` |
+        | `ease-in-out` | 느리게 - 빠르게 - 느리게 |  | `cubic-bezier(.42, 0, .58, 1)` |
+        | `cubic-bezier(n,n,n,n)` | 자신만의 값을 정의(`0`~`1`) |  |  |
+        | `steps(n)` | `n`번 분할된 애니메이션 |  |  |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `transition-delay`
+
+        전환 효과가 몇 초 뒤에 시작할지 대기시간을 설정<span class="property individual" title="개별 속성"></span>
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | 시간 | 전환 효과의 대기시간을 설정 | `0s` |
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## Transforms
+
+        요소의 변환 효과를 지정
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `transform`
+
+        요소의 변환 효과(변형)를 지정
+
+        ```
+        transform: 변환함수1 변환함수2 변환함수3;
+        ```
+
+        ```css
+        .box {
+          transform: rotate(20deg) translate(10px, 0);
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `transform` 2D 변환 효과
+
+        | 값(변환함수) | 의미 |
+        |---|---|
+        | `translate(x, y)` | 이동 |
+        | `translateX(x)` | X축 이동 |
+        | `translateY(y)` | Y축 이동 |
+        | `scale(x, y)` | 크기 |
+        | `scaleX(x)` | X축 크기 |
+        | `scaleY(y)` | Y축 크기 |
+        | `rotate(degree)` | 회전 |
+        | `skew(x, y)` | 기울임(비틀기) |
+        | `skewX(x)` | X축 기울임 |
+        | `skewY(y)` | Y축 기울임 |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## `transform` 3D 변환 효과
+
+        | 값(변환함수) | 의미 |
+        |---|---|
+        | `translate3d(x, y, z)` | 이동(X축, Y축, Z축) |
+        | `translateZ(z)` | 이동(Z축) |
+        | `scale3d(x, y, z)` | 크기(X축, Y축, Z축) |
+        | `scaleZ(z)` | 크기(Z축) |
+        | `rotate3d(x, y, z)` | 회전(X축, Y축, Z축) |
+        | `rotateX(x)` | 회전(X축) |
+        | `rotateY(y)` | 회전(Y축) |
+        | `rotateZ(z)` | 회전(Z축) |
+        | `perspective(n)` |  |
       </textarea>
       </section>
     </section>
