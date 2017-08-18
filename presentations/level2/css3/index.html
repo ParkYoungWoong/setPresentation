@@ -882,7 +882,7 @@
 
       <section data-markdown>
       <textarea data-template>
-        ## `transition`
+        ### `transition`
 
         CSS 속성의 시작과 끝을 지정(전환 효과)하여 중간 값을 애니메이션<span class="property shorthand" title="단축 속성"></span>
 
@@ -897,6 +897,10 @@
 
       <section data-markdown>
       <textarea data-template>
+        ```
+        transition: 속성이름 지속시간 [타이밍함수 대기시간];
+        ```
+
         ```css
         .box {
           height: 100px;
@@ -913,7 +917,7 @@
 
       <section data-markdown>
       <textarea data-template>
-        ## `transition-property`
+        ### `transition-property`
 
         전환 효과를 사용할 속성 이름을 설정<span class="property individual" title="개별 속성"></span>
 
@@ -926,7 +930,7 @@
 
       <section data-markdown>
       <textarea data-template>
-        ## `transition-duration`
+        ### `transition-duration`
 
         전환 효과의 지속시간을 설정<span class="property individual" title="개별 속성"></span>
 
@@ -938,7 +942,7 @@
 
       <section data-markdown>
       <textarea data-template>
-        ## `transition-timing-function`
+        ### `transition-timing-function`
 
         타이밍 함수(애니메이션 전환 효과를 계산하는 방법) 지정<span class="property individual" title="개별 속성"></span>
 
@@ -956,7 +960,7 @@
 
       <section data-markdown>
       <textarea data-template>
-        ## `transition-delay`
+        ### `transition-delay`
 
         전환 효과가 몇 초 뒤에 시작할지 대기시간을 설정<span class="property individual" title="개별 속성"></span>
 
@@ -980,7 +984,7 @@
 
       <section data-markdown>
       <textarea data-template>
-        ## `transform`
+        ### `transform`
 
         요소의 변환 효과(변형)를 지정
 
@@ -999,7 +1003,7 @@
 
       <section data-markdown>
       <textarea data-template>
-        ## `transform` 2D 변환 함수
+        ### `transform` 2D 변환 함수
 
         | 값(변환함수) | 의미 | 단위 |
         |---|---|---|
@@ -1019,7 +1023,7 @@
 
       <section data-markdown>
       <textarea data-template>
-        ## `transform` 3D 변환 함수
+        ### `transform` 3D 변환 함수
 
         | 값(변환함수) | 의미 | 단위 |
         |---|---|---|
@@ -1045,7 +1049,7 @@
 
       <section data-markdown>
       <textarea data-template>
-        ### `matrix(a,b,c,d,e,f)`
+        #### `matrix(a,b,c,d,e,f)`
 
         요소의 2차원 변환 효과를 지정<br>
         `scale()`, `skew()`, `translate()` 그리고 `rotate()`를 지정
@@ -1079,12 +1083,14 @@
           transform: matrix(0.866025, 0.5, -0.5, 0.866025, 0, 0);
         }
         ```
+
+        > 일반 변환 함수의 값을 `matrix` 변환 함수로 계산한 결과입니다.
       </textarea>
       </section>
 
       <section data-markdown>
       <textarea data-template>
-        ## `transform` 변환 속성
+        ### `transform` 변환 속성
 
         | 속성 | 의미 |
         |---|---|
@@ -1098,7 +1104,7 @@
 
       <section data-markdown>
       <textarea data-template>
-        ## `transform-origin`
+        ### `transform-origin`
 
         요소 변환의 기준점을 설정
 
@@ -1112,7 +1118,7 @@
 
       <section data-markdown>
       <textarea data-template>
-        ## `transform-style`
+        ### `transform-style`
 
         3D 변환 요소의 자식 요소도 3D 변환을 사용할지 설정
 
@@ -1134,7 +1140,7 @@
 
       <section data-markdown>
       <textarea data-template>
-        ## `perspective`
+        ### `perspective`
 
         하위 요소를 관찰하는 원근 거리를 설정
 
@@ -1153,7 +1159,27 @@
 
       <section data-markdown>
       <textarea data-template>
-        ## `perspective-origin`
+        #### `perspective` 속성과 함수의 차이점
+
+        | 속성/함수 | 적용대상 | 기준점 설정 |
+        |---|---|---|
+        | `perspective` | 관찰 대상의 부모 요소 | `perspective-origin` |
+        | `transform: perspective()` | 관찰 대상 | `transform-origin` |
+
+        > `perspective`속성은 관찰 대상의 부모(조상) 요소에 적용하여 하위 요소들을 관찰하는 원근 거리를 설정하며, `transform: perspective()`변환 함수는 관찰 대상에 직접 적용하여 그 대상을 관찰하는 원근 거리를 설정합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        <iframe height='400' scrolling='no' title='Defferences in perspective' src='//codepen.io/heropark/embed/EvowKb/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/heropark/pen/EvowKb/'>Defferences in perspective</a> by park young woong (<a href='https://codepen.io/heropark'>@heropark</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `perspective-origin`
 
         원근 거리의 기준점을 설정
 
@@ -1170,7 +1196,201 @@
 </iframe>
       </textarea>
       </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `backface-visibility`
+
+        3D 변환으로 회전된 요소의 뒷면 숨김을 설정
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `visible` | 뒷면 숨기지 않음 | `visible` |
+        | `hidden` | 뒷면 숨김 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        <iframe height='400' scrolling='no' title='backface-visibility' src='//codepen.io/heropark/embed/oeEbpW/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/heropark/pen/oeEbpW/'>backface-visibility</a> by park young woong (<a href='https://codepen.io/heropark'>@heropark</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+      </textarea>
+      </section>
     </section>
+
+
+    <!--SECTION-->
+    <section>
+      <section data-markdown>
+      <textarea data-template>
+        ## Animations
+
+        요소에 애니메이션을 지정
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `animation`
+
+        요소에 애니메이션을 설정/제어<span class="property shorthand" title="단축 속성"></span>
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `animation-name` | `@keyframes`규칙의 이름을 지정 | `none` |
+        | `animation-duration` | 애니메이션의 지속 시간 설정 | `0s` |
+        | `animation-timing-function` | 타이밍 함수 지정(<a href="http://easings.net/ko" target="_blank">타이밍 함수란?</a>) | `ease` |
+        | `animation-delay` | 애니메이션의 대기 시간 설정 | `0s` |
+        | `animation-iteration-count` | 애니메이션의 반복 횟수 설정 | `1` |
+        | `animation-direction` | 애니메이션의 반복 방향 설정 | `normal` |
+        | `animation-fill-mode` | 애니메이션의 전후 상태(위치) 설정 | `none` |
+        | `animation-play-state` | 애니메이션의 재생과 정지 설정 | `running` |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ```
+        animation: 애니메이션이름 지속시간 [타이밍함수 대기시간 반복횟수 반복방향 전후상태 재생/정지];
+        ```
+
+        ```css
+        .box {
+          width: 100px;
+          height: 100px;
+          background: tomato;
+          animation: hello 2s linear infinite both;
+        }
+
+        @keyframes hello {
+          0% { width: 200px; }
+          100% { width: 50px; }
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `animation-name`
+
+        `@keyframes`규칙(애니메이션 프레임)의 이름을 지정<span class="property individual" title="개별 속성"></span>
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `none` | 애니메이션을 지정하지 않음 | `none` |
+        | `@keyframes`이름 | 이름이 일치하는 `@keyframes`규칙의 애니메이션을 적용 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `animation-duration`
+
+        애니메이션의 **지속** 시간 설정<span class="property individual" title="개별 속성"></span>
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | 시간 | 지속 시간을 설정 | `0s` |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `animation-timing-function`
+
+        타이밍 함수(애니메이션 효과를 계산하는 방법) 지정<span class="property individual" title="개별 속성"></span>
+
+        | 값 | 의미 | 기본값 | Cubic Bezier 값 |
+        |---|---|---|---|
+        | `ease` | 빠르게 - 느리게 | `ease` | `cubic-bezier(.25, .1, .25, 1)` |
+        | `linear` | 일정하게 |  | `cubic-bezier(0, 0, 1, 1)` |
+        | `ease-in` | 느리게 - 빠르게 |  | `cubic-bezier(.42, 0, 1, 1)` |
+        | `ease-out` | 빠르게 - 느리게 |  | `cubic-bezier(0, 0, .58, 1)` |
+        | `ease-in-out` | 느리게 - 빠르게 - 느리게 |  | `cubic-bezier(.42, 0, .58, 1)` |
+        | `cubic-bezier(n,n,n,n)` | 자신만의 값을 정의(`0`~`1`) |  |  |
+        | `steps(n)` | `n`번 분할된 애니메이션 |  |  |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `animation-delay`
+
+        애니메이션의 **대기** 시간 설정<span class="property individual" title="개별 속성"></span>
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | 시간 | 대기 시간을 설정 | `0s` |
+
+        >  음수가 허용됩니다. 음수가 있을 경우 애니메이션은 바로 시작되지만, 그 값만큼 애니메이션 앞서 시작합니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `animation-iteration-count`
+
+        애니메이션의 반복 횟수를 설정<span class="property individual" title="개별 속성"></span>
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | 숫자 | 반복 횟수를 설정 | `1` |
+        | `infinite` | 무한 반복 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `animation-direction`
+
+        애니메이션의 반복 방향을 설정<span class="property individual" title="개별 속성"></span>
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `normal` | 정방향만 반복 | `normal` |
+        | `reverse` | 역방향만 반복 |  |
+        | `alternate` | 정방향에서 역방향으로 반복(왕복) |  |
+        | `alternate-reverse` | 역방향에서 정방향으로 반복(왕복) |  |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `animation-fill-mode`
+
+        애니메이션의 전후 상태(위치)를 설정<span class="property individual" title="개별 속성"></span>
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `none` | 기존 위치에서 시작 -> 애니메이션 시작 위치로 이동 -> 동작 -> 기존 위치에서 끝 | `none` |
+        | `forwards` | 기존 위치에서 시작 -> 애니메이션 시작 위치로 이동 -> 동작 -> 애니메이션 끝 위치에서 끝 |  |
+        | `backwards` | 애니메이션 시작 위치에서 시작 -> 동작 -> 기존 위치에서 끝 |  |
+        | `both` | 애니메이션 시작 위치에서 시작 -> 동작 -> 애니메이션 끝 위치에서 끝 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        <iframe height='500' scrolling='no' title='PKQbQM' src='//codepen.io/heropark/embed/PKQbQM/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/heropark/pen/PKQbQM/'>PKQbQM</a> by park young woong (<a href='https://codepen.io/heropark'>@heropark</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `animation-play-state`
+
+        애니메이션의 재생과 정지를 설정<span class="property individual" title="개별 속성"></span>
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `running` | 애니메이션을 동작 | `running` |
+        | `paused` | 애니메이션 동작을 정지 |  |
+      </textarea>
+      </section>
+    </section>
+
 
 
   </div>
