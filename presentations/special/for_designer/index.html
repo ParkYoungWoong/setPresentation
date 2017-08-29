@@ -83,6 +83,16 @@
 
       <section data-markdown>
       <textarea data-template>
+        ## 그리드 시스템이 왜 필요하죠?
+
+        웹의 정보를 효율적으로 구조화(표현)해야 유지/보수가 쉽다!
+
+        > 레이아웃이 그때그때 달라요 ~@
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
         ## 웹 디자인(퍼블리싱) 상식
 
         왜 섹션으로 나누고 해상도에 맞게 디자인하는가?<br>
@@ -91,14 +101,6 @@
         > 내가 디자인 고자라니?!
 
         <img src="img/iamgoja.jpg" alt="내가 고자라니?!" width="130" style="border-radius: 50%;">
-      </textarea>
-      </section>
-
-      <section data-markdown>
-      <textarea data-template>
-        ## 시간이 남으면?
-
-        회사별(부서별) 웹 디자이너들의 장단점 소개.
       </textarea>
       </section>
     </section>
@@ -249,7 +251,7 @@
 
         '네모 바퀴 자동차 이야기'
 
-        > 사이트 하단에 들어갈 '춤추는 캐릭터'를 디자인 해주세요!
+        > 사이트 하단에 들어갈 '춤추는 **캐릭터**'를 디자인 해주세요!
       </textarea>
       </section>
 
@@ -257,9 +259,9 @@
       <textarea data-template>
         ## `HTML`, `CSS`는 웹 디자이너의 기본 소양이다
 
-        구조, 표현, 동작
+        구조.. / 표현! / 동작?
 
-        > 제 개발자 친구는 `CSS`가 어렵다고 해요.
+        > 개발자 친구는 `CSS`가 어렵다고 해요.
       </textarea>
       </section>
 
@@ -281,7 +283,7 @@
         <img src="img/prototype_tool_framer.jpg" alt="Framer" width="200">
         <img src="img/prototype_tool_origami.jpg" alt="Origami" width="200">
 
-        > 슬라이드 애니메이션 만들어 놓았으니 코드만 복사해서 쓰세요.
+        > 두둥! 자~ 이런 방식으로 만들죠!
       </textarea>
       </section>
 
@@ -419,6 +421,8 @@
         # 프론트엔드 개발
 
         ## HTML, CSS, JS
+
+        HTML, CSS는 배우기 쉽다!
       </textarea>
       </section>
 
@@ -426,21 +430,21 @@
       <textarea data-template>
         ## HTML
 
+        구조
+
         ```html
-        <표준코딩>
+        <정보영역>
+          <제목>나의 포트폴리오</제목>
+          <정보 종류="제작자" 내용="박영웅" />
+          <불러오기 경로="폴더/파일.css" />
+        </정보영역>
 
-        <전체영역>
-          <정보영역>
-            <제목>나의 포트폴리오</제목>
-            <정보 이름="제작자" 내용="박영웅">
-            <불러오기 경로="css폴더/main.css파일">
-          </정보영역>
-
-          <구조영역>
-            <영역 이름="헤더"></영역>
-            <영역 이름="푸터"></영역>
-          </구조영역>
-        </전체영역>
+        <구조영역>
+          <영역 이름="헤더">
+            <이미지 이름="로고" />
+          </영역>
+          <영역 이름="푸터"></영역>
+        </구조영역>
         ```
       </textarea>
       </section>
@@ -448,6 +452,8 @@
       <section data-markdown>
       <textarea data-template>
         ## CSS
+
+        표현
 
         ```css
         .헤더 {
@@ -458,9 +464,14 @@
           글자색상: 빨강;
         }
 
+        .로고 {
+          정렬: 왼쪽;
+        }
+
         .푸터 {
           세로너비: 300px;
           배경색상: 검정;
+          글꼴: 나눔고딕, 고딕체계열;
         }
         ```
       </textarea>
@@ -469,6 +480,8 @@
       <section data-markdown>
       <textarea data-template>
         ## JavaScript 는?
+
+        동작
 
         표준명칭은 `ECMAScript`
 
@@ -585,7 +598,7 @@
             <!--FOOTER-->
             <footer></footer>
 
-          </body>
+           </body>
         </html>
         ```
       </textarea>
@@ -676,7 +689,7 @@
       <textarea data-template>
         ## 웹 그리드 시스템(Grid System) 이란?
 
-        웹 사이트의 콘텐츠를 효율적으로 표현하기 위해 사용되는 구조화 방식
+        웹 사이트의 콘텐츠(정보)를 효율적으로 표현하기 위해 사용되는 구조화 방식
       </textarea>
       </section>
 
@@ -693,6 +706,20 @@
         | `margin` | 줄과 줄 사이의 여백 |
         | `padding` | 칸 내부 여백 |
         | `offset` | 콘텐츠가 있는 칸과 칸 사이의 빈 칸 |
+
+        <a href="http://www.designinfluences.com/fluid960gs/" target="_blank">12 컬럼 / 16 컬럼</a>
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="그리드 시스템 / grid">
+      <textarea data-template>
+        <img src="img/grid-1200.jpg" alt="그리드 설명" width="800">
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="그리드 시스템 / grid">
+      <textarea data-template>
+        <img src="img/grid-960.jpg" alt="그리드 설명" width="800">
       </textarea>
       </section>
 
@@ -741,6 +768,12 @@
       <section data-markdown data-present-title="그리드 시스템 / padding, offset">
       <textarea data-template>
         <img src="img/grid2-padding-offset.jpg" alt="그리드 설명" width="1000">
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="그리드 시스템">
+      <textarea data-template>
+        <img src="img/grid-exam1.jpg" alt="그리드 설명" width="800">
       </textarea>
       </section>
 
@@ -864,7 +897,7 @@
         |--|---|---|
         | 색상 수 | 256 | 16,777,216 |
 
-        > `GIF`는 8비트 컬러 이미지이지만 '반복 이미지(움짤)'를 위해서 사용됩니다.
+        > `GIF`는 8비트 컬러만 지원하지만 '반복 이미지(움짤)'를 위해서 사용됩니다.
       </textarea>
       </section>
 
@@ -969,56 +1002,56 @@
 
 
     <!--SECTION-->
-    <section>
-      <section data-markdown>
-      <textarea data-template>
-        # 부록 - 회사별 디자이너의 차이
-      </textarea>
-      </section>
+    <!--<section>-->
+      <!--<section data-markdown>-->
+      <!--<textarea data-template>-->
+        <!--# 부록 - 회사별 디자이너의 차이-->
+      <!--</textarea>-->
+      <!--</section>-->
 
-      <section data-markdown>
-      <textarea data-template>
-        ## 웹에이전시 디자이너
+      <!--<section data-markdown>-->
+      <!--<textarea data-template>-->
+        <!--## 웹에이전시 디자이너-->
 
-        웹 디자인(UI), 이벤트 페이지 디자인
+        <!--웹 디자인(UI), 이벤트 페이지 디자인-->
 
-        | GOOD | BAD |
-        |---|---|
-        | 다양한 디자인 경험 | 일상이 야근 |
-        | 효율적이고 세분화된 업무 프로세스 경험 | 조물주 위에 클라이언트
-        | 양질의 포트폴리오 | 포토샵 기계 |
-        |  | 낮은 초봉 |
-      </textarea>
-      </section>
+        <!--| GOOD | BAD |-->
+        <!--|-&#45;&#45;|-&#45;&#45;|-->
+        <!--| 다양한 디자인 경험 | 일상이 야근 |-->
+        <!--| 효율적이고 세분화된 업무 프로세스 경험 | 조물주 위에 클라이언트-->
+        <!--| 양질의 포트폴리오 | 포토샵 기계 |-->
+        <!--|  | 낮은 초봉 |-->
+      <!--</textarea>-->
+      <!--</section>-->
 
-      <section data-markdown>
-      <textarea data-template>
-        ## 마케팅팀 디자이너
+      <!--<section data-markdown>-->
+      <!--<textarea data-template>-->
+        <!--## 마케팅팀 디자이너-->
 
-        기획, 마케팅, 편집, 영업, 디자인(?) 등...
+        <!--기획, 마케팅, 편집, 영업, 디자인(?) 등...-->
 
-        | GOOD | BAD |
-        |---|---|
-        | 기획 단계부터 많은 참여 가능 | 실질적 디자인 업무가 거의 없음 |
-        | 프로세스의 큰 흐름을 볼 수 있음 | 디자인 외 업무가 상당히 많음 |
-        | 안정적인 연봉 | '내가 디자이너 맞나?' |
-      </textarea>
-      </section>
+        <!--| GOOD | BAD |-->
+        <!--|-&#45;&#45;|-&#45;&#45;|-->
+        <!--| 기획 단계부터 많은 참여 가능 | 실질적 디자인 업무가 거의 없음 |-->
+        <!--| 프로세스의 큰 흐름을 볼 수 있음 | 디자인 외 업무가 상당히 많음 |-->
+        <!--| 안정적인 연봉 | '내가 디자이너 맞나?' |-->
+      <!--</textarea>-->
+      <!--</section>-->
 
-      <section data-markdown>
-      <textarea data-template>
-        ## 자체 서비스를 보유하고 있는<br> IT 회사 디자이너
+      <!--<section data-markdown>-->
+      <!--<textarea data-template>-->
+        <!--## 자체 서비스를 보유하고 있는<br> IT 회사 디자이너-->
 
-        웹 디자인(UI/UX), 유지/보수
+        <!--웹 디자인(UI/UX), 유지/보수-->
 
-        | GOOD | BAD |
-        |---|---|
-        | 작은 규모로 기획 단계 참여/제작 | 서비스가 실패하면 직장을 잃을 수 있음 |
-        | 균형잡힌 업무 | 지옥의 업데이트 |
-        | 수평적 문화가 많음 | ' 포트폴리오는?' |
-      </textarea>
-      </section>
-    </section>
+        <!--| GOOD | BAD |-->
+        <!--|-&#45;&#45;|-&#45;&#45;|-->
+        <!--| 작은 규모로 기획 단계 참여/제작 | 서비스가 실패하면 직장을 잃을 수 있음 |-->
+        <!--| 균형잡힌 업무 | 지옥의 업데이트 |-->
+        <!--| 수평적 문화가 많음 | ' 포트폴리오는?' |-->
+      <!--</textarea>-->
+      <!--</section>-->
+    <!--</section>-->
 
 
     <!--SECTION-->
