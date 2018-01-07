@@ -654,10 +654,10 @@
       <textarea data-template>
         ```css
         .box.normal {
-          transform: scale(1.5, 2.5) skew(2, 3) translate(20px, 40px);
+          transform: scale(1.5, 2.5) skew(10deg, 20deg) translate(20px, 40px);
         }
         .box.matrix {
-          transform: matrix(1.5, 2, 3, 2.5, 20, 40);
+          transform: matrix(1.5, 0.909926, 0.26449, 2.5, 40.5796, 118.199);
         }
         ```
 
@@ -1099,6 +1099,8 @@
           flex: 1 20px;  /* 증가 기본 */
         }
         ```
+
+        > `flex-basis` 속성의 기본값은 `auto`이나 `flex` (단축) 속성으로 작성시 값을 생략하면 `0`으로 변경되니 주의하세요!
       </textarea>
       </section>
 
