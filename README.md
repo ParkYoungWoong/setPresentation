@@ -106,76 +106,80 @@ This was made with [Reveal.js](https://github.com/hakimel/reveal.js/).
 
 ### For Designer
 
-#### [디자이너를 위한 웹 개발 개론](https://parkyoungwoong.github.io/setPresentation/presentations/special/for_designer/)
+#### [디자이너를 위한 웹 개발 개론](https://heropy.info/presentations/special/for_designer/)
+
+### For StartUp
+
+#### [스타트업을 위한 웹앱 UI/UX 디자인](https://heropy.info/presentations/special/for_startup/)
 
 ### Level1
 
-#### [HTML](https://parkyoungwoong.github.io/setPresentation/presentations/level1/html/)
+#### [HTML](https://heropy.info/presentations/level1/html/)
 
 `HTML 문법` `html` `head` `body` `doctype` `meta` `title` `link` `style` `script` `요소 특성` `h1` `h2` `h3` `h4` `h5` `h6` `div` `p` `ul` `ol` `li` `dl` `dt` `dd` `table` `tr` `td` `a` `span` `img` `input` `주석` `전역속성` `경로`  
 
-#### [CSS 개요](https://parkyoungwoong.github.io/setPresentation/presentations/level1/css/summary)
+#### [CSS 개요](https://heropy.info/presentations/level1/css/summary)
 
 `CSS 문법` `선언 방식` `선택자` `상속` `우선순위(명시도)`
 
-#### [CSS 속성](https://parkyoungwoong.github.io/setPresentation/presentations/level1/css/properties)
+#### [CSS 속성](https://heropy.info/presentations/level1/css/properties)
 
 `width` `height` `margin` `padding` `border` `border-width` `border-style` `border-color` `font` `font-style` `font-weight` `font-size` `line-height` `font-family` `color` `색상표현` `text-align` `text-indent` `text-decoration` `letter-spacing` `word-spacing` `float` `position` `top` `bottom` `left` `right` `z-index` `background` `background-color` `background-image` `background-repeat` `background-position` `background-attachment` `display` `overflow` `overflow-x` `overflow-y` `opacity`
 
-#### [CSS 속성 +](https://parkyoungwoong.github.io/setPresentation/presentations/level2/css3)
+#### [CSS 속성 +](https://heropy.info/presentations/level2/css3)
 
 `at-rules` `@charset` `@import` `@font-face` `@media` `@keyframes` `animation` `animation-name` `animation-duration` `animation-timing-function` `animation-delay` `animation-iteration-count` `animation-direction` `animation-fill-mode` `animation-play-state` `tansition` `transition-property` `transition-duration` `transition-timing-function` `transition-delay` `transform` `translate` `scale` `rotate` `skew` `matrix` `transform-origin` `transform-style` `perspective` `perspective-origin` `backface-visibility` `flex` `flex-flow` `flex-direction` `flex-wrap` `justify-content` `align-content` `align-items` `order` `flex-grow` `flex-shrink` `flex-basis` `align-self` `columns` `column-width` `column-count` `column-rule` `column-rule-width` `column-rule-style` `column-rule-color` `column-gap`
 
 ### jQuery for Level 2
 
-#### [JavaScript for jQuery, 선행학습](https://parkyoungwoong.github.io/setPresentation/presentations/level2/jquery/prior_learning)
+#### [JavaScript for jQuery, 선행학습](https://heropy.info/presentations/level2/jquery/prior_learning)
 
 `표기법` `Zero-based` `JS 데이터 종류` `변수` `기명 함수` `익명 함수` `예약어` `length` `연산자` `jQuery 문법`
 
-#### [jQuery Animation Methods](https://parkyoungwoong.github.io/setPresentation/presentations/level2/jquery/animation)
+#### [jQuery Animation Methods](https://heropy.info/presentations/level2/jquery/animation)
 
 `show` `hide` `toggle` `fadeIn` `fadeOut` `fadeToggle` `slideDown` `slideUp` `slideToggle` `fadeTo` `animate` `delay` `stop` `finish` `애니메이션 대기열(Queue)`
 
-#### [jQuery Style Methods](https://parkyoungwoong.github.io/setPresentation/presentations/level2/jquery/style)
+#### [jQuery Style Methods](https://heropy.info/presentations/level2/jquery/style)
 
 `css`
 
-#### [jQuery Size Methods](https://parkyoungwoong.github.io/setPresentation/presentations/level2/jquery/size)
+#### [jQuery Size Methods](https://heropy.info/presentations/level2/jquery/size)
 
 `width` `innerWidth` `outerWidth` `height` `innerHeight` `outerHeight`
 
-#### [jQuery Position Methods](https://parkyoungwoong.github.io/setPresentation/presentations/level2/jquery/position)
+#### [jQuery Position Methods](https://heropy.info/presentations/level2/jquery/position)
 
 `offsetParent` `position` `offset` `scrollTop` `scrollLeft`
 
-#### [jQuery Attribute Methods](https://parkyoungwoong.github.io/setPresentation/presentations/level2/jquery/attribute)
+#### [jQuery Attribute Methods](https://heropy.info/presentations/level2/jquery/attribute)
 
 `hasClass` `addClass` `removeClass` `toggleClass` `attr` `removeAttr` `prop` `data` `val`
 
-#### [jQuery Event Methods](https://parkyoungwoong.github.io/setPresentation/presentations/level2/jquery/event)
+#### [jQuery Event Methods](https://heropy.info/presentations/level2/jquery/event)
 
 `on` `off` `one` `jQuery 이벤트 종류` `Event 객체` `이벤트 버블링(Bubbling)` `이벤트 캡처링(Capturing)`
  
-#### [jQuery Node Methods](https://parkyoungwoong.github.io/setPresentation/presentations/level2/jquery/node)
+#### [jQuery Node Methods](https://heropy.info/presentations/level2/jquery/node)
 
 `first` `last` `eq` `index` `find` `filter` `not` `children` `parent` `parents` `prev` `next` `siblings` `prepend` `prependTo` `append` `appendTo` `html` `text` `remove` `empty` `each`
 
 ### JavaScript for Level 2
 
-#### [구문(Statements)](https://parkyoungwoong.github.io/setPresentation/presentations/level2/javascript/statements)
+#### [구문(Statements)](https://heropy.info/presentations/level2/javascript/statements)
 
 `if` `조건부(3항) 연산자` `else` `switch` `for` `while` `case` `default` `break` `continue`
 
-#### [함수(Function)](https://parkyoungwoong.github.io/setPresentation/presentations/level2/javascript/function)
+#### [함수(Function)](https://heropy.info/presentations/level2/javascript/function)
                 
 `선언(Declarations)` `표현(Expressions)` `즉시실행함수(IIFE)` `인자(Arguments)` `매개변수(Parameters)` `함수 종료` `arguments 객체` `유효범위(Scope)` `렉시컬(Lexical)` `호이스팅(Hoisting)` `콜백(Callback)`
 
-#### [Core functions(Methods)](https://parkyoungwoong.github.io/setPresentation/presentations/level2/javascript/core_functions)
+#### [Core functions(Methods)](https://heropy.info/presentations/level2/javascript/core_functions)
 
 `String` `Number` `Math` `Date` `Array` `Timer`
 
-#### [this](https://parkyoungwoong.github.io/setPresentation/presentations/level2/javascript/this)
+#### [this](https://heropy.info/presentations/level2/javascript/this)
 
-#### [GSAP(TweenMax)](https://parkyoungwoong.github.io/setPresentation/presentations/level2/libraries/gsap)
+#### [GSAP(TweenMax)](https://heropy.info/presentations/level2/libraries/gsap)
 
 `GSAP` `TweenMax` `TimelineMax`
