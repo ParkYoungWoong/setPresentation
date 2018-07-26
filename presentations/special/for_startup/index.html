@@ -475,6 +475,121 @@
 
     <!--SECTION-->
     <section>
+      <style media="screen">
+      .reveal .browser_group::after {
+          content: "";
+          display: block;
+          clear: both;
+      }
+      .reveal .browser {
+          width: 500px;
+          float: left;
+          margin-right: 30px;
+          border: 1px solid #e5e5e5;
+      }
+      .reveal .browser:last-child {
+          float: right;
+      }
+      .reveal .browser img {
+          margin: 0;
+          max-width: none;
+          max-height: none;
+          vertical-align: top;
+      }
+      .reveal .browser .status_bar {
+          height: 23px;
+      }
+      .reveal .browser .scroll_area {
+          width: 500px;
+          height: 500px;
+          overflow: auto;
+      }
+      </style>
+
+      <section data-markdown>
+      <textarea data-template>
+        # 섹션(Section) 이해하기
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 섹션(Section) 이란?
+
+        웹 사이트를 구성하는 가장 큰 단위의 연결된 레이아웃들(Layouts)
+
+        `header`, `footer`, `section`, `article`...
+      </textarea>
+      </section>
+
+      <section data-state="nice_scroller">
+        <div class="browser_group">
+          <div class="browser">
+            <div class="status_bar"><img src="img/browser_status_bar_500.jpg" alt=""></div>
+            <div id="browser_origin_area" class="scroll_area">
+              <img src="img/heren_main_500.jpg" alt="" width="500" height="1476">
+            </div>
+          </div>
+
+          <div class="browser">
+            <div class="status_bar"><img src="img/browser_status_bar_500.jpg" alt=""></div>
+            <div id="browser_copy_area" class="scroll_area">
+              <img src="img/heren_main_500_section.jpg" alt="" width="500" height="1476">
+            </div>
+          </div>
+        </div>
+
+        <script>
+          $(document).ready(function () {
+            Reveal.addEventListener('nice_scroller', function() {
+              var opts = {
+                cursorcolor: "rgba(0,0,0,.4)",
+                cursorwidth: 3,
+                scrollspeed: 60,
+                cursorborderradius: 0,
+                mousescrollstep: 40,
+                background: "none",
+                cursorborder: "none",
+                autohidemode: true,
+                boxzoom: false,
+                zindex: 990
+              };
+
+              $('.browser .scroll_area').each(function () {
+                $(this).niceScroll(opts);
+              });
+
+              $('#browser_origin_area').on('scroll', function () {
+                var originY = $(this).scrollTop();
+                $('#browser_copy_area').getNiceScroll(0).doScrollTop(originY, 0);
+              });
+            }, false );
+          });
+        </script>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## 섹션으로 구성하는 이유
+
+        웹의 콘텐츠(Contents)를 구분하여 관리하기 위해서 섹션으로 구성.
+
+        - 웹의 내용 구분
+        - 각 레이아웃의 기준
+        - 관리가 편리
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        <img src="img/remove_section.jpg" alt="섹션 빼기" width="900">
+      </textarea>
+      </section>
+    </section>
+
+
+    <!--SECTION-->
+    <section>
       <section data-markdown>
       <textarea data-template>
         # 프로토타입?
