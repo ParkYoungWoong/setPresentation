@@ -624,6 +624,70 @@
 
       <section data-markdown data-present-title="가상 클래스 선택자">
       <textarea data-template>
+        #### ACTIVE
+
+        `E`를 마우스로 클릭하는 동안에만 `E` 선택
+
+        ```
+        E:active
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="가상 클래스 선택자 :active">
+      <textarea data-template>
+        ```css
+        div {
+          width: 100px;
+          height: 100px;
+          background: tomato;
+          transition: 0.4s;
+        }
+        div:active {
+          width: 200px;
+        }
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="가상 클래스 선택자">
+      <textarea data-template>
+        #### FOCUS
+
+        `E`가 포커스 된 동안에만 `E` 선택
+
+        ```
+        E:focus
+        ```
+
+        > <a href="https://developer.mozilla.org/ko/docs/Web/Guide/HTML/%EC%BB%A8%ED%85%90%ED%8A%B8_%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC#%EB%8C%80%ED%99%94%ED%98%95_%EC%BD%98%ED%85%90%EC%B8%A0" target="_blank">대화형 콘텐츠</a>에서 사용 가능
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="가상 클래스 선택자 :focus">
+      <textarea data-template>
+        ```css
+        input {
+          width: 100px;
+          outline: none;
+          padding: 5px 10px;
+          border: 1px solid lightgray;
+          transition: 0.4s;
+        }
+        input:focus {
+          width: 200px;
+          border-color: red;
+        }
+        ```
+
+        ```html
+        <input type="text">
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="가상 클래스 선택자">
+      <textarea data-template>
         #### FIRST CHILD
 
         `E`가 형제 요소 중 첫번째 요소라면 선택
@@ -956,6 +1020,132 @@
         ```
 
         > 각 `<li></li>` 내부의 뒤에 내용(content)으로 `.0` 문자를 삽입했습니다.
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### 속성 선택자(Attribute Selectors)
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="속성 선택자">
+      <textarea data-template>
+        #### ATTR
+
+        속성 `attr`을 포함한 요소 선택
+
+        ```
+        [attr]
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="속성 선택자 [attr]">
+      <textarea data-template>
+        ```css
+        [disabled] {
+          opacity: 0.2;
+        }
+        ```
+
+        ```html
+        <input type="id" value="HEROPY">
+        <input type="password" value="1234">
+        <input type="text" value="disabled text" disabled>
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="속성 선택자">
+      <textarea data-template>
+        #### ATTR=VALUE
+
+        속성 `attr`을 포함하며 속성 값이 `value`인 요소 선택
+
+        ```
+        [attr=value]
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="속성 선택자 [attr=value]">
+      <textarea data-template>
+        ```css
+        [type="password"] {
+          color: red;
+        }
+        ```
+
+        ```html
+        <input type="id" value="HEROPY">
+        <input type="password" value="1234">
+        <input type="text" value="disabled text" disabled>
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="속성 선택자">
+      <textarea data-template>
+        #### ATTR^=VALUE
+
+        속성 `attr`을 포함하며 속성 값이 `value`로 시작하는 요소 선택
+
+        ```
+        [attr^=value]
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="속성 선택자 [attr^=value]">
+      <textarea data-template>
+        ```css
+        [class^="btn-"] {
+          font-weight: bold;
+          border-radius: 4px;
+        }
+        ```
+
+        ```html
+        <button class="btn-success">Success</button>
+        <button class="btn-danger">Danger</button>
+        <button>Normal</button>
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="속성 선택자">
+      <textarea data-template>
+        #### ATTR$=VALUE
+
+        속성 `attr`을 포함하며 속성 값이 `value`로 끝나는 요소 선택
+
+        ```
+        [attr$=value]
+        ```
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="속성 선택자 [attr$=value]">
+      <textarea data-template>
+        ```css
+        [class^="btn-"] {
+          font-weight: bold;
+          border-radius: 4px;
+        }
+        [class$="success"] {
+          color: green;
+        }
+        [class$="danger"] {
+          color: red;
+        }
+        ```
+
+        ```html
+        <button class="btn-success">Success</button>
+        <button class="btn-danger">Danger</button>
+        <button>Normal</button>
+        ```
       </textarea>
       </section>
     </section>
