@@ -2207,6 +2207,116 @@
         > `local` 값을 사용했을 경우, `overflow: [auto, scroll]` 속성이 필요합니다.
       </textarea>
       </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `background-size`
+
+        배경 이미지의 크기를 지정
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="background-size">
+      <textarea data-template>
+        #### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `auto` | 배경 이미지가 원래의 크기로 표시됨 | `auto` |
+        | 단위 | - `px`, `em`, `%` 등 단위로 지정<br>- `width height`형태로 입력 가능(E.g. `120px 370px`)<br>- `width`만 입력하면 비율에 맞게 지정됨(E.g. `120px`) |  |
+        | `cover` | - 배경 이미지의 크기 비율을 유지하며, 요소의 더 넓은 너비에 맞춰짐<br>- 이미지가 잘릴 수 있음 |  |
+        | `contain` | - 배경 이미지의 크기 비율을 유지하며, 요소의 더 짧은 너비에 맞춰짐<br>- 이미지가 잘리지 않음 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `background-origin`
+
+        배경 이미지의 원점 위치를 지정
+
+        > `background-attachment`가 `fixed`인 경우 무시됩니다.
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="background-origin">
+      <textarea data-template>
+        #### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `padding-box` | 배경 이미지가 'padding-box'의 좌상단 원점을 가짐 | `padding-box` |
+        | `border-box` | 배경 이미지가 'border-box'의 좌상단 원점을 가짐 |  |
+        | `content-box` | 배경 이미지가 'content-box'의 좌상단 원점을 가짐 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="background-origin">
+      <textarea data-template>
+        #### 사용법
+
+        ```
+        background-origin: 원점위치;
+        ```
+
+        ```css
+        .box {
+          width: 500px;
+          height: 500px;
+          padding: 50px;
+          border: 30px dashed rgba(255, 0, 0, .3);
+          background: orange url(https://heropy.blog/css/images/logo.png) no-repeat;
+          background-origin: border-box;
+        }
+        ```
+
+        > `background-origin` 값을 변경해 보세요!
+      </textarea>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ### `background-clip`
+
+        배경 색상 및 이미지를 출력할 범위를 지정
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="background-origin">
+      <textarea data-template>
+        #### 속성 값
+
+        | 값 | 의미 | 기본값 |
+        |---|---|---|
+        | `border-box` | 배경 색상 및 이미지가 'border-box' 범위에서만 출력 | `border-box` |
+        | `padding-box` | 배경 색상 및 이미지가 'padding-box' 범위에서만 출력 |  |
+        | `content-box` | 배경 색상 및 이미지가 'content-box' 범위에서만 출력 |  |
+      </textarea>
+      </section>
+
+      <section data-markdown data-present-title="background-clip">
+      <textarea data-template>
+        #### 사용법
+
+        ```
+        background-origin: 출력범위;
+        ```
+
+        ```css
+        .box {
+          width: 500px;
+          height: 500px;
+          padding: 50px;
+          border: 30px dashed rgba(255, 0, 0, .3);
+          background: orange url(https://heropy.blog/css/images/logo.png) no-repeat;
+          background-origin: border-box;
+          background-clip: content-box;
+        }
+        ```
+
+        > `background-clip` 값을 변경해 보세요!
+      </textarea>
+      </section>
     </section>
 
 
